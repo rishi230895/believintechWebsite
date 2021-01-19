@@ -1,0 +1,30 @@
+$primary-color: #00428a;
+
+
+.navbar{
+    padding: 5px 115px;
+    .navbar-brand{
+        width: 12%;
+        height: 100%;
+        margin: 0;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .navbar-nav{
+        // background-color: $primary-color;
+        .nav-item{
+            position: relative;
+        }
+        .nav-item:hover::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: $primary-color;
+            width: 100%;
+            height: 2px;
+        }
+    }
+}
