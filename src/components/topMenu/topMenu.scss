@@ -13,7 +13,6 @@
         }
     }
     .navbar-nav{
-        // background-color: $primary-color;
         .nav-item{
             position: relative;
             padding-right: 1rem;
@@ -22,14 +21,24 @@
                 padding: 0;
             }
         }
-        .nav-item:hover::after{
+        .nav-item::after{
             content: '';
             position: absolute;
             bottom: -33px;
             left: 0;
             background-color: $primary-color;
-            width: 100%;
+            width: 0%;
             height: 3px;
+            opacity: 0;
+            transition: all 500ms ease;
+            -moz-transition: all 500ms ease;
+            -webkit-transition: all 500ms ease;
+            -ms-transition: all 500ms ease;
+            -o-transition: all 500ms ease;
+        }
+        .nav-item:hover::after{
+            opacity: 1;
+            width: 100%;
         }
     }
 }
