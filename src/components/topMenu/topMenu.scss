@@ -1,8 +1,8 @@
-$primary-color: #00428a;
-
+@import "@/styles/_variables.scss";
 
 .navbar{
     padding: 5px 115px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15);
     .navbar-brand{
         width: 12%;
         height: 100%;
@@ -16,15 +16,20 @@ $primary-color: #00428a;
         // background-color: $primary-color;
         .nav-item{
             position: relative;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            .nav-link{
+                padding: 0;
+            }
         }
         .nav-item:hover::after{
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -33px;
             left: 0;
             background-color: $primary-color;
             width: 100%;
-            height: 2px;
+            height: 3px;
         }
     }
 }
