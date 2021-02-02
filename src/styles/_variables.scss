@@ -1,1 +1,16 @@
-$primary-color: #00428a;
+$primary-blue: #00428a;
+$secondary-blue: #007bff;
+$charcoal: #3B4047;
+$white: #fff;
+$poppins-regular: poppins-reg;
+$redhat-medium: redhat-med;
+
+@font-face {
+    font-family: poppins-reg;
+    src: url('~@/assets/fonts/Poppins/Poppins-Regular.ttf');
+}
+
+@font-face{
+    font-family: redhat-med;
+    src: url('~@/assets/fonts/Red_Hat_Display/RedHatDisplay-Medium.ttf');
+}

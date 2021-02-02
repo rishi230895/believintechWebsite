@@ -1,23 +1,70 @@
-<div>
-  <b-navbar toggleable="lg" type="light" variant="faded">
-    <b-navbar-brand href="#">
-      <img src="../../assets/logo-believintech.png" alt="believintech logo">
-    </b-navbar-brand>
-
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-    <b-collapse id="nav-collapse" is-nav>
-
-      <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
-        <b-nav-item href="#">
-          <font-awesome-icon icon="user-secret" />Home</b-nav-item>
-        <b-nav-item href="#">About Us</b-nav-item>
-        <b-nav-item href="#">Services</b-nav-item>
-        <b-nav-item href="#">Portfolio</b-nav-item>
-        <b-nav-item href="#">Team</b-nav-item>
-        <b-nav-item href="#">Contact Us</b-nav-item>
-      </b-navbar-nav>
-    </b-collapse>
-  </b-navbar>
+<div class="headerWrapper">
+  <div class="infoNavWrapper">
+    <div class="container-lg p-lg-0">
+      <div class="infoNav">
+        <div class="infoCnt">
+          <ul>
+            <li>
+              <a href="mailto:ketan@believintech.com">
+                <font-awesome-icon :icon="['fas', 'envelope']" />
+                ketan@believintech.com</a>
+            </li>
+            <li>
+              <a href="tel:+919643886273">
+                <font-awesome-icon :icon="['fas', 'phone-alt']" />
+                +91 9643886273</a>
+            </li>
+          </ul>
+        </div>
+        <div class="infoscl">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/BelievIn-Tech-107391134339508/">
+                <font-awesome-icon :icon="['fab', 'facebook']" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/believintech/?viewAsMember=true">
+                <font-awesome-icon :icon="['fab', 'linkedin']" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbarWrapper">
+    <b-navbar toggleable="lg" type="light" variant="faded" class="cstmNav">
+      <div class="container-lg p-lg-0">
+        <b-navbar-brand href="#" class="cstmNavBrd">
+          <em>Believin</em><span>tech</span>
+          <!-- <img src="../../assets/logo-believintech.png" alt="believintech logo"> -->
+        </b-navbar-brand>
+    
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+    
+        <b-collapse id="nav-collapse" is-nav class="cstmNavColl">
+    
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto cstmNavbarUl">
+            <b-nav-item href="#" class="cstmNavItem">Home</b-nav-item>
+            <b-nav-item href="#" class="cstmNavItem">About Us</b-nav-item>
+            <b-nav-item href="#" class="cstmNavItem drpDwnItem">Services
+              <ul class="cstmDrpdwn">
+                <li><a href="">Web Designing</a></li>
+                <li><a href="">WordPress Development</a></li>
+                <li><a href="">ECommerce Development</a></li>
+                <li><a href="">API Development</a></li>
+                <li><a href="">PHP Frameworks development</a></li>
+                <li><a href="">Website Optimization</a></li>
+              </ul>
+            </b-nav-item>
+            <b-nav-item href="#" class="cstmNavItem">Portfolio</b-nav-item>
+            <b-nav-item href="#" class="cstmNavItem">Team</b-nav-item>
+            <b-nav-item href="#" class="cstmNavItem">Contact Us</b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </div>
+    </b-navbar>
+  </div>
 </div>
