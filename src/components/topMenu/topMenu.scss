@@ -57,8 +57,9 @@
             text-decoration: none;
             position: relative;
             line-height: 32px;
-            padding-bottom: 0;
-            padding-left: 15px;
+            // padding-bottom: 0;
+            // padding-left: 15px;
+            max-width: 200px;
             em{
                 font-style: normal;
                 color: $primary-blue;
@@ -71,26 +72,27 @@
                 height: 100%;
             }
         }
-        .cstmNavBrd::before{
-            content: "{";
-            position: absolute;
-            top: 50%;
-            left: -5px;
-            color: $primary-blue;
-            transform: translateY(-50%);
-        }
-        .cstmNavBrd::after{
-            content: "}";
-            position: absolute;
-            top: 50%;
-            right: -20px;
-            color: $secondary-blue;
-            transform: translateY(-50%);
-        }
+        // .cstmNavBrd::before{
+        //     content: "{";
+        //     position: absolute;
+        //     top: 50%;
+        //     left: -5px;
+        //     color: $primary-blue;
+        //     transform: translateY(-50%);
+        // }
+        // .cstmNavBrd::after{
+        //     content: "}";
+        //     position: absolute;
+        //     top: 50%;
+        //     right: -20px;
+        //     color: $secondary-blue;
+        //     transform: translateY(-50%);
+        // }
         .cstmNavbarUl{
+            align-items: center;
             .cstmNavItem{
                 position: relative;
-                padding: 30px 16px;
+                padding: 30px 15px;
                 .nav-link{
                     padding: 0;
                     color: $charcoal;
@@ -108,8 +110,8 @@
                     z-index: 99;
                     border-radius: 0 0 10px 10px;
                     max-width: 265px;
-                    // transition: all 0.3s ease;
                     height: 0%;
+                    visibility: hidden;
                     li{
                         list-style: none;
                         padding: 5px 0;
@@ -131,15 +133,32 @@
                     }
                 }
             }
-            .drpDwnItem{
+            .quoteBtn{
+                padding-top: 0;
+                padding-bottom: 0;
+                a{
+                    background: $secondary-blue;
+                    transition: $cmn-transition;
+                    color: $white !important;
+                    padding: 10px 15px !important;
+                    border-radius: 25px;
+                    text-decoration: none;
+                    position: relative;
+                }
+                a:hover{
+                    background: $primary-blue;
+                }
+            }
+            .noHrLine{
                 position: relative;
             }
-            .drpDwnItem::after{
+            .noHrLine::after{
                 display: none;
             }
-            .drpDwnItem:hover .cstmDrpdwn{
+            .noHrLine:hover .cstmDrpdwn{
                 padding: 15px 35px 15px 15px;
                 height: fit-content;
+                visibility: visible;
             }
             .cstmNavItem:hover .nav-link{
                 color: $primary-blue;

@@ -4,6 +4,8 @@ $charcoal: #3B4047;
 $white: #fff;
 $poppins-regular: poppins-reg;
 $redhat-medium: redhat-med;
+$montserrat-bold: mont-bold;
+$cmn-transition: all 0.3s linear;
 
 @font-face {
     font-family: poppins-reg;
@@ -13,4 +15,9 @@ $redhat-medium: redhat-med;
 @font-face{
     font-family: redhat-med;
     src: url('~@/assets/fonts/Red_Hat_Display/RedHatDisplay-Medium.ttf');
+}
+
+@font-face{
+    font-family: mont-bold;
+    src: url('~@/assets/fonts/Montserrat/Montserrat-Bold.ttf');
 }
