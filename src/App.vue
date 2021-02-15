@@ -1,14 +1,13 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <topMenu />
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <banner />
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import topMenu from './components/topMenu'
+import banner from './components/banner'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -16,8 +15,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
     topMenu,
+    banner
   }
 }
 </script>
@@ -29,6 +28,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
 }
 </style>

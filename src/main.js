@@ -20,3 +20,16 @@ Vue.use(IconsPlugin)
 new Vue({
   render: h => h(App),
 }).$mount('#app')
+
+// custom js
+// const nav = document.querySelector('.navbarWrapper');
+// const navTop = nav.offsetTop;
+// const navHeight = nav.offsetHeight;
+
+// function stickyNavigation() { 
+//   console.log('navTop = ' + navTop);
+//   console.log('scrollY = ' + window.scrollY);
+//   console.log("nav height is = " + navHeight);
+// }
+
+// window.addEventListener('scroll', stickyNavigation);
