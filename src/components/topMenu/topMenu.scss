@@ -1,4 +1,5 @@
 @import "@/styles/_variables.scss";
+@import "@/styles/_common.scss";
 
 // info navbar
 .infoNavWrapper{
@@ -19,6 +20,7 @@
                 a{
                     color: $white;
                     text-decoration: none;
+                    font-size: $copy-text;
                 }
             }
             li:first-child{
@@ -57,9 +59,7 @@
             text-decoration: none;
             position: relative;
             line-height: 32px;
-            // padding-bottom: 0;
-            // padding-left: 15px;
-            max-width: 200px;
+            max-width: 240px;
             em{
                 font-style: normal;
                 color: $primary-blue;
@@ -72,22 +72,6 @@
                 height: 100%;
             }
         }
-        // .cstmNavBrd::before{
-        //     content: "{";
-        //     position: absolute;
-        //     top: 50%;
-        //     left: -5px;
-        //     color: $primary-blue;
-        //     transform: translateY(-50%);
-        // }
-        // .cstmNavBrd::after{
-        //     content: "}";
-        //     position: absolute;
-        //     top: 50%;
-        //     right: -20px;
-        //     color: $secondary-blue;
-        //     transform: translateY(-50%);
-        // }
         .cstmNavbarUl{
             align-items: center;
             .cstmNavItem{
@@ -97,6 +81,7 @@
                     padding: 0;
                     color: $charcoal;
                     font-family: $poppins-regular;
+                    font-size: $copy-text;
                 }
                 .cstmDrpdwn{
                     margin: 0;
@@ -120,6 +105,7 @@
                         a{
                             color: $white;
                             text-decoration: none;
+                            font-size: $copy-text;
                         }
                     }
                     li::after{
@@ -137,16 +123,19 @@
                 padding-top: 0;
                 padding-bottom: 0;
                 a{
-                    background: $secondary-blue;
+                    font-family: 'poppins-med' !important;
                     transition: $cmn-transition;
                     color: $white !important;
                     padding: 10px 25px !important;
                     border-radius: 5px;
                     text-decoration: none;
                     position: relative;
+                    background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
+                    background-size: 200% 100%;
+                    background-position: right bottom;
                 }
                 a:hover{
-                    background: $primary-blue;
+                    background-position: left bottom;
                 }
             }
             .noHrLine{

@@ -1,22 +1,32 @@
-$primary-blue: #00428a;
-$secondary-blue: #007bff;
-$charcoal: #3B4047;
-$white: #fff;
-$poppins-regular: poppins-reg;
-$redhat-medium: redhat-med;
-$montserrat-bold: mont-bold;
-$cmn-transition: all 0.3s linear;
+$primary-blue: #00428a; // main blue
+$secondary-blue: #007bff; // secondary blue
+$charcoal: #3B4047; // text color
+$white: #fff; // white color
+$poppins-regular: poppins-reg; // poppins regular font
+$poppins-medium: poppins-med; // poppins medium font
+$poppins-semibold: poppins-semibold; //poppins semibold font
+$redhat-medium: redhat-med; // redhat medium font
+$montserrat-bold: mont-bold; // montserrat bold font
+$cmn-transition: all 0.3s linear; // common transition
+$copy-text: 16px; // common text font size
 
+// font faces
 @font-face {
     font-family: poppins-reg;
     src: url('~@/assets/fonts/Poppins/Poppins-Regular.ttf');
 }
-
+@font-face {
+    font-family: poppins-med;
+    src: url('~@/assets/fonts/Poppins/Poppins-Medium.ttf');
+}
+@font-face {
+    font-family: poppins-semibold;
+    src: url('~@/assets/fonts/Poppins/Poppins-SemiBold.ttf');
+}
 @font-face{
     font-family: redhat-med;
     src: url('~@/assets/fonts/Red_Hat_Display/RedHatDisplay-Medium.ttf');
 }
-
 @font-face{
     font-family: mont-bold;
     src: url('~@/assets/fonts/Montserrat/Montserrat-Bold.ttf');

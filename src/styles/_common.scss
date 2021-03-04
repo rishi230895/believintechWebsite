@@ -1,0 +1,21 @@
+@import "@/styles/_variables.scss";
+
+.ctaBtn{
+    color: $white;
+    padding: 12px 25px;
+    border-radius: 3px;
+    font-family: $poppins-medium;
+    display: block;
+    width: fit-content;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: all 0.4s linear;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    &:hover{
+        background-position: left bottom;
+    }
+}

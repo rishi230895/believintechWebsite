@@ -1,11 +1,72 @@
 
 <section class="banner">
-  <div class="bannerWrap">
-    <div class="container">
+  <div class="container-lg p-lg-0">
+    <div class="bannerWrap">
       <div class="bannerContent">
-        <h1>Title</h1>
+        <h1 class="bannerTitle">A descriptive headline that clearly states what you do</h1>
+        <p class="bannerDesc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum at itaque modi? Voluptatibus error dolorum obcaecati reprehenderit aperiam ut minima eos, qui tempora, sit, earum quo corporis</p>
+        <a class="ctaBtn" href="#" v-b-modal.modal-center>Discuss Your Project 
+          <font-awesome-icon :icon="['fas', 'arrow-right']" />
+        </a>
+      </div>
+      <div class="bannerBg">
+        <img src="../../assets/4886718.jpg" alt="">
       </div>
     </div>
   </div>
+
+  
+
+  <!-- project form -->
+  <b-modal id="modal-center" no-close-on-esc no-close-on-backdrop centered title="Let's Discuss Your Project"> 
+    <div class="form">
+      <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+        <b-form-group id="input-group-1" label="Email address:" label-for="input-1" description="We'll never share your email with anyone else.">
+          <b-form-input
+            id="input-1"
+            v-model="form.email"
+            type="email"
+            placeholder="Enter email"
+            required
+          ></b-form-input>
+        </b-form-group>
+  
+        <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
+          <b-form-input
+            id="input-2"
+            v-model="form.name"
+            placeholder="Enter name"
+            required
+          ></b-form-input>
+        </b-form-group>
+  
+        <b-form-group id="input-group-3" label="Phone Number" label-for="input-3">
+          <b-form-input
+            id="input-3"
+            v-model="form.phnNumber"
+            placeholder="Enter Phone Number"
+            required
+          ></b-form-input>
+        </b-form-group>
+  
+        <b-form-group id="input-group-4" label="Project Details" label-for="input-4">
+          <b-form-textarea
+            id="input-4"
+            v-model="form.projectDetails"
+            placeholder="Enter Project Details"
+            required>
+          </b-form-textarea>
+        </b-form-group>
+        
+        <b-button class="mr-1" type="submit" variant="primary">Submit</b-button>
+        <b-button class="ml-1" type="reset" variant="danger">Reset</b-button>
+      </b-form>
+    </div>
+  </b-modal>
+
 </section>
+
+
+
+
 

@@ -2,11 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEnvelope,faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope,faPhoneAlt,faArrowRight,faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { faFontAwesome,faFacebook,faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+// import axios from 'axios'
+// import VueAxios from 'vue-axios'
 
-library.add(faFontAwesome,faFacebook,faLinkedin,faEnvelope,faPhoneAlt)
+library.add(faFontAwesome,faFacebook,faLinkedin,faEnvelope,faPhoneAlt,faArrowRight,faChevronRight)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -16,6 +18,8 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
+
+// Vue.use(VueAxios, axios)
 
 new Vue({
   render: h => h(App),
