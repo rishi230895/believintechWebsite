@@ -5,6 +5,9 @@ export default {
   props: [],
   data () {
     return {
+      heading:'A descriptive headline that clearly states what you do',
+      subHeading:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum at itaque modi? Voluptatibus error dolorum obcaecati reprehenderit aperiam ut minima eos, qui tempora, sit, earum quo corporis',
+      ctaText: 'Discuss Your Project ',
       form: {
         email: '',
         name: '',
