@@ -39,7 +39,7 @@ export default {
         },
         {
           heading: "Mobile Technologies",
-          description: "The Backend Stack we use to store the users data",
+          description: "The Mobile Stack we use to develop mobile apps",
           items:[{
             techLogo: "https://www.classicinformatics.com/hubfs/images/React.png",
             techName: "React Native"
