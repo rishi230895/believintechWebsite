@@ -1,17 +1,55 @@
 @import "@/styles/_variables.scss";
 @import "@/styles/_common.scss";
 
+@keyframes arrow{
+    0% {opacity:0}
+    40% {opacity:1}
+    80% {opacity:0}
+    100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/ {
+    0% {opacity:0}
+    40% {opacity:1}
+    80% {opacity:0}
+    100% {opacity:0}
+}
+
 .bannerWrap{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    margin-top: 30px;
+    margin-top: -80px;
+    height: 100vh;
+    .arrows{
+        height: 55px;
+        width: 65px;
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .arrows path {
+        stroke: $primary-blue;
+        fill: transparent;
+        stroke-width: 1px;	
+        animation: arrow 2s infinite;
+        -webkit-animation: arrow 2s infinite; 
+    }
+    .arrows path.a1 {
+        animation-delay:-1s;
+        -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+    }
+    .arrows path.a2 {
+        animation-delay:-0.5s;
+        -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+    }
     .bannerContent{
         width: 50%;
         h1.bannerTitle{
             text-align: left;
-            font-family: $poppins-semibold;
+            font-family: $poppins-bold;
             font-size: 50px;
             margin: 0;
         }
@@ -24,12 +62,6 @@
             margin: 15px 0 0 0;
         }
         a.ctaBtn{
-            svg{
-                margin-left: 15px;
-                vertical-align: middle;
-                transition: all 0.3s ease;
-                font-size: 14px;
-            }
             &:hover{
                 background-position: left bottom;
             }

@@ -1,0 +1,15 @@
+
+<section class="testimonial-slider">
+  <carousel :autoplay="true" :autoplayTimeout="8000" :autoplayHoverPause="true" :autoplaySpeed="1000" :dots="true" :nav="false" :items="1" :center="true" v-if="testimonials">
+    <b-card no-body class="testiCard" v-for="testimonial in testimonials">
+      <b-card-body class="testiBody">
+        <b-card-text class="testiMsg">{{testimonial.testiMsg}}</b-card-text>
+      </b-card-body>
+      <b-card-footer class="testiFooter">
+        <span class="testiDesig">{{testimonial.testidesig}}</span>
+        <em class="testiComp">{{testimonial.testiComp}}</em>
+      </b-card-footer>
+    </b-card>
+  </carousel>
+</section>
+

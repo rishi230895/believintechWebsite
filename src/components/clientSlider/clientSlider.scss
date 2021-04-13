@@ -1,0 +1,23 @@
+@import '@/styles/_variables.scss';
+@import '@/styles/_common.scss';
+
+.client-slider {
+    .sectionHeading{
+        margin-bottom: 40px;
+    }
+    .clientWrap{
+        .contentCopy{
+            width: fit-content;
+            max-width: 40%;
+            margin: 0 auto;
+        }
+        .clientOwl{
+            margin-top: 20px;
+            ::v-deep .owl-stage{
+                display: flex;
+                flex-direction: row;
+                align-items: center
+            }
+        }
+    }
+}

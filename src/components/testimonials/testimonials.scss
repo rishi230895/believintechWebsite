@@ -1,0 +1,50 @@
+@import '@/styles/variables.scss';
+@import '@/styles/common.scss';
+
+.testimonials {
+    .testimonialWrap{
+        background-color: $primary-blue;
+        padding: 30px 0;
+        .row{
+            align-items: center;
+            .colOne{
+                width: 40%;
+                .sectionHeading{
+                    color: $white;
+                    text-align: left;
+                    font-size: 35px;
+                    &::after{
+                        background-color: $logo-secondary-blue;
+                        bottom: -15px;
+                    }
+                    span{
+                        color: $logo-secondary-blue;
+                        font-size: 45px;
+                    }
+                }
+                .contentCopy{
+                    color: $white;
+                    text-align: left;
+                    font-family: $poppins-light;
+                    font-size: 18px;
+                }
+            }
+            .colTwo{
+                width: 60%;
+                padding: 0 30px;
+                .subHeading{
+                    color: $logo-secondary-blue;
+                    width: fit-content;
+                }
+                img{
+                    max-height: 250px;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    } 
+}
+// .sectionWrap{
+//     padding: 40px 0;
+// }

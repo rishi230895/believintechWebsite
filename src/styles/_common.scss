@@ -1,5 +1,47 @@
 @import "@/styles/_variables.scss";
 
+// animations
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(144, 202, 249, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+
+// cta banner wrap
+.ctaBannerWrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+// cta text 
+.ctaBannerTitle{
+    font-family: $poppins-bold;
+    font-size: 35px;
+    max-width: 60%;
+    text-align: left;
+    color: $white;
+    text-transform: capitalize;
+    span{
+        color: $logo-secondary-blue;
+    }
+}
+
+// cta btn
 .ctaBtn{
     color: $white;
     padding: 12px 25px;
@@ -13,9 +55,90 @@
     position: relative;
     overflow: hidden;
     background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
-    background-size: 200% 100%;
+    background-size: 201% 100%;
     background-position: right bottom;
+    box-shadow: 0px 8px 18px rgb(0 0 0 / 12%);
     &:hover{
         background-position: left bottom;
     }
+    svg{
+        margin-left: 15px;
+        vertical-align: middle;
+        transition: all 0.3s ease;
+        font-size: 16px;
+    }
+}
+
+// content section
+.sectionWrap{
+    padding: 25px 0;
+    position: relative;
+    // &:hover .sectionHeading{
+    //     &::after{
+    //         width: 35%;
+    //         opacity: 1;
+    //     }
+    // }
+}
+
+// content section heading
+.sectionHeading{
+    color: $charcoal;
+    font-family: $poppins-bold;
+    font-size: 45px;
+    line-height: 40px;
+    text-transform: capitalize;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto 50px;
+    transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    // &::after{
+    //     content: "";
+    //     position: absolute;
+    //     bottom: -10px;
+    //     left: 0;
+    //     width: 25%;
+    //     height: 3px;
+    //     opacity: 1;
+    //     background-color: $primary-blue;
+    //     transition: all 500ms ease;
+    //     -moz-transition: all 500ms ease;
+    //     -webkit-transition: all 500ms ease;
+    //     -ms-transition: all 500ms ease;
+    //     -o-transition: all 500ms ease;
+    // }
+    span{
+        color: $secondary-blue;
+    }
+}
+
+.subHeading{
+    font-family: $redhat-bold;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 25%;
+        height: 1px;
+        background-color: $white;
+    }
+}
+
+// content copy
+.contentCopy{
+    font-family: 'poppins-reg';
+    font-size: 15px;
+    color: $charcoal;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
 }

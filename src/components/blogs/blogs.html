@@ -1,0 +1,26 @@
+
+<section class="blogs sectionWrap">
+  <div class="container-lg p-lg-0">
+    <h2 class="sectionHeading">Latest Articles & News<span>.</span></h2>
+    <b-card-group deck>
+      <b-card class="blogCard" v-for="blog in blogs">
+        <b-card-img class="blogThumbnail" v-bind:src="blog.blogThumbnail"></b-card-img>
+        <div class="blogDetailsWrap">
+          <div class="blogDetails">
+            <font-awesome-icon :icon="['fas', 'clock']" />
+            {{blog.publishDate}}</div>
+          <div class="blogDetails">
+            <font-awesome-icon :icon="['fas', 'user-circle']" />
+            {{blog.author}}</div>
+          <div class="blogDetails">
+            <font-awesome-icon :icon="['fas', 'comments']" />
+            {{blog.commentNo}}</div>
+        </div>
+        <a class="blogTitle" href="">{{blog.blogTitle}}</a>
+        <p class="blogContent">{{blog.blogContent}}</p>
+        <a class="ctaBtn" href="">Read More</a>
+      </b-card>
+    </b-card-group>
+  </div>
+</section>
+

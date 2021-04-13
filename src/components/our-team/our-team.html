@@ -1,0 +1,26 @@
+<section class="our-team sectionWrap">
+  <div class="container-lg p-lg-0">
+    <h2 class="sectionHeading">Meet The Team<span>.</span></h2>
+    <div class="teamWrap">
+      <b-card-group>
+        <b-col sm="12" lg="3" class="p-0 teamCardWrap" v-for="member in team">
+            <b-card class="teamCard" no-body>
+              <b-card-img class="teamImg" v-bind:src="member.memberImg"></b-card-img>
+            </b-card>
+            <div class="memberDetails">
+              <h4>{{member.memberName}}</h4>
+              <span>{{member.memberDesi}}</span>
+              <div class="memberSocial">
+                <a v-bind:href="member.memberFb" target="_blank">
+                  <font-awesome-icon :icon="['fab', 'facebook']" />
+                </a>
+                <a v-bind:href="member.memberLinkedin" target="_blank">
+                  <font-awesome-icon :icon="['fab', 'linkedin']" />
+                </a>
+              </div>
+            </div>
+        </b-col>
+      </b-card-group>
+    </div>
+  </div>
+</section>

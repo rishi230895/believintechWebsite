@@ -1,0 +1,129 @@
+@import "@/styles/_variables.scss";
+@import "@/styles/_common.scss";
+
+@keyframes arrow{
+    0% {opacity:0}
+    40% {opacity:1}
+    80% {opacity:0}
+    100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/ {
+    0% {opacity:0}
+    40% {opacity:1}
+    80% {opacity:0}
+    100% {opacity:0}
+}
+
+.our-services {
+    // background: url('../../assets/19366.jpg') no-repeat;
+    // background-size: cover;
+    // background-position: center;
+    // background-attachment: fixed;
+    .serviceRow{
+        margin-top: 30px;
+        .serviceCardGrp{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            .serviceCard{
+                border: 1px solid $logo-secondary-blue;
+                border-radius: 0;
+                transition: all 0.4s ease;
+                max-width: 250px;
+                width: 100%;
+                flex: auto;
+                margin-bottom: 30px;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+                -moz-backface-visibility: hidden;
+                &:nth-last-child(-n+4){
+                    margin-bottom: 0;
+                }
+                &:hover{
+                    transform: scale(1.02);
+                    box-shadow: 0 0 10px rgb(0 0 0 / 12%);
+                }
+                &:hover .serviceFooter{
+                    border-top: 1px solid $logo-secondary-blue;
+                }
+                &:hover .ctaBtn{
+                    background-position: left bottom;
+                    padding-right: 35px;
+                    svg{
+                      opacity: 1;
+                    }
+                }
+                .logoWrap{
+                    position: relative;
+                    border: 1px solid #90caf9;
+                    padding: 24px;
+                    border-radius: 50%;
+                    margin: 0 auto;
+                    max-width: 100px;
+                    max-height: 100px;
+                    .serviceLogo{
+                        max-width: 80px;
+                        max-height: 80px;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .arrows{
+                        width: 65px;
+                        position: absolute;
+                        bottom: -160px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                    .arrows path {
+                        stroke: $logo-secondary-blue;
+                        fill: transparent;
+                        stroke-width: 1px;	
+                        animation: arrow 2s infinite;
+                        -webkit-animation: arrow 2s infinite; 
+                    }
+                    .arrows path.a1 {
+                        animation-delay:-1s;
+                        -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+                    }
+                    .arrows path.a2 {
+                        animation-delay:-0.5s;
+                        -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+                    }
+                }
+                .serviceName{
+                    font-family: $poppins-medium;
+                    font-size: 20px;
+                    line-height: 24px;
+                    color: $charcoal;
+                    margin: 10px 0;
+                }
+                .serviceDesc{
+                    font-family: 'poppins-reg';
+                    font-size: 14px;
+                    line-height: 24px;
+                    margin: 0 auto;
+                }
+                .ctaBtn{
+                    margin: auto;
+                    padding: 5px 15px;
+                    line-height: 24px;
+                    svg{
+                        position: absolute;
+                        top: 50%;
+                        right: 15px;
+                        opacity: 0;
+                        font-size: 12px;
+                        transform: translateY(-50%);
+                        margin: 0;
+                    }
+                }
+                .serviceFooter{
+                    background-color: transparent;
+                    border: none;
+                }
+            }
+        }
+    }
+}

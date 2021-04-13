@@ -1,0 +1,22 @@
+
+<section class="team sectionWrap">
+  <div class="container-lg p-lg-0">
+    <h2 class="sectionHeading">Our Team</h2>
+    <div class="teamWrap">
+      <b-card-group>
+        <b-col sm="12" lg="6" class="p-1" v-for="member in team">
+          <div class="teamCardWrap">
+            <b-card class="teamCard" no-body>
+              <b-card-img class="teamImg" v-bind:src="member.memberImg"></b-card-img>
+            </b-card>
+            <div class="memberDetails">
+              <h4>{{member.memberName}}</h4>
+              <span>{{member.memberDesi}}</span>
+            </div>
+          </div>
+        </b-col>
+      </b-card-group>
+    </div>
+  </div>
+</section>
+

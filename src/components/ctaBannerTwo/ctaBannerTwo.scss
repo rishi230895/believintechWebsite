@@ -1,0 +1,35 @@
+@import '@/styles/_variables.scss';
+@import '@/styles/_common.scss'; 
+
+.sectionWrap{
+    padding: 0;
+    bottom: -55px;
+    z-index: 1;
+}
+.cta-banner-two {
+    .ctaBg{
+        background-color: $logo-secondary-blue;
+        padding: 90px 50px;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0px 13px 15px 0px rgb(0 0 0 / 12%);
+        .ctaBannerTitle{
+            font-size: 40px;
+        }
+        .ctaBtn{
+            background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
+            background-size: 201% 100%;
+            background-position: right bottom;
+            box-shadow: 0px 8px 18px rgb(0 0 0 / 12%);
+            margin-top: 0;
+            &:hover{
+                background-position: left bottom;
+            }
+        }
+        // .overlayShape{
+        //     width: 250px;
+        //     height: 250px;
+        //     background-color: $primary-blue;
+        // }
+    }
+}
