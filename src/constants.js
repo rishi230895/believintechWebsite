@@ -1,0 +1,1 @@
+export const apiUrl = 'http://api.believintech.com/wp-json/api/v1';

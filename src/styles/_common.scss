@@ -18,6 +18,22 @@
 	}
 }
 
+// page banner title and desc
+h1.bannerTitle{
+    text-align: left;
+    font-family: $poppins-bold;
+    font-size: 50px;
+    margin: 0;
+}
+p.bannerDesc{
+    text-align: left;
+    line-height: 160%;
+    max-width: 85%;
+    font-size: $copy-text;
+    font-family: $poppins-regular;
+    margin: 15px 0 0 0;
+}
+
 // cta banner wrap
 .ctaBannerWrap{
     display: flex;
@@ -60,6 +76,9 @@
     box-shadow: 0px 8px 18px rgb(0 0 0 / 12%);
     &:hover{
         background-position: left bottom;
+    }
+    &:hover svg{
+        margin-left: 20px;
     }
     svg{
         margin-left: 15px;

@@ -1,7 +1,7 @@
 export default {
   name: 'cta-banner',
   components: {},
-  props: [],
+  props: ['items'],
   data () {
     return {
       // ctaBanner: 'Want your business to succeed with an IT solution?',

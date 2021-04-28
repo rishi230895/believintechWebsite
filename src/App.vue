@@ -1,61 +1,61 @@
 <template>
   <div id="app">
     <topMenu />
-    <banner />
-    <our-services />
-    <ctabanner />
-    <process />
-    <techStack />
-    <clientSlider />
-    <testimonials />
-    <blogs />
-    <ctaBannerTwo />
+    <router-view />
+    <ctaBannerTwo :items = "footerctabannar_section"/>
     <footerComp />
-    <!-- <our-team /> -->
-    <!-- <team /> -->
   </div>
 </template>
 
 <script>
 import topMenu from './components/topMenu'
-import banner from './components/banner'
-import ourServices from './components/our-services'
-import ctabanner from './components/ctaBanner'
-import process from './components/process'
-import techStack from './components/techStack'
-import clientSlider from './components/clientSlider'
-import testimonials from './components/testimonials'
-import blogs from './components/blogs'
 import ctaBannerTwo from './components/ctaBannerTwo'
 import footerComp from './components/footerComp'
-// import team from './components/team'
-// import ourTeam from './components/our-team'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import axios from 'axios'
+import {apiUrl} from '@/constants.js'
 
 export default {
   name: 'App',
   components: {
     topMenu,
-    banner,
-    ourServices,
-    ctabanner,
-    process,
-    techStack,
-    clientSlider,
-    testimonials,
-    blogs,
     ctaBannerTwo,
-    footerComp,
-    // ourTeam,
-    // team,
+    footerComp
+  },
+  data() {
+    return{
+      footerctabannar_section: [],
+      // routerPage: '',
+    }
+  },
+  async created(){
+    try {
+      const res = await axios.get(apiUrl + '/homeData');
+      if(res.data.status == 'success'){
+        this.footerctabannar_section = res.data.data.footerctabannar_section;
+        console.log(this.footerctabannar_section);
+      }
+      // if(this.$router.currentRoute.path == '/career'){
+      //   var careerPage = document.querySelector("#app");
+      //   careerPage.style.backgroundColor = '#fafafa';
+      //   console.log(this.$router.currentRoute.path);
+      // }else{
+      //   careerPage.style.backgroundColor = '#fff';
+      // }
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
 </script>
 
 
-<style>
+<style lang="scss">
+@import '@/styles/_variables.scss';
+@import '@/styles/_common.scss'; 
+
 html,body{
     scroll-behavior: smooth;
 }
@@ -63,6 +63,6 @@ html,body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $charcoal;
 }
 </style>

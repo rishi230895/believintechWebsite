@@ -20,8 +20,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    margin-top: -80px;
-    height: 100vh;
+    padding: 50px 0;
     .arrows{
         height: 55px;
         width: 65px;
@@ -47,28 +46,14 @@
     }
     .bannerContent{
         width: 50%;
-        h1.bannerTitle{
-            text-align: left;
-            font-family: $poppins-bold;
-            font-size: 50px;
-            margin: 0;
-        }
-        p.bannerDesc{
-            text-align: left;
-            line-height: 160%;
-            max-width: 85%;
-            font-size: $copy-text;
-            font-family: $poppins-regular;
-            margin: 15px 0 0 0;
-        }
-        a.ctaBtn{
-            &:hover{
-                background-position: left bottom;
-            }
-            &:hover svg{
-                margin-left: 20px;
-            }
-        }
+        // a.ctaBtn{
+        //     &:hover{
+        //         background-position: left bottom;
+        //     }
+        //     &:hover svg{
+        //         margin-left: 20px;
+        //     }
+        // }
     }
     .bannerBg{
         width: 50%;

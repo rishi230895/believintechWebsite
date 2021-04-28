@@ -4,6 +4,7 @@
 .blogs {
     .blogCard{
         border: none;
+        max-width: 33%;
         &:hover .card-body{
             .blogTitle{
                 color: $secondary-blue;
@@ -56,6 +57,10 @@
                 -webkit-transition: all 0.5s ease;
                 -moz-transition: all 0.5s ease;
             }
+        }
+        .card-footer{
+            background-color: transparent;
+            border: none;
             .ctaBtn{
                 padding: 5px 15px;
                 margin: 0 auto;

@@ -1,17 +1,17 @@
 <section class="tech-stack sectionWrap">
   <div class="cstmBg">
-    <h2 class="sectionHeading">Technologies We Use<span>.</span></h2>
+    <h2 class="sectionHeading">{{items.techHeading}}<span>.</span></h2>
     <div class="container-lg p-lg-0">
-      <div class="techWrap" v-for="techwrap in techwraps" v-if="techwraps">
+      <div class="techWrap" v-for="techwrap in items.details">
         <div class="colOne">
-          <h4>{{techwrap.heading}}</h4>
-          <p>{{techwrap.description}}</p>
+          <h4>{{techwrap.technologiesTitle}}</h4>
+          <p>{{techwrap.technologiesDesc}}</p>
         </div>
         <div class="colTwo">
           <div class="stackWrap">
-            <div class="tech" v-for="tech in techwrap.items">
-              <img class="techLogo" v-bind:src="tech.techLogo" alt="">
-              <span class="techName">{{tech.techName}}</span>
+            <div class="tech" v-for="tech in techwrap.technologiesimageName">
+              <img class="techLogo" v-bind:src="tech.technologiesImage" alt="">
+              <span class="techName">{{tech.technologiesName}}</span>
             </div>
           </div>
         </div>

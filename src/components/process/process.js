@@ -2,7 +2,7 @@
 export default {
   name: 'process',
   components: {},
-  props: [],
+  props: ['items'],
   data () {
     return {
 

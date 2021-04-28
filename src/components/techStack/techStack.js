@@ -2,7 +2,7 @@
 export default {
   name: 'tech-stack',
   components: {},
-  props: [],
+  props: ['items'],
   data () {
     return {
       techwraps:[{

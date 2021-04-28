@@ -1,15 +1,33 @@
 
 <section class="testimonial-slider">
-  <carousel :autoplay="true" :autoplayTimeout="8000" :autoplayHoverPause="true" :autoplaySpeed="1000" :dots="true" :nav="false" :items="1" :center="true" v-if="testimonials">
-    <b-card no-body class="testiCard" v-for="testimonial in testimonials">
+  <carousel :autoplay="true" :autoplayTimeout="8000" :autoplayHoverPause="true" :autoplaySpeed="true" 
+  :dots="true" :nav="false" :items="1" :center="true">
+    <b-card no-body class="testiCard" v-for="items in testimonialsSlider">
       <b-card-body class="testiBody">
-        <b-card-text class="testiMsg">{{testimonial.testiMsg}}</b-card-text>
+        <b-card-text class="testiMsg">{{items.details.testimonialsMessage}}</b-card-text>
       </b-card-body>
       <b-card-footer class="testiFooter">
-        <span class="testiDesig">{{testimonial.testidesig}}</span>
-        <em class="testiComp">{{testimonial.testiComp}}</em>
+        <span class="testiDesig">{{items.details.testimonialsDesignation}}</span>
+        <em class="testiComp">{{items.details.testimonialscompanyName}}</em>
       </b-card-footer>
     </b-card>
   </carousel>
+
+  <!-- <template>
+    <div>
+      <VueSlickCarousel class="testiSlider" v-bind="settings">
+        <b-card no-body class="testiCard" v-for="testimonial in testimonialsSlider.details" v-if="testimonial">
+          <b-card-body class="testiBody">
+            <b-card-text class="testiMsg">{{testimonial.testimonialsMessage}}</b-card-text>
+          </b-card-body>
+          <b-card-footer class="testiFooter">
+            <span class="testiDesig">{{testimonial.testimonialsDesignation}}</span>
+            <em class="testiComp">{{testimonial.testimonialscompanyName}}</em>
+          </b-card-footer>
+        </b-card>
+      </VueSlickCarousel>
+    </div>
+  </template> -->
+
 </section>
 

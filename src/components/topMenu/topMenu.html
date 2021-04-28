@@ -36,10 +36,10 @@
   <div class="navbarWrapper">
     <b-navbar toggleable="lg" type="light" variant="faded" class="cstmNav">
       <div class="container-lg p-lg-0">
-        <b-navbar-brand href="#" class="cstmNavBrd">
-          <!-- <em>Believin</em><span>tech</span> -->
-          <img src="../../assets/logo/believintech-full&final-logo-2.0.svg" alt="">
-        </b-navbar-brand>
+        <router-link class="cstmNavBrd" to="/">
+          <img src="../../assets/logo/believintech-full-&-final-logo.png" alt="">
+          <!-- <img src="../../assets/logo/believintech-full&final-logo-2.0.svg" alt=""> -->
+        </router-link>
     
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     
@@ -47,31 +47,64 @@
     
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto cstmNavbarUl">
-            <b-nav-item href="#" class="cstmNavItem">Home</b-nav-item>
-            <b-nav-item href="#" class="cstmNavItem noHrLine">About Us
+            <li class="cstmNavItem">
+              <router-link class="nav-link" to="/">Home</router-link>
+            </li>
+            <li class="cstmNavItem noHrLine">
+              <router-link class="nav-link" to="about">About Us</router-link>
               <ul class="cstmDrpdwn">
-                <li><a href="">Our Engagement Model</a></li>
-                <li><a href="">Our Team</a></li>
-                <li><a href="">Our Clients</a></li>
-                <li><a href="">Success Stories</a></li>
+                <li>
+                  <router-link to="engagement-model">Our Engagement Model</router-link>
+                </li>
+                <!-- <li>
+                  <router-link to="our-team">Our Team</router-link>
+                </li> -->
+                <li>
+                  <router-link to="our-clients">Our Clients</router-link>
+                </li>
+                <li>
+                  <router-link to="success-stories">Success Stories</router-link>
+                </li>
               </ul>
-            </b-nav-item>
-            <b-nav-item href="#" class="cstmNavItem noHrLine">Services
-              <ul class="cstmDrpdwn">
-                <li><a href="">WordPress Development</a></li>
-                <li><a href="">ECommerce Development</a></li>
-                <li><a href="">WooCommerce</a></li>
-                <li><a href="">Laravel</a></li>
-                <li><a href="">API Development</a></li>
-                <li><a href="">PHP Frameworks development</a></li>
-                <li><a href="">Ongoing Web Support & Optimization</a></li>
-              </ul>
-            </b-nav-item>
-            <b-nav-item href="#" class="cstmNavItem">Portfolio</b-nav-item>
-            <b-nav-item href="#" class="cstmNavItem">Career</b-nav-item>
-            <b-nav-item href="#" class="cstmNavItem">Contact Us</b-nav-item>
-            <b-nav-item href="#" class="cstmNavItem">Blog</b-nav-item>
-            <b-nav-item href="#" class="cstmNavItem noHrLine quoteBtn">Let's Connect</b-nav-item>
+            </li>
+            <li class="cstmNavItem">
+              <router-link class="nav-link" to="services">Services</router-link>
+              <!-- <ul class="cstmDrpdwn">
+                <li>
+                  <router-link to="wordpress-development">WordPress Development</router-link>
+                </li>
+                <li>
+                  <router-link to="ecommerce-development">E-Commerce Development</router-link>
+                </li>
+                <li>
+                  <router-link to="woocommerce">WooCommerce</router-link>
+                </li>
+                <li>
+                  <router-link to="api-development">API Development</router-link>
+                </li>
+                <li>
+                  <router-link to="php-frameworks">PHP Frameworks</router-link>
+                </li>
+                <li>
+                  <router-link to="web-support">Ongoing Web Support & Optimization</router-link>
+                </li>
+              </ul> -->
+            </li>
+            <li class="cstmNavItem">
+              <router-link class="nav-link" to="work">Work</router-link>
+            </li>
+            <li class="cstmNavItem">
+              <router-link class="nav-link" to="career">Career</router-link>
+            </li>
+            <li class="cstmNavItem">
+              <router-link class="nav-link" to="contact">Contact Us</router-link>
+            </li>
+            <li class="cstmNavItem">
+              <router-link class="nav-link" to="blog">Blog</router-link>
+            </li>
+            <li class="cstmNavItem noHrLine quoteBtn">
+              <router-link class="nav-link" to="contact">Let's Connect</router-link>
+            </li>
           </b-navbar-nav>
         </b-collapse>
       </div>

@@ -1,13 +1,13 @@
-<section class="process sectionWrap">
+<section class="process sectionWrap" v-if="items.details">
   <div class="container-lg p-lg-0">
-    <h2 class="sectionHeading">our workflow<span>.</span></h2>
+    <h2 class="sectionHeading">{{items.workflowHeading}}<span>.</span></h2>
     <div class="processWrap">
-       <div class="step">
-         <img class="processIcon" src="../../assets/data-research.png" alt="">
-         <span>Research & Project Planning</span>
-         <img class="rightArrow" src="../../assets/right-arrow-blue.png" alt="">
-       </div>
-       <div class="step">
+        <div class="step" v-for="steps in items.details">
+          <img class="processIcon" v-bind:src="steps.workflowImage" alt="">
+          <span>{{steps.workflowName}}</span>
+          <img class="rightArrow" src="../../assets/right-arrow-blue.png" alt="">
+        </div>
+       <!-- <div class="step">
         <img class="processIcon" src="../../assets/web-design.png" alt="">
         <span>Design</span>
         <img class="rightArrow" src="../../assets/right-arrow-blue.png" alt="">
@@ -30,7 +30,7 @@
       <div class="step">
         <img class="processIcon" src="../../assets/technical-support.png" alt="">
         <span>Support and Maintenance</span>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
