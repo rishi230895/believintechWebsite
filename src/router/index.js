@@ -19,6 +19,7 @@ import phpFrameworks from '@/pages/phpFrameworks'
 import webSupport from '@/pages/webSupport'
 import privacy from '@/pages/privacy'
 import terms from '@/pages/terms'
+import singlePage from '@/pages/singlePage'
 
 Vue.use(Router)
 
@@ -59,6 +60,11 @@ export default new Router({
             path: '/blog',
             name: 'Blog',
             component: Blog
+        },
+        {
+            path: '/single-page',
+            name: 'singlePage',
+            component: singlePage
         },
         {
             path: '/our-team',

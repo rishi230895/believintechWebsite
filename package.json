@@ -16,13 +16,17 @@
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
     "require-stack": "^1.0.2",
+    "skeleton-loader-vue": "^1.0.10",
     "vue": "^2.6.11",
     "vue-cli-plugin-fontawesome": "^0.3.1",
     "vue-owl-carousel": "^2.0.3",
     "vue-router": "^3.5.1",
-    "vue-slick-carousel": "^1.0.6"
+    "vue-slick": "^1.1.16",
+    "vue-slick-carousel": "^1.0.6",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
+    "@types/vuelidate": "^0.7.14",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
@@ -32,7 +36,8 @@
     "sass": "^1.32.4",
     "sass-loader": "^10.1.1",
     "vue-template-compiler": "^2.6.11",
-    "webpack": "^4.44.2"
+    "webpack": "^4.0.0",
+    "webpack-cli": "^4.6.0"
   },
   "eslintConfig": {
     "root": true,

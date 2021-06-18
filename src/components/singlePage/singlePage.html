@@ -1,0 +1,35 @@
+<section class="single-page">
+  <div id="singlePg" class="singlePgWrap">
+    <div class="bannerWrap">
+      <img v-bind:src="banner.blogThumbnail" alt="">
+    </div>
+    <div class="container-lg p-lg-0">
+      <div class="singleMain">
+        <div class="singleContHead">
+          <h2 class="singleTitle">{{items.blogTitle}}</h2>
+          <span class="blogDetailWrap">
+            <span class="pubDate">{{items.blogDate}}</span>
+            <span class="pubAuthor">Root</span>
+          </span>
+        </div>
+        <div class="contentWrap">
+          <aside class="socialSec">
+            <span>Share</span>
+            <div class="singleSocial">
+              <a v-bind:href="items.blogFacebook">
+                <font-awesome-icon :icon="['fab', 'facebook']" />
+              </a>
+              <a v-bind:href="items.blogLinkedin">
+                <font-awesome-icon :icon="['fab', 'linkedin']" />
+              </a>
+            </div>
+          </aside>
+          <main class="mainSec">
+            <p class="contentCopy">{{items.blogContent}}</p>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

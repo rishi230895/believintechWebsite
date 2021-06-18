@@ -1,12 +1,15 @@
-import carousel from 'vue-owl-carousel';
+// import carousel from 'vue-owl-carousel';
 // import VueSlickCarousel from 'vue-slick-carousel'
 // import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import Slick from 'vue-slick';
+import 'slick-carousel/slick/slick.css';
 
 export default {
   name: 'client-slider',
   components: {
     // VueSlickCarousel, 
-    carousel
+    // carousel
+    Slick
   },
   props: ['items'],
   data () {
@@ -25,6 +28,19 @@ export default {
       //   // slidesToScroll: 1,
       //   centerMode: true,
       // }
+      slickOptions: {
+        infinite: true,
+        slidesToShow: 6,
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 3000,
+        adaptiveHeight: false,
+        arrows: false,
+        cssEase: 'linear',
+        pauseOnHover: false,
+        centerMode: true,
+      },
+      
     }
   },
   computed: {
@@ -34,7 +50,21 @@ export default {
 
   },
   methods: {
-    
+    // updated() {
+    //   this.reInit();
+    // },
+    // reInit() {
+    //   // Helpful if you have to deal with v-for to update dynamic lists
+    //   this.$nextTick(() => {
+    //       this.$refs.slick.reSlick();
+    //   });
+    // },
+    handleInit(event, slick) {
+      console.log('handleInit', event, slick);
+    },
+    handleReInit(event, slick) {
+        console.log('handleReInit', event, slick);
+    },
   }
 }
 

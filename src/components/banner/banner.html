@@ -1,5 +1,11 @@
 
 <section class="banner">
+  <skeleton-loader-vue
+      type="circle"
+      :width="200"
+      :height="200"
+      animation="fade"
+    />
   <div class="container-lg p-lg-0">
     <div class="bannerWrap">
       <div class="bannerContent">
@@ -12,7 +18,7 @@
       <div class="bannerBg">
         <img v-bind:src="items.bannerImage" alt="">
       </div>
-      <a href="#services">
+      <a class="bannerDwnArrow" href="#services">
         <svg class="arrows">
           <path class="a1" d="M0 0 L30 32 L60 0"></path>
           <path class="a2" d="M0 20 L30 52 L60 20"></path>

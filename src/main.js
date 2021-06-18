@@ -7,6 +7,7 @@ import { faEnvelope,faPhoneAlt,faArrowRight,faChevronRight,faUserCircle,faClock,
 import { faFontAwesome,faFacebook,faFacebookSquare,faLinkedin, faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Vuelidate from 'vuelidate'
+import VueSkeletonLoader from 'skeleton-loader-vue';
 // import axios from 'axios'
 // import VueAxios from 'vue-axios'
 
@@ -22,7 +23,8 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 // Vue use form validations
-Vue.use(Vuelidate);
+Vue.use(Vuelidate)
+Vue.component('vue-skeleton-loader', VueSkeletonLoader);
 
 // Vue.use(VueAxios, axios)
 

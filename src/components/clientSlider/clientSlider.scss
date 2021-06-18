@@ -11,24 +11,14 @@
             max-width: 40%;
             margin: 0 auto;
         }
-        // .clientOwl{
-        //     margin-top: 20px;
-        //     ::v-deep .owl-stage{
-        //         display: flex;
-        //         flex-direction: row;
-        //         align-items: center
-        //     }
-        // }
-        .clientSlider{
+        ::v-deep .slick-track{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
             padding-top: 30px;
-            ::v-deep .slick-track{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-            }
-            ::v-deep .slick-slide{
-                margin: 0 20px;
-            }
+        }
+        ::v-deep .slick-slide{
+            margin: 0 25px;
         }
     }
 }

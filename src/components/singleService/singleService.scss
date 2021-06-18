@@ -1,0 +1,17 @@
+@import "@/styles/_variables.scss";
+@import "@/styles/_common.scss";
+
+.single-service {
+    .servContent{
+        padding: 50px 0 25px 0;
+        .servTitle{
+            color: $logo-secondary-blue;
+            font-size: 35px;
+            line-height: 35px;
+            margin: 0 0 15px 0;
+        }
+        .servDesc{
+            text-align: left;
+        }
+    }
+}

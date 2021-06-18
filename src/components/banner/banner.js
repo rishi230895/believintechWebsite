@@ -1,7 +1,8 @@
+import VueSkeletonLoader from 'skeleton-loader-vue';
 
 export default {
   name: 'banner',
-  components: {},
+  components: {VueSkeletonLoader},
   props: ['items'],
   data () {
     return {
