@@ -1,31 +1,29 @@
 @import "@/styles/_variables.scss";
-
 // animations
 @keyframes pulse {
-	0% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(144, 202, 249, 0.7);
-	}
-
-	70% {
-		transform: scale(1);
-		box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
-	}
-
-	100% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-	}
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(144, 202, 249, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
 }
 
 // page banner title and desc
-h1.bannerTitle{
+h1.bannerTitle {
     text-align: left;
     font-family: $poppins-bold;
     font-size: 50px;
     margin: 0;
 }
-p.bannerDesc{
+
+p.bannerDesc {
     text-align: left;
     line-height: 160%;
     max-width: 85%;
@@ -35,7 +33,7 @@ p.bannerDesc{
 }
 
 // cta banner wrap
-.ctaBannerWrap{
+.ctaBannerWrap {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -45,20 +43,20 @@ p.bannerDesc{
 }
 
 // cta text 
-.ctaBannerTitle{
+.ctaBannerTitle {
     font-family: $poppins-bold;
     font-size: 35px;
     max-width: 60%;
     text-align: left;
     color: $white;
     text-transform: capitalize;
-    span{
+    span {
         color: $logo-secondary-blue;
     }
 }
 
 // cta btn
-.ctaBtn{
+.ctaBtn {
     color: $white;
     padding: 12px 25px;
     border-radius: 3px;
@@ -74,13 +72,13 @@ p.bannerDesc{
     background-size: 201% 100%;
     background-position: right bottom;
     box-shadow: 0px 8px 18px rgb(0 0 0 / 12%);
-    &:hover{
+    &:hover {
         background-position: left bottom;
     }
-    &:hover svg{
+    &:hover svg {
         margin-left: 20px;
     }
-    svg{
+    svg {
         margin-left: 15px;
         vertical-align: middle;
         transition: all 0.3s ease;
@@ -89,7 +87,7 @@ p.bannerDesc{
 }
 
 // content section
-.sectionWrap{
+.sectionWrap {
     padding: 25px 0;
     position: relative;
     // &:hover .sectionHeading{
@@ -101,7 +99,7 @@ p.bannerDesc{
 }
 
 // content section heading
-.sectionHeading{
+.sectionHeading {
     color: $charcoal;
     font-family: $poppins-bold;
     font-size: 45px;
@@ -130,18 +128,18 @@ p.bannerDesc{
     //     -ms-transition: all 500ms ease;
     //     -o-transition: all 500ms ease;
     // }
-    span{
+    span {
         color: $secondary-blue;
     }
 }
 
-.subHeading{
+.subHeading {
     font-family: $redhat-bold;
     font-size: 18px;
     line-height: 24px;
     margin: 0;
     position: relative;
-    &::after{
+    &::after {
         content: "";
         position: absolute;
         bottom: -5px;
@@ -153,11 +151,38 @@ p.bannerDesc{
 }
 
 // content copy
-.contentCopy{
+.contentCopy {
     font-family: 'poppins-reg';
     font-size: 15px;
     color: $charcoal;
     line-height: 24px;
     margin: 0;
     padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .sectionHeading {
+        font-size: 32px;
+        line-height: 34px;
+        margin: 0 auto 30px;
+    }
+    h1.bannerTitle {
+        font-size: 32px;
+        line-height: 34px;
+    }
+    p.bannerDesc {
+        max-width: 100%;
+        font-size: 14px;
+        font-family: poppins-reg;
+        margin: 15px 0 0 0;
+    }
+    .ctaBtn {
+        padding: 10px 20px;
+    }
+    .ctaBannerTitle {
+        font-size: 32px;
+        max-width: 100%;
+        line-height: 34px;
+        margin-bottom: 30px;
+    }
 }

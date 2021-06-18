@@ -45,5 +45,20 @@ export default {
 .workWrap{
     padding: 50px 0;
 }
+@media screen and (max-width: 767px) {
+    
+    .workWrap{
+    padding: 30px 0;
+     
 
+}
+
+
+
+     .workWrap .container-lg .tabs .container-lg{
+             margin-left: 0px;
+             margin-right: 0px;
+         }
+
+}
 </style>

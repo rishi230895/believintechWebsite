@@ -1,23 +1,22 @@
 @import '@/styles/variables.scss';
 @import '@/styles/common.scss';
-
 .testimonial-slider {
     margin-top: 15px;
-    .testiCard{
+    .testiCard {
         background-color: transparent;
         border: none;
         color: $white;
         text-align: left;
-        .testiBody{
+        .testiBody {
             padding-left: 0;
             padding-right: 0;
-            .testiMsg{
+            .testiMsg {
                 font-family: $poppins-light;
                 font-size: 15px;
                 line-height: 24px;
             }
         }
-        .testiFooter{
+        .testiFooter {
             background-color: transparent;
             border-color: $logo-secondary-blue;
             padding-left: 0;
@@ -25,12 +24,14 @@
             opacity: 0.7;
             font-family: $poppins-regular;
             font-size: 16px;
-            .testiDesig{
+            .testiDesig {
                 padding-right: 3px;
             }
-            .testiComp{
+            .testiComp {
                 padding-left: 3px;
             }
         }
     }
 }
+
+@media screen and (max-width: 767px) {}

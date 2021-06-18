@@ -1,26 +1,25 @@
 @import "@/styles/_variables.scss";
 @import "@/styles/_common.scss";
-
 .team {
-    .teamWrap{
-        .teamCardWrap{
+    .teamWrap {
+        .teamCardWrap {
             display: flex;
             flex-direction: row;
             position: relative;
             overflow: hidden;
             height: 100%;
             max-height: 250px;
-            &:nth-of-type(even) .teamCard{
+            &:nth-of-type(even) .teamCard {
                 order: 2;
             }
-            &:nth-of-type(even) .memberDetails{
+            &:nth-of-type(even) .memberDetails {
                 order: 1;
-                &::before{
+                &::before {
                     left: auto;
                     right: -10px;
                     border-top: 10px solid transparent;
-                    border-bottom: 10px solid transparent; 
-                    border-left: 10px solid $primary-blue; 
+                    border-bottom: 10px solid transparent;
+                    border-left: 10px solid $primary-blue;
                     border-right: 0;
                 }
             }
@@ -61,8 +60,8 @@
             //     transition: all 600ms ease;
             //     z-index: 1;
             // }
-            &:hover .memberDetails{
-                &::after{
+            &:hover .memberDetails {
+                &::after {
                     transform: scale(1);
                     webkit-transition-delay: 300ms;
                     -ms-transition-delay: 300ms;
@@ -70,13 +69,13 @@
                     top: 0;
                     right: 0;
                 }
-                &::before{
-                    border-right: 10px solid $secondary-blue; 
+                &::before {
+                    border-right: 10px solid $secondary-blue;
                     webkit-transition-delay: 600ms;
                     -ms-transition-delay: 600ms;
                     transition-delay: 600ms;
                 }
-            } 
+            }
             // &:hover:before{
             //     transform: scale(1);
             //     webkit-transition-delay: 600ms;
@@ -89,20 +88,20 @@
             //     -ms-transition-delay: 300ms;
             //     transition-delay: 300ms;
             // }
-            .teamCard{
+            .teamCard {
                 position: relative;
                 overflow: hidden;
                 border: none;
                 border-radius: 0;
                 width: 50%;
-                .teamImg{
+                .teamImg {
                     border-radius: 0;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
                 }
             }
-            .memberDetails{
+            .memberDetails {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -115,16 +114,16 @@
                 -webkit-transition: all 500ms ease;
                 -ms-transition: all 500ms ease;
                 -o-transition: all 500ms ease;
-                &::before{
+                &::before {
                     content: "";
                     position: absolute;
                     left: -10px;
                     top: 50%;
                     transform: translateY(-50%);
-                    width: 0; 
-                    height: 0; 
+                    width: 0;
+                    height: 0;
                     border-top: 10px solid transparent;
-                    border-bottom: 10px solid transparent; 
+                    border-bottom: 10px solid transparent;
                     border-right: 10px solid $primary-blue;
                     -webkit-transition: all 600ms ease;
                     -moz-transition: all 600ms ease;
@@ -132,7 +131,7 @@
                     -o-transition: all 600ms ease;
                     transition: all 600ms ease;
                 }
-                &:after{
+                &:after {
                     content: "";
                     position: absolute;
                     top: -140px;
@@ -150,15 +149,28 @@
                     -o-transition: all 600ms ease;
                     transition: all 600ms ease;
                 }
-                h4{
+                h4 {
                     font-size: 24px;
                     font-family: $redhat-medium;
                     color: $white;
                 }
-                span{
+                span {
                     font-size: 14px;
                     color: $white;
                     font-family: $redhat-medium;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .our-team {
+        .teamWrap {
+            .teamCardWrap {
+                margin-bottom: 30px;
+                &:last-child {
+                    margin-bottom: 0;
                 }
             }
         }

@@ -1,9 +1,8 @@
 @import "@/styles/_variables.scss";
 @import "@/styles/_common.scss";
-
 .cta-banner-three {
-    .ctaWrap{
-        .bannerWrap{
+    .ctaWrap {
+        .bannerWrap {
             background-color: $secondary-blue;
             box-shadow: 2px 4px 6px rgb(0 0 0 / 15%);
             display: flex;
@@ -12,29 +11,48 @@
             border-radius: 10px;
             padding: 80px 50px;
             justify-content: space-between;
-            .colOne{
-                .ctaBannerTitle{
+            .colOne {
+                .ctaBannerTitle {
                     max-width: 100%;
                 }
-                p{
+                p {
                     margin: 0;
                     font-family: $poppins-regular;
                     font-size: 16px;
                     color: $white;
                 }
             }
-            .colTwo{
-                .ctaBtn{
+            .colTwo {
+                .ctaBtn {
                     margin: 0;
                     background-color: $white;
                     color: $primary-blue;
                     background: linear-gradient(to left, $white 50%, $primary-blue 50%);
                     background-size: 201% 100%;
                     background-position: right bottom;
-                    &:hover{
+                    &:hover {
                         background-position: left bottom;
                         color: $white;
                         background-color: $primary-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cta-banner-three {
+        .ctaWrap {
+            .bannerWrap {
+                padding: 30px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                .colOne {
+                    width: 100%;
+                    p {
+                        text-align: left;
+                        margin-bottom: 30px;
                     }
                 }
             }

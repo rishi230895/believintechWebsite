@@ -1,18 +1,36 @@
 @import "@/styles/_variables.scss";
 @import "@/styles/_common.scss";
-
-@keyframes arrow{
-    0% {opacity:0}
-    40% {opacity:1}
-    80% {opacity:0}
-    100% {opacity:0}
+@keyframes arrow {
+    0% {
+        opacity: 0
+    }
+    40% {
+        opacity: 1
+    }
+    80% {
+        opacity: 0
+    }
+    100% {
+        opacity: 0
+    }
 }
 
-@-webkit-keyframes arrow /*Safari and Chrome*/ {
-    0% {opacity:0}
-    40% {opacity:1}
-    80% {opacity:0}
-    100% {opacity:0}
+@-webkit-keyframes arrow
+/*Safari and Chrome*/
+
+{
+    0% {
+        opacity: 0
+    }
+    40% {
+        opacity: 1
+    }
+    80% {
+        opacity: 0
+    }
+    100% {
+        opacity: 0
+    }
 }
 
 .our-services {
@@ -20,14 +38,14 @@
     // background-size: cover;
     // background-position: center;
     // background-attachment: fixed;
-    .serviceRow{
+    .serviceRow {
         margin-top: 30px;
-        .serviceCardGrp{
+        .serviceCardGrp {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
-            .serviceCard{
+            .serviceCard {
                 border: 1px solid $logo-secondary-blue;
                 border-radius: 5px;
                 transition: all 0.4s ease;
@@ -38,24 +56,24 @@
                 backface-visibility: hidden;
                 -webkit-backface-visibility: hidden;
                 -moz-backface-visibility: hidden;
-                &:nth-last-child(-n+4){
+                &:nth-last-child(-n+4) {
                     margin-bottom: 0;
                 }
-                &:hover{
+                &:hover {
                     transform: scale(1.02);
                     box-shadow: 0 0 10px rgb(0 0 0 / 12%);
                 }
-                &:hover .serviceFooter{
+                &:hover .serviceFooter {
                     border-top: 1px solid $logo-secondary-blue;
                 }
-                &:hover .ctaBtn{
+                &:hover .ctaBtn {
                     background-position: left bottom;
                     padding-right: 35px;
-                    svg{
-                      opacity: 1;
+                    svg {
+                        opacity: 1;
                     }
                 }
-                .logoWrap{
+                .logoWrap {
                     position: relative;
                     border: 1px solid #90caf9;
                     padding: 24px;
@@ -63,13 +81,13 @@
                     margin: 0 auto;
                     max-width: 100px;
                     max-height: 100px;
-                    .serviceLogo{
+                    .serviceLogo {
                         max-width: 80px;
                         max-height: 80px;
                         width: 100%;
                         height: 100%;
                     }
-                    .arrows{
+                    .arrows {
                         width: 65px;
                         position: absolute;
                         bottom: -160px;
@@ -79,37 +97,39 @@
                     .arrows path {
                         stroke: $logo-secondary-blue;
                         fill: transparent;
-                        stroke-width: 1px;	
+                        stroke-width: 1px;
                         animation: arrow 2s infinite;
-                        -webkit-animation: arrow 2s infinite; 
+                        -webkit-animation: arrow 2s infinite;
                     }
                     .arrows path.a1 {
-                        animation-delay:-1s;
-                        -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+                        animation-delay: -1s;
+                        -webkit-animation-delay: -1s;
+                        /* Safari 和 Chrome */
                     }
                     .arrows path.a2 {
-                        animation-delay:-0.5s;
-                        -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+                        animation-delay: -0.5s;
+                        -webkit-animation-delay: -0.5s;
+                        /* Safari 和 Chrome */
                     }
                 }
-                .serviceName{
+                .serviceName {
                     font-family: $poppins-medium;
                     font-size: 20px;
                     line-height: 24px;
                     color: $charcoal;
                     margin: 10px 0;
                 }
-                .serviceDesc{
+                .serviceDesc {
                     font-family: 'poppins-reg';
                     font-size: 14px;
                     line-height: 24px;
                     margin: 0 auto;
                 }
-                .ctaBtn{
+                .ctaBtn {
                     margin: auto;
                     padding: 5px 15px;
                     line-height: 24px;
-                    svg{
+                    svg {
                         position: absolute;
                         top: 50%;
                         right: 15px;
@@ -119,9 +139,35 @@
                         margin: 0;
                     }
                 }
-                .serviceFooter{
+                .serviceFooter {
                     background-color: transparent;
                     border: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .our-services {
+        .sectionHeading {
+            font-size: 32px;
+            line-height: 34px;
+            margin: 0 auto 30px;
+        }
+        .contentCopy {
+            font-size: 14px;
+        }
+        .serviceRow {
+            .serviceCardGrp {
+                flex-direction: column;
+                justify-content: center;
+                .serviceCard {
+                    margin-bottom: 30px !important;
+                    margin: auto;
+                    &:last-child {
+                        margin-bottom: 0 !important;
+                    }
                 }
             }
         }

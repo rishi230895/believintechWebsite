@@ -1,8 +1,7 @@
 @import "@/styles/_variables.scss";
 @import "@/styles/_common.scss";
-
 .cta-banner {
-    .ctaBg{
+    .ctaBg {
         background: url("../../assets/pexels-junior-teixeira-2047905.jpg");
         background-size: cover;
         background-position: center;
@@ -10,7 +9,7 @@
         padding: 70px 0;
         position: relative;
         // margin: 25px 0;
-        &::after{
+        &::after {
             content: '';
             position: absolute;
             top: 0;
@@ -20,7 +19,7 @@
             background-color: $primary-blue;
             opacity: 0.8;
         }
-        .ctaBannerWrap{
+        .ctaBannerWrap {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -35,14 +34,30 @@
             //     color: $white;
             //     text-transform: capitalize;
             // }
-            a.ctaBtn{
+            a.ctaBtn {
                 margin: 0;
                 background: linear-gradient(to left, $secondary-blue 50%, $primary-blue 50%);
                 background-size: 200% 100%;
                 background-position: right bottom;
                 text-transform: uppercase;
-                &:hover{
+                &:hover {
                     background-position: left bottom;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cta-banner {
+        .ctaBg {
+            .ctaBannerWrap {
+                flex-direction: column;
+                align-items: flex-start;
+                .ctaBannerTitle {
+                    max-width: 100%;
+                    font-size: 32px;
+                    margin-bottom: 30px;
                 }
             }
         }

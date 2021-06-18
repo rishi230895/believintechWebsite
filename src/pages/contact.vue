@@ -232,4 +232,40 @@ export default {
         }
     }
 }
+
+
+@media screen and (max-width: 767px) {
+
+ .contactWrap{
+    .bannerWrap{
+        padding: 30px 0;
+    flex-direction: column-reverse;
+    .colOne
+            {
+                width:100%;
+                 .formWrap{
+                .contact-form{
+                    max-width: 100%;
+                    .fieldWrap{
+                    .formRow{
+                           flex-direction: column;
+                            .formGroup{
+                                 max-width: 100%;
+                                 width:100%;&:first-child{
+                                     padding-bottom: 10px;
+                                 }
+                            }
+                    }
+                    }
+                }
+                 }
+            }
+            .colTwo
+            {
+                width:100%;
+                margin-bottom: 30px; 
+            }
+    }
+ }   
+}
 </style>

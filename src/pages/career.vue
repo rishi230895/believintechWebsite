@@ -46,6 +46,29 @@
             }
         }
     }
+
+@media screen and (max-width: 767px) {
+  .careerBanner{
+        .bannerWrap{
+            padding: 30px 0;
+            flex-direction: column-reverse;
+            .colOne
+            {
+                width:100%;
+
+            }
+            .colTwo
+            {
+               width: 100%;
+               margin-bottom: 30px; 
+            }
+        }
+  }  
+    
+}
+
+
+
 </style>
 
 <script>

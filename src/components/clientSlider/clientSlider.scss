@@ -1,12 +1,11 @@
 @import '@/styles/_variables.scss';
 @import '@/styles/_common.scss';
-
 .client-slider {
-    .sectionHeading{
+    .sectionHeading {
         margin-bottom: 40px;
     }
-    .clientWrap{
-        .contentCopy{
+    .clientWrap {
+        .contentCopy {
             width: fit-content;
             max-width: 40%;
             margin: 0 auto;
@@ -19,15 +18,25 @@
         //         align-items: center
         //     }
         // }
-        .clientSlider{
+        .clientSlider {
             padding-top: 30px;
-            ::v-deep .slick-track{
+             ::v-deep .slick-track {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
             }
-            ::v-deep .slick-slide{
+             ::v-deep .slick-slide {
                 margin: 0 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .client-slider {
+        .clientWrap {
+            .contentCopy {
+                max-width: 80%;
             }
         }
     }

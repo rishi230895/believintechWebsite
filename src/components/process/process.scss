@@ -1,28 +1,27 @@
 @import "@/styles/_variables.scss";
 @import "@/styles/_common.scss";
-
 .process {
-    .processWrap{
+    .processWrap {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
         position: relative;
-        .step{
+        .step {
             position: relative;
-            img{
+            img {
                 width: 100%;
                 max-width: 50px;
                 max-height: 50px;
                 display: block;
                 margin: 0 auto 10px;
             }
-            span{
+            span {
                 font-family: $redhat-medium;
                 font-size: 16px;
                 color: $charcoal;
             }
-            .rightArrow{
+            .rightArrow {
                 position: absolute;
                 margin: 0;
                 top: 50%;
@@ -36,9 +35,32 @@
                 max-width: 40px;
                 max-height: 40px;
             }
-            &:last-child .rightArrow{
+            &:last-child .rightArrow {
                 display: none;
             }
         }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .process {
+        .processWrap {
+            .step {
+                width: 50%;
+                margin-bottom: 30px;
+                .rightArrow {
+                    right: -26px;
+                    max-width: 34px;
+                    max-height: 34px;
+                }
+            }
+        }
+    }
+    .process .processWrap .step:nth-last-child(2),
+    .process .processWrap .step:last-child {
+        margin-bottom: 0;
+    }
+    .process .processWrap .step:nth-child(2n) .rightArrow {
+        display: none;
     }
 }

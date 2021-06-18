@@ -1,41 +1,41 @@
 @import "@/styles/_variables.scss";
 @import "@/styles/_common.scss";
-
 // info navbar
-.infoNavWrapper{
+.infoNavWrapper {
     background-color: $primary-blue;
     padding: 5px 0;
-    .infoNav{
+    .infoNav {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        ul{
+        ul {
             padding: 0;
             margin: 0;
             display: flex;
             flex-direction: row;
-            li{
+            li {
                 list-style: none;
-                a{
+                a {
                     color: $white;
                     text-decoration: none;
                     font-size: 14px;
                     font-family: $poppins-regular;
                 }
             }
-            li:first-child{
+            li:first-child {
                 padding-right: 30px;
             }
         }
-        .infoCnt,.infoscl{
+        .infoCnt,
+        .infoscl {
             width: fit-content;
         }
-        .infoscl{
+        .infoscl {
             padding-right: 15px;
-            ul{
-                li{
-                    a{
+            ul {
+                li {
+                    a {
                         font-size: 20px;
                     }
                 }
@@ -45,12 +45,12 @@
 }
 
 // main menu
-.navbarWrapper{
+.navbarWrapper {
     padding: 0;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15);
-    .cstmNav{
+    .cstmNav {
         padding: 0;
-        .cstmNavBrd{
+        .cstmNavBrd {
             height: 100%;
             margin: 0;
             font-family: $redhat-medium;
@@ -61,31 +61,31 @@
             position: relative;
             line-height: 32px;
             max-width: 240px;
-            em{
+            em {
                 font-style: normal;
                 color: $primary-blue;
             }
-            span{
+            span {
                 color: $secondary-blue;
             }
-            img{
+            img {
                 width: 100%;
                 height: 100%;
             }
         }
-        .cstmNavbarUl{
+        .cstmNavbarUl {
             align-items: center;
-            .cstmNavItem{
+            .cstmNavItem {
                 position: relative;
                 padding: 30px 15px;
-                .nav-link{
+                .nav-link {
                     padding: 0;
                     color: $charcoal;
                     font-family: $poppins-medium;
                     font-size: 14px;
                     text-transform: uppercase;
                 }
-                .cstmDrpdwn{
+                .cstmDrpdwn {
                     margin: 0;
                     background-color: #00428a;
                     position: absolute;
@@ -99,19 +99,19 @@
                     max-width: 265px;
                     height: 0%;
                     visibility: hidden;
-                    li{
+                    li {
                         list-style: none;
                         padding: 5px 0;
                         text-align: left;
                         position: relative;
-                        a{
+                        a {
                             color: $white;
                             text-decoration: none;
                             font-family: $poppins-regular;
                             font-size: 14px;
                         }
                     }
-                    li::after{
+                    li::after {
                         content: ">";
                         font-size: 20px;
                         color: $white;
@@ -121,10 +121,10 @@
                     }
                 }
             }
-            .quoteBtn{
+            .quoteBtn {
                 padding-top: 0;
                 padding-bottom: 0;
-                a{
+                a {
                     font-family: 'poppins-med' !important;
                     transition: $cmn-transition;
                     color: $white !important;
@@ -136,25 +136,25 @@
                     background-size: 200% 100%;
                     background-position: right bottom;
                 }
-                a:hover{
+                a:hover {
                     background-position: left bottom;
                 }
             }
-            .noHrLine{
+            .noHrLine {
                 position: relative;
             }
-            .noHrLine::after{
+            .noHrLine::after {
                 display: none;
             }
-            .noHrLine:hover .cstmDrpdwn{
+            .noHrLine:hover .cstmDrpdwn {
                 padding: 15px 35px 15px 15px;
                 height: fit-content;
                 visibility: visible;
             }
-            .cstmNavItem:hover .nav-link{
+            .cstmNavItem:hover .nav-link {
                 color: $primary-blue;
             }
-            .cstmNavItem::after{
+            .cstmNavItem::after {
                 content: '';
                 position: absolute;
                 bottom: 0;
@@ -169,9 +169,45 @@
                 -ms-transition: all 500ms ease;
                 -o-transition: all 500ms ease;
             }
-            .cstmNavItem:hover::after{
+            .cstmNavItem:hover::after {
                 opacity: 1;
                 width: 100%;
+            }
+        }
+    }
+}
+
+
+/* responsive mode scss*/
+
+@media screen and (max-width: 767px) {
+    .infoNavWrapper {
+        .infoNav {
+            .infoscl {
+                display: none;
+            }
+            .infoCnt {
+                width: 100%;
+                ul {
+                    justify-content: space-between;
+                    li:first-child {
+                        padding-right: unset;
+                    }
+                }
+            }
+        }
+    }
+    .navbarWrapper {
+        .cstmNav {
+            padding: 10px 15px;
+            .navbar-toggler {
+                border-radius: 0;
+            }
+            .cstmNavbarUl {
+                margin-top: 15px;
+                .cstmNavItem {
+                    padding: 10px 15px;
+                }
             }
         }
     }
