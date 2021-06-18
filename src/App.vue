@@ -35,15 +35,7 @@ export default {
       const res = await axios.get(apiUrl + '/homeData');
       if(res.data.status == 'success'){
         this.footerctabannar_section = res.data.data.footerctabannar_section;
-        console.log(this.footerctabannar_section);
       }
-      // if(this.$router.currentRoute.path == '/career'){
-      //   var careerPage = document.querySelector("#app");
-      //   careerPage.style.backgroundColor = '#fafafa';
-      //   console.log(this.$router.currentRoute.path);
-      // }else{
-      //   careerPage.style.backgroundColor = '#fff';
-      // }
     } catch (error) {
       console.error(error);
     }

@@ -1,3 +1,20 @@
 <template>
-    <h1>Woocommerce Development</h1>
+    <singleService />
 </template>
+
+<script>
+import singleService from '@/components/singleService'
+
+export default {
+    name: 'woocommerce',
+    components:{
+        singleService
+    },
+    props: [],
+    data(){
+        return{
+
+        }
+    }
+}
+</script>

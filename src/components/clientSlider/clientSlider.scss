@@ -1,4 +1,4 @@
-@import '@/styles/_variables.scss';
+    @import '@/styles/_variables.scss';
 @import '@/styles/_common.scss';
 .client-slider {
     .sectionHeading {
@@ -28,16 +28,23 @@
              ::v-deep .slick-slide {
                 margin: 0 20px;
             }
-        }
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .client-slider {
-        .clientWrap {
-            .contentCopy {
-                max-width: 80%;
+             ::v-deep .slick-track {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding-top: 30px;
+            }
+             ::v-deep .slick-slide {
+                margin: 0 25px;
             }
         }
     }
-}
+    @media screen and (max-width: 767px) {
+        .client-slider {
+            .clientWrap {
+                .contentCopy {
+                    max-width: 80%;
+                }
+            }
+        }
+    }

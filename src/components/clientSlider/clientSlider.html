@@ -2,9 +2,31 @@
   <h2 class="sectionHeading">{{items.clientHeadings}}<span>.</span></h2>
   <div class="clientWrap">
     <p class="contentCopy">{{items.clientDescriptions}}</p>
-    <carousel class="clientOwl" :items="6" :autoplay="true" :autoplayHoverPause="false" 
-    :loop="true" :autoplaySpeed="true" :autoplayTimeout="1000" :dots="false" :nav="false" :margin="50">
+    <!-- <carousel class="clientOwl" :items="6" :autoplay="true" :autoplayHoverPause="false" 
+    :loop="true" :autoplaySpeed="5000" :autoplayTimeout="1000" :dots="false" :nav="false" :margin="50">
         <img v-bind:src="client.clients_image" v-for="client in items.details" alt="">
+      <img src="../../assets/clients/PatientHandling.png">
+      <img src="../../assets/clients/activeplace.png">
+      <img src="../../assets/clients/defiant.png">
+      <img src="../../assets/clients/drug.png">
+      <img src="../../assets/clients/Gurmeesool.png">
+      <img src="../../assets/clients/konservatory.png">
+      <img src="../../assets/clients/sapphire.png">
+      <img src="../../assets/clients/selfhypno.png">
+    </carousel> -->
+    <!-- <template>
+      <div>
+        <VueSlickCarousel class="clientSlider" v-bind="settings">
+          <img v-bind:src="client.clientsImage" v-for="client in items.details" alt="">
+        </VueSlickCarousel>
+      </div>
+    </template> -->
+    <slick
+      ref="slick"
+      :options="slickOptions"
+      @init="handleInit"
+      @reInit="handleReInit">
+        <img v-for="client in items.details" v-bind:src="client.clientsImage" alt="">
       <!-- <img src="../../assets/clients/PatientHandling.png">
       <img src="../../assets/clients/activeplace.png">
       <img src="../../assets/clients/defiant.png">
@@ -13,14 +35,7 @@
       <img src="../../assets/clients/konservatory.png">
       <img src="../../assets/clients/sapphire.png">
       <img src="../../assets/clients/selfhypno.png"> -->
-    </carousel>
-    <!-- <template>
-      <div>
-        <VueSlickCarousel class="clientSlider" v-bind="settings">
-          <img v-bind:src="client.clientsImage" v-for="client in items.details" alt="">
-        </VueSlickCarousel>
-      </div>
-    </template> -->
+    </slick>
   </div>
 </section>
 

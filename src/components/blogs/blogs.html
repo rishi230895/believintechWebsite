@@ -1,9 +1,9 @@
 
 <section class="blogs sectionWrap">
   <div class="container-lg p-lg-0">
-    <h2 class="sectionHeading">{{items.latestArticleHeading}}<span>.</span></h2>
+    <h2 class="sectionHeading">{{latestArticleSection.latestArticleHeading}}<span>.</span></h2>
     <b-card-group deck>
-      <b-card class="blogCard" v-for="blog in items.details">
+      <b-card class="blogCard" v-for="blog in latestArticleSection.details">
         <b-card-img class="blogThumbnail" v-bind:src="blog.blogImage"></b-card-img>
         <div class="blogDetailsWrap">
           <div class="blogDetails">
@@ -16,7 +16,8 @@
             <font-awesome-icon :icon="['fas', 'comments']" />
             {{blog.blogComments}}</div>
         </div>
-        <a class="blogTitle" href="">{{blog.blogTitle}}</a>
+        <router-link class="blogTitle" to="single-page">{{blog.blogTitle}}</router-link>
+        <!-- <a class="blogTitle" href="">{{blog.blogTitle}}</a> -->
         <p class="blogContent">{{blog.blogContent}}</p>
         <template #footer>
           <a class="ctaBtn" href="">Read More</a>

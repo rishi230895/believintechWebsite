@@ -39,6 +39,7 @@
     flex-wrap: wrap;
     align-items: center;
     padding: 50px 0;
+    position: relative;
     .arrows {
         height: 55px;
         width: 65px;
@@ -107,6 +108,24 @@
             margin-bottom: 30px;
         }
         .arrows {
+            display: none;
+        }
+    }
+}
+
+// MEDIA QUERIES
+@media screen and (max-width: 767px) {
+    .bannerWrap {
+        .bannerContent {
+            width: 100%;
+            .bannerDesc {
+                max-width: 100%;
+            }
+        }
+        .bannerBg {
+            display: none;
+        }
+        .bannerDwnArrow {
             display: none;
         }
     }

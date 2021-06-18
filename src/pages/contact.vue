@@ -58,7 +58,7 @@
 <script>
 import axios from 'axios'
 import {apiUrl} from '@/constants.js'
-import { required, minLength } from 'vuelidate/lib/validators'
+import { required, minLength, maxLength } from 'vuelidate/lib/validators'
 import { validationMixin } from 'vuelidate'
 
 export default {
@@ -85,7 +85,8 @@ export default {
     validations: {
         firstname: {
             required,
-            minLength: minLength(4)
+            minLength: minLength(4),
+            maxLength: maxLength(10)
         }
     },
     async created(){

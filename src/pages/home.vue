@@ -7,7 +7,7 @@
         <techStack :items = "technologiesSection"/>
         <clientSlider :items = "clientsSection"/>
         <testimonials :items = "testimonialsSection"/>
-        <blogs :items = "latestArticleSection"/>
+        <blogs />
     </div>
 </template>
 
@@ -43,7 +43,7 @@ export default {
       technologiesSection: [],
       clientsSection: [],
       testimonialsSection: [],
-      latestArticleSection: []
+      // latestArticleSection: []
     }
   },
   async created(){
@@ -56,7 +56,7 @@ export default {
         this.technologiesSection = res.data.data.technologiesSection;
         this.clientsSection = res.data.data.clientsSection;
         this.testimonialsSection = res.data.data.testimonialsSection;
-        this.latestArticleSection = res.data.data.latestArticleSection;
+        // this.latestArticleSection = res.data.data.latestArticleSection;
       }
     } catch (error) {
       console.error(error);

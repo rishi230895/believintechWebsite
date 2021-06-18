@@ -1,4 +1,4 @@
-@import "@/styles/_variables.scss";
+            @import "@/styles/_variables.scss";
 @import "@/styles/_common.scss";
 // info navbar
 .infoNavWrapper {
@@ -95,120 +95,180 @@
                     top: 81px;
                     left: -24px;
                     z-index: 99;
-                    border-radius: 0 0 10px 10px;
                     max-width: 265px;
                     height: 0%;
                     visibility: hidden;
                     li {
-                        list-style: none;
-                        padding: 5px 0;
-                        text-align: left;
-                        position: relative;
-                        a {
-                            color: $white;
-                            text-decoration: none;
-                            font-family: $poppins-regular;
-                            font-size: 14px;
+                        border-radius: 0 0 10px 10px;
+                        // height: 0%;
+                        display: none;
+                        li {
+                            list-style: none;
+                            text-align: left;
+                            position: relative;
+                            a {
+                                background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
+                                background-size: 201% 100%;
+                                background-position: right bottom;
+                                transition: all 0.4s linear;
+                                &:hover {
+                                    background-position: left bottom;
+                                }
+                                &:last-child {
+                                    border-radius: 0 0 10px 10px;
+                                }
+                                a {
+                                    color: $white;
+                                    text-decoration: none;
+                                    font-family: $poppins-regular;
+                                    font-size: 14px;
+                                    padding: 10px 40px 10px 15px;
+                                    display: block;
+                                    &::after {
+                                        content: ">";
+                                        font-size: 20px;
+                                        color: $white;
+                                        position: absolute;
+                                        top: 50%;
+                                        right: 15px;
+                                        pointer-events: none;
+                                        transform: translateY(-50%);
+                                    }
+                                }
+                            }
+                            li::after {
+                                content: ">";
+                                font-size: 20px;
+                                color: $white;
+                                position: absolute;
+                                top: 0;
+                                right: -25px;
+                            }
                         }
                     }
-                    li::after {
-                        content: ">";
-                        font-size: 20px;
-                        color: $white;
-                        position: absolute;
-                        top: 0;
-                        right: -25px;
+                    .quoteBtn {
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        a {
+                            font-family: 'poppins-med' !important;
+                            transition: $cmn-transition;
+                            color: $white !important;
+                            padding: 10px 25px !important;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            position: relative;
+                            background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
+                            background-size: 200% 100%;
+                            background-position: right bottom;
+                        }
+                        a:hover {
+                            background-position: left bottom;
+                        }
+                    }
+                    .noHrLine {
+                        position: relative;
+                    }
+                    .noHrLine::after {
+                        display: none;
+                    }
+                    .noHrLine:hover .cstmDrpdwn {
+                        padding: 15px 35px 15px 15px;
+                        height: fit-content;
+                        visibility: visible;
+                        .noHrLine:hover .cstmDrpdwn {
+                            padding: 0;
+                            // height: fit-content;
+                            display: block;
+                        }
+                        .cstmNavItem:hover .nav-link {
+                            color: $primary-blue;
+                        }
+                        .cstmNavItem::after {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            background-color: $primary-blue;
+                            width: 0%;
+                            height: 3px;
+                            opacity: 0;
+                            transition: all 500ms ease;
+                            -moz-transition: all 500ms ease;
+                            -webkit-transition: all 500ms ease;
+                            -ms-transition: all 500ms ease;
+                            -o-transition: all 500ms ease;
+                        }
+                        .cstmNavItem:hover::after {
+                            opacity: 1;
+                            width: 100%;
+                        }
                     }
                 }
             }
-            .quoteBtn {
-                padding-top: 0;
-                padding-bottom: 0;
-                a {
-                    font-family: 'poppins-med' !important;
-                    transition: $cmn-transition;
-                    color: $white !important;
-                    padding: 10px 25px !important;
-                    border-radius: 5px;
-                    text-decoration: none;
-                    position: relative;
-                    background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
-                    background-size: 200% 100%;
-                    background-position: right bottom;
-                }
-                a:hover {
-                    background-position: left bottom;
-                }
-            }
-            .noHrLine {
-                position: relative;
-            }
-            .noHrLine::after {
-                display: none;
-            }
-            .noHrLine:hover .cstmDrpdwn {
-                padding: 15px 35px 15px 15px;
-                height: fit-content;
-                visibility: visible;
-            }
-            .cstmNavItem:hover .nav-link {
-                color: $primary-blue;
-            }
-            .cstmNavItem::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                background-color: $primary-blue;
-                width: 0%;
-                height: 3px;
-                opacity: 0;
-                transition: all 500ms ease;
-                -moz-transition: all 500ms ease;
-                -webkit-transition: all 500ms ease;
-                -ms-transition: all 500ms ease;
-                -o-transition: all 500ms ease;
-            }
-            .cstmNavItem:hover::after {
-                opacity: 1;
-                width: 100%;
-            }
-        }
+            // MEDIA QUERIES
+            /*
+    @media screen and (max-width: 480px){
+        
     }
-}
-
-
-/* responsive mode scss*/
-
-@media screen and (max-width: 767px) {
-    .infoNavWrapper {
-        .infoNav {
-            .infoscl {
-                display: none;
+    */
+            @media screen and (max-width: 600px) {
+                .infoNavWrapper {
+                    display: none;
+                }
             }
-            .infoCnt {
-                width: 100%;
-                ul {
-                    justify-content: space-between;
-                    li:first-child {
-                        padding-right: unset;
+            @media screen and (max-width: 991px) {
+                .infoNavWrapper {
+                    .infoNav {
+                        .infoscl {
+                            padding-right: 0;
+                        }
+                    }
+                }
+                .navbarWrapper {
+                    padding: 15px;
+                    .cstmNav {
+                        .cstmNavbarUl {
+                            align-items: flex-end;
+                            li.cstmNavItem {
+                                padding: 15px 0 15px 15px;
+                                &::after {
+                                    display: none;
+                                }
+                            }
+                        }
                     }
                 }
             }
-        }
-    }
-    .navbarWrapper {
-        .cstmNav {
-            padding: 10px 15px;
-            .navbar-toggler {
-                border-radius: 0;
-            }
-            .cstmNavbarUl {
-                margin-top: 15px;
-                .cstmNavItem {
-                    padding: 10px 15px;
+            /* responsive mode scss*/
+            @media screen and (max-width: 767px) {
+                .infoNavWrapper {
+                    .infoNav {
+                        .infoscl {
+                            display: none;
+                        }
+                        .infoCnt {
+                            width: 100%;
+                            ul {
+                                justify-content: space-between;
+                                li:first-child {
+                                    padding-right: unset;
+                                }
+                            }
+                        }
+                    }
+                }
+                .navbarWrapper {
+                    .cstmNav {
+                        padding: 10px 15px;
+                        .navbar-toggler {
+                            border-radius: 0;
+                        }
+                        .cstmNavbarUl {
+                            margin-top: 15px;
+                            .cstmNavItem {
+                                padding: 10px 15px;
+                            }
+                        }
+                    }
                 }
             }
-        }
-    }
-}
