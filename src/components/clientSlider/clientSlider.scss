@@ -1,4 +1,4 @@
-    @import '@/styles/_variables.scss';
+@import '@/styles/_variables.scss';
 @import '@/styles/_common.scss';
 .client-slider {
     .sectionHeading {
@@ -39,12 +39,14 @@
             }
         }
     }
-    @media screen and (max-width: 767px) {
-        .client-slider {
-            .clientWrap {
-                .contentCopy {
-                    max-width: 80%;
-                }
+}
+
+@media screen and (max-width: 767px) {
+    .client-slider {
+        .clientWrap {
+            .contentCopy {
+                max-width: 80%;
             }
         }
     }
+}

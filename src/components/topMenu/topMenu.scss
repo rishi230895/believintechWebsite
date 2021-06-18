@@ -1,221 +1,228 @@
             @import "@/styles/_variables.scss";
-@import "@/styles/_common.scss";
-// info navbar
-.infoNavWrapper {
-    background-color: $primary-blue;
-    padding: 5px 0;
-    .infoNav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        ul {
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: row;
-            li {
-                list-style: none;
-                a {
-                    color: $white;
-                    text-decoration: none;
-                    font-size: 14px;
-                    font-family: $poppins-regular;
-                }
-            }
-            li:first-child {
-                padding-right: 30px;
-            }
-        }
-        .infoCnt,
-        .infoscl {
-            width: fit-content;
-        }
-        .infoscl {
-            padding-right: 15px;
-            ul {
-                li {
-                    a {
-                        font-size: 20px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-// main menu
-.navbarWrapper {
-    padding: 0;
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15);
-    .cstmNav {
-        padding: 0;
-        .cstmNavBrd {
-            height: 100%;
-            margin: 0;
-            font-family: $redhat-medium;
-            font-weight: 600;
-            letter-spacing: 4px;
-            font-size: 32px;
-            text-decoration: none;
-            position: relative;
-            line-height: 32px;
-            max-width: 240px;
-            em {
-                font-style: normal;
-                color: $primary-blue;
-            }
-            span {
-                color: $secondary-blue;
-            }
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-        .cstmNavbarUl {
-            align-items: center;
-            .cstmNavItem {
-                position: relative;
-                padding: 30px 15px;
-                .nav-link {
-                    padding: 0;
-                    color: $charcoal;
-                    font-family: $poppins-medium;
-                    font-size: 14px;
-                    text-transform: uppercase;
-                }
-                .cstmDrpdwn {
-                    margin: 0;
-                    background-color: #00428a;
-                    position: absolute;
-                    width: -webkit-max-content;
-                    width: -moz-max-content;
-                    width: max-content;
-                    top: 81px;
-                    left: -24px;
-                    z-index: 99;
-                    max-width: 265px;
-                    height: 0%;
-                    visibility: hidden;
-                    li {
-                        border-radius: 0 0 10px 10px;
-                        // height: 0%;
-                        display: none;
+            @import "@/styles/_common.scss";
+            // info navbar
+            .infoNavWrapper {
+                background-color: $primary-blue;
+                padding: 5px 0;
+                .infoNav {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    ul {
+                        padding: 0;
+                        margin: 0;
+                        display: flex;
+                        flex-direction: row;
                         li {
                             list-style: none;
-                            text-align: left;
-                            position: relative;
                             a {
-                                background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
-                                background-size: 201% 100%;
-                                background-position: right bottom;
-                                transition: all 0.4s linear;
-                                &:hover {
-                                    background-position: left bottom;
-                                }
-                                &:last-child {
-                                    border-radius: 0 0 10px 10px;
-                                }
-                                a {
-                                    color: $white;
-                                    text-decoration: none;
-                                    font-family: $poppins-regular;
-                                    font-size: 14px;
-                                    padding: 10px 40px 10px 15px;
-                                    display: block;
-                                    &::after {
-                                        content: ">";
-                                        font-size: 20px;
-                                        color: $white;
-                                        position: absolute;
-                                        top: 50%;
-                                        right: 15px;
-                                        pointer-events: none;
-                                        transform: translateY(-50%);
-                                    }
-                                }
-                            }
-                            li::after {
-                                content: ">";
-                                font-size: 20px;
                                 color: $white;
-                                position: absolute;
-                                top: 0;
-                                right: -25px;
+                                text-decoration: none;
+                                font-size: 14px;
+                                font-family: $poppins-regular;
                             }
                         }
-                    }
-                    .quoteBtn {
-                        padding-top: 0;
-                        padding-bottom: 0;
-                        a {
-                            font-family: 'poppins-med' !important;
-                            transition: $cmn-transition;
-                            color: $white !important;
-                            padding: 10px 25px !important;
-                            border-radius: 5px;
-                            text-decoration: none;
-                            position: relative;
-                            background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
-                            background-size: 200% 100%;
-                            background-position: right bottom;
-                        }
-                        a:hover {
-                            background-position: left bottom;
+                        li:first-child {
+                            padding-right: 30px;
                         }
                     }
-                    .noHrLine {
-                        position: relative;
+                    .infoCnt,
+                    .infoscl {
+                        width: fit-content;
                     }
-                    .noHrLine::after {
-                        display: none;
-                    }
-                    .noHrLine:hover .cstmDrpdwn {
-                        padding: 15px 35px 15px 15px;
-                        height: fit-content;
-                        visibility: visible;
-                        .noHrLine:hover .cstmDrpdwn {
-                            padding: 0;
-                            // height: fit-content;
-                            display: block;
-                        }
-                        .cstmNavItem:hover .nav-link {
-                            color: $primary-blue;
-                        }
-                        .cstmNavItem::after {
-                            content: '';
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            background-color: $primary-blue;
-                            width: 0%;
-                            height: 3px;
-                            opacity: 0;
-                            transition: all 500ms ease;
-                            -moz-transition: all 500ms ease;
-                            -webkit-transition: all 500ms ease;
-                            -ms-transition: all 500ms ease;
-                            -o-transition: all 500ms ease;
-                        }
-                        .cstmNavItem:hover::after {
-                            opacity: 1;
-                            width: 100%;
+                    .infoscl {
+                        padding-right: 15px;
+                        ul {
+                            li {
+                                a {
+                                    font-size: 20px;
+                                }
+                            }
                         }
                     }
                 }
             }
+            
+            // main menu
+            .navbarWrapper {
+                padding: 0;
+                box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15);
+                .cstmNav {
+                    padding: 0;
+                    .cstmNavBrd {
+                        height: 100%;
+                        margin: 0;
+                        font-family: $redhat-medium;
+                        font-weight: 600;
+                        letter-spacing: 4px;
+                        font-size: 32px;
+                        text-decoration: none;
+                        position: relative;
+                        line-height: 32px;
+                        max-width: 240px;
+                        em {
+                            font-style: normal;
+                            color: $primary-blue;
+                        }
+                        span {
+                            color: $secondary-blue;
+                        }
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .cstmNavbarUl {
+                        align-items: center;
+                        .cstmNavItem {
+                            position: relative;
+                            padding: 30px 15px;
+                            .nav-link {
+                                padding: 0;
+                                color: $charcoal;
+                                font-family: $poppins-medium;
+                                font-size: 14px;
+                                text-transform: uppercase;
+                            }
+                            .cstmDrpdwn {
+                                margin: 0;
+                                background-color: #00428a;
+                                position: absolute;
+                                width: -webkit-max-content;
+                                width: -moz-max-content;
+                                width: max-content;
+                                top: 81px;
+                                left: -24px;
+                                z-index: 99;
+                                max-width: 265px;
+                                height: 0%;
+                                visibility: hidden;
+                                li {
+                                    border-radius: 0 0 10px 10px;
+                                    // height: 0%;
+                                    display: none;
+                                    li {
+                                        list-style: none;
+                                        text-align: left;
+                                        position: relative;
+                                        a {
+                                            background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
+                                            background-size: 201% 100%;
+                                            background-position: right bottom;
+                                            transition: all 0.4s linear;
+                                            &:hover {
+                                                background-position: left bottom;
+                                            }
+                                            &:last-child {
+                                                border-radius: 0 0 10px 10px;
+                                            }
+                                            a {
+                                                color: $white;
+                                                text-decoration: none;
+                                                font-family: $poppins-regular;
+                                                font-size: 14px;
+                                                padding: 10px 40px 10px 15px;
+                                                display: block;
+                                                &::after {
+                                                    content: ">";
+                                                    font-size: 20px;
+                                                    color: $white;
+                                                    position: absolute;
+                                                    top: 50%;
+                                                    right: 15px;
+                                                    pointer-events: none;
+                                                    transform: translateY(-50%);
+                                                }
+                                            }
+                                        }
+                                        li::after {
+                                            content: ">";
+                                            font-size: 20px;
+                                            color: $white;
+                                            position: absolute;
+                                            top: 0;
+                                            right: -25px;
+                                        }
+                                    }
+                                }
+                                .quoteBtn {
+                                    padding-top: 0;
+                                    padding-bottom: 0;
+                                    a {
+                                        font-family: 'poppins-med' !important;
+                                        transition: $cmn-transition;
+                                        color: $white !important;
+                                        padding: 10px 25px !important;
+                                        border-radius: 5px;
+                                        text-decoration: none;
+                                        position: relative;
+                                        background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
+                                        background-size: 200% 100%;
+                                        background-position: right bottom;
+                                    }
+                                    a:hover {
+                                        background-position: left bottom;
+                                    }
+                                }
+                                .noHrLine {
+                                    position: relative;
+                                }
+                                .noHrLine::after {
+                                    display: none;
+                                }
+                                .noHrLine:hover .cstmDrpdwn {
+                                    padding: 15px 35px 15px 15px;
+                                    height: fit-content;
+                                    visibility: visible;
+                                    .noHrLine:hover .cstmDrpdwn {
+                                        padding: 0;
+                                        // height: fit-content;
+                                        display: block;
+                                    }
+                                    .cstmNavItem:hover .nav-link {
+                                        color: $primary-blue;
+                                    }
+                                    .cstmNavItem::after {
+                                        content: '';
+                                        position: absolute;
+                                        bottom: 0;
+                                        left: 0;
+                                        background-color: $primary-blue;
+                                        width: 0%;
+                                        height: 3px;
+                                        opacity: 0;
+                                        transition: all 500ms ease;
+                                        -moz-transition: all 500ms ease;
+                                        -webkit-transition: all 500ms ease;
+                                        -ms-transition: all 500ms ease;
+                                        -o-transition: all 500ms ease;
+                                    }
+                                    .cstmNavItem:hover::after {
+                                        opacity: 1;
+                                        width: 100%;
+                                    }
+                                }
+                                /* no hr */
+                            }
+                        }
+                    }
+                }
+            }
+            
             // MEDIA QUERIES
             /*
     @media screen and (max-width: 480px){
         
     }
     */
+            
             @media screen and (max-width: 600px) {
                 .infoNavWrapper {
                     display: none;
                 }
             }
+            
             @media screen and (max-width: 991px) {
                 .infoNavWrapper {
                     .infoNav {
@@ -240,6 +247,7 @@
                 }
             }
             /* responsive mode scss*/
+            
             @media screen and (max-width: 767px) {
                 .infoNavWrapper {
                     .infoNav {
