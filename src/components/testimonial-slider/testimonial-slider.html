@@ -1,14 +1,14 @@
 
 <section class="testimonial-slider">
   <carousel :autoplay="true" :autoplayTimeout="8000" :autoplayHoverPause="true" :autoplaySpeed="true" 
-  :dots="true" :nav="false" :items="1" :center="true">
-    <b-card no-body class="testiCard" v-for="items in testimonialsSlider">
+  :dots="true" :nav="false" :items="1" :center="true"  v-if="testimonialsSlider.details && testimonialsSlider.details.length > 0">
+    <b-card no-body class="testiCard" v-for="testimonialsSliders in testimonialsSlider.details">
       <b-card-body class="testiBody">
-        <b-card-text class="testiMsg">{{items.details.testimonialsMessage}}</b-card-text>
+        <b-card-text class="testiMsg">{{testimonialsSliders.testimonialsMessage}}</b-card-text>
       </b-card-body>
       <b-card-footer class="testiFooter">
-        <span class="testiDesig">{{items.details.testimonialsDesignation}}</span>
-        <em class="testiComp">{{items.details.testimonialscompanyName}}</em>
+        <span class="testiDesig">{{testimonialsSliders.testimonialsDesignation}}</span>
+        <em class="testiComp">{{testimonialsSliders.testimonialscompanyName}}</em>
       </b-card-footer>
     </b-card>
   </carousel>

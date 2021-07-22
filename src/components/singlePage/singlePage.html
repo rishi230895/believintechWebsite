@@ -1,7 +1,7 @@
 <section class="single-page">
   <div id="singlePg" class="singlePgWrap">
     <div class="bannerWrap">
-      <img v-bind:src="banner.blogThumbnail" alt="">
+      <img v-bind:src="items.blogThumbnail" alt="">
     </div>
     <div class="container-lg p-lg-0">
       <div class="singleMain">
@@ -9,7 +9,7 @@
           <h2 class="singleTitle">{{items.blogTitle}}</h2>
           <span class="blogDetailWrap">
             <span class="pubDate">{{items.blogDate}}</span>
-            <span class="pubAuthor">Root</span>
+            <span class="pubAuthor">{{items.blogAuthor}}</span>
           </span>
         </div>
         <div class="contentWrap">

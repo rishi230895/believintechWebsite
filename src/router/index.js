@@ -62,9 +62,10 @@ export default new Router({
             component: Blog
         },
         {
-            path: '/single-page',
+            path: '/single-page/:slug',
             name: 'singlePage',
-            component: singlePage
+            component: singlePage,
+            props: true
         },
         {
             path: '/our-team',

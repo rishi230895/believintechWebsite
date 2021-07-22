@@ -14,20 +14,22 @@ import singlePage from '@/components/singlePage'
 
 export default {
     name: 'singlePg',
+    props: ['slug'],
     components: {
         singlePage
     },
     data(){
         return{
+            blogSection:[],
             blogThumbnail: [],
-            blogSection:[]
         }
     },
     async created(){
+        console.log(apiUrl);
         try {
-            const res = await axios.get(apiUrl + '/singleblog');
+            const res = await axios.get(apiUrl + '/postSingle/' + this.slug);
             if(res.data.status == 'success'){
-                this.blogThumbnail = res.data.data.blogThumbnail;
+                console.log(res.data.data);
                 this.blogSection = res.data.data.blogSection;
             }
         } catch (error) {

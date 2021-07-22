@@ -16,11 +16,14 @@
             <font-awesome-icon :icon="['fas', 'comments']" />
             {{blog.blogComments}}</div>
         </div>
-        <router-link class="blogTitle" to="single-page">{{blog.blogTitle}}</router-link>
+        <router-link class="blogTitle" :to="{ name: 'singlePage', params: { slug: blog.blogSlug }}" >{{blog.blogTitle}}</router-link>
         <!-- <a class="blogTitle" href="">{{blog.blogTitle}}</a> -->
         <p class="blogContent">{{blog.blogContent}}</p>
         <template #footer>
-          <a class="ctaBtn" href="">Read More</a>
+          <router-link class="ctaBtn" :to="{name: 'singlePage', params: {slug: blog.blogSlug}}">
+            Read More
+          </router-link>
+          <!-- <a class="ctaBtn" href="">Read More</a> -->
         </template>
       </b-card>
     </b-card-group>

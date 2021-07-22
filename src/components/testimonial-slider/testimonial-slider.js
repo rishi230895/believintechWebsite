@@ -1,6 +1,6 @@
 import carousel from 'vue-owl-carousel';
-// import axios from 'axios'
-// import {apiUrl} from '@/constants.js'
+import axios from 'axios'
+import {apiUrl} from '@/constants.js'
 // import VueSlickCarousel from 'vue-slick-carousel'
 // import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 
@@ -10,10 +10,10 @@ export default {
     carousel,
     // VueSlickCarousel
   },
-  props: ['items'],
+  props: [],
   data () {
     return {
-      
+      testimonialsSlider: [],
       // settings:{
       //   arrows: false,
       //   dots: true,
@@ -38,6 +38,17 @@ export default {
       //   testidesig: "CTO,",
       //   testiComp: "XYZ Company"
       // }]
+    }
+  },
+  async created(){
+    try {
+      const res = await axios.get(apiUrl + '/homeData');
+      if(res.data.status == 'success'){
+        this.testimonialsSlider = res.data.data.testimonialsSlider;
+        console.log(this.testimonialsSlider);
+      }
+    } catch (error) {
+      console.error(error);
     }
   },
   computed: {

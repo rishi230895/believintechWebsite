@@ -37,14 +37,26 @@
              ::v-deep .slick-slide {
                 margin: 0 25px;
             }
+            .clientImgWrap{
+                max-width: 200px;
+            }
         }
     }
-    @media screen and (max-width: 767px) {
-        .client-slider {
-            .clientWrap {
-                .contentCopy {
-                    max-width: 80%;
+}
+
+// medi queries
+@media screen and (max-width: 767px) {
+    .client-slider {
+        .clientWrap {
+            .contentCopy {
+                max-width: 80%;
+            }
+            .clientSlider{
+                ::v-deep .slick-slide img{
+                    width: 80px !important;
+                    object-fit: cover;
                 }
             }
         }
     }
+}

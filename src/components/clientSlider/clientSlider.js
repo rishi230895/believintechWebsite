@@ -1,45 +1,45 @@
 // import carousel from 'vue-owl-carousel';
-// import VueSlickCarousel from 'vue-slick-carousel'
-// import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-import Slick from 'vue-slick';
-import 'slick-carousel/slick/slick.css';
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// import Slick from 'vue-slick';
+// import 'slick-carousel/slick/slick.css';
 
 export default {
   name: 'client-slider',
   components: {
-    // VueSlickCarousel, 
+    VueSlickCarousel, 
     // carousel
-    Slick
+    // Slick
   },
   props: ['items'],
   data () {
     return {
-      // settings: {
-      //   arrows: false,
-      //   dots: false,
-      //   autoplay: true,
-      //   autoplaySpeed: 3000,
-      //   speed: 3000,
-      //   cssEase: "linear",
-      //   draggable: false,
-      //   infinite: true,
-      //   pauseOnHover: true,
-      //   slidesToShow: 6,
-      //   // slidesToScroll: 1,
-      //   centerMode: true,
-      // }
-      slickOptions: {
-        infinite: true,
-        slidesToShow: 6,
-        autoplay: true,
-        autoplaySpeed: 0,
-        speed: 3000,
-        adaptiveHeight: false,
+      settings: {
         arrows: false,
-        cssEase: 'linear',
-        pauseOnHover: false,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        speed: 3000,
+        cssEase: "linear",
+        draggable: false,
+        infinite: true,
+        pauseOnHover: true,
+        slidesToShow: 6,
+        // slidesToScroll: 1,
         centerMode: true,
-      },
+      }
+      // slickOptions: {
+      //   infinite: true,
+      //   slidesToShow: 6,
+      //   autoplay: true,
+      //   autoplaySpeed: 0,
+      //   speed: 3000,
+      //   adaptiveHeight: false,
+      //   arrows: false,
+      //   cssEase: 'linear',
+      //   pauseOnHover: false,
+      //   centerMode: true,
+      // },
       
     }
   },
