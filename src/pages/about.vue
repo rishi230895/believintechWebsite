@@ -21,9 +21,9 @@
                     <p class="contentCopy">{{visionSection.visionDesc}}</p>
                 </div>
             </section>
-            <section class="sectionWrap">
+            <!-- <section class="sectionWrap">
                 <cta-banner-three />
-            </section>
+            </section> -->
             <our-team :items = "teamSection"/>
         </div>
     </div>
@@ -101,7 +101,7 @@
 
 <script>
 import ourTeam from '@/components/our-team'
-import ctaBannerThree from '@/components/ctaBannerThree'
+// import ctaBannerThree from '@/components/ctaBannerThree'
 import axios from 'axios'
 import {apiUrl} from '@/constants.js'
 
@@ -109,7 +109,7 @@ export default {
     name: 'about',
     components: {
         ourTeam,
-        ctaBannerThree
+        // ctaBannerThree
     },
     data(){
         return{

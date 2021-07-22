@@ -5,17 +5,14 @@
                 <div class="bannerWrap">
                     <div class="colOne">
                         <div class="formWrap">
-                            <form class="contact-form"  @submit.prevent="onSubmit">
+                            <form class="contact-form"  v-on:submit.prevent="submitForm">
                                 <div class="fieldWrap">
                                     <h2 class="sectionHeading">{{contactBanner.contactTitle}}<span>.</span></h2>
                                     <div class="formRow">
-                                        <div class="formGroup" :class="{ 'form-group--error': $v.firstname.$error }">
+                                        <div class="formGroup">
                                             <label for="firstName">First Name *</label>
-                                            <input id="firstName" type="text" name="firstName" required 
-                                            v-model="form.firstname"  v-model.trim="$v.firstname.$model">
+                                            <input id="firstName" type="text" name="firstName" required v-model="form.firstname">
                                         </div>
-                                        <div class="error" v-if="!$v.firstname.required">Name is required</div>
-                                        <div class="error" v-if="!$v.firstname.minLength">Name must have at least {{$v.name.$params.minLength.min}} letters.</div>
                                         <div class="formGroup">
                                             <label for="lastName">Last Name *</label>
                                             <input id="lastName" type="text" name="lastName" required v-model="form.lastname">
@@ -38,10 +35,10 @@
                                         <label for="privacy">I understand the information above will be stored only for business purposes.</label>
                                     </div>
                                 </div>
-                                <input class="ctaBtn" type="submit" value="Submit" :disabled="submitStatus === 'PENDING'">
-                                <p class="typo__p" v-if="submitStatus === 'OK'">Thanks for your submission!</p>
-                                <p class="typo__p" v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
-                                <p class="typo__p" v-if="submitStatus === 'PENDING'">Sending...</p>
+                                <div class="cstmFrmFooter">
+                                    <input class="ctaBtn" type="submit" value="Submit">
+                                    <p v-if="this.show" class="successMsg">thanks</p>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -49,17 +46,15 @@
                         <img v-bind:src="contactBanner.contactImage" alt="believintech contact">
                     </div>
                 </div>
-                <div>{{form}}</div>
+                <!-- <div>{{form}}</div> -->
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import axios from 'axios'
-import {apiUrl} from '@/constants.js'
-import { required, minLength, maxLength } from 'vuelidate/lib/validators'
-import { validationMixin } from 'vuelidate'
+import axios from 'axios';
+import {apiUrl} from '@/constants.js';
 
 export default {
     name: 'contact',
@@ -78,15 +73,8 @@ export default {
                 checkbox: []
             },
             name: '',
+            show: false,
             submitStatus: null
-        }
-    },
-    mixins: [validationMixin],
-    validations: {
-        firstname: {
-            required,
-            minLength: minLength(4),
-            maxLength: maxLength(10)
         }
     },
     async created(){
@@ -100,35 +88,37 @@ export default {
         }
     },
     methods: {
-        onSubmit(event) {
-            event.preventDefault()
-            console.log(JSON.stringify(this.form));
-            // Reset our form values
-            this.form.firstname = ''
-            this.form.lastname = ''
-            this.form.email = ''
-            this.form.phone = ''
-            this.form.message = ''
-            this.form.checkbox = []
-            // Trick to reset/clear native browser form validation state
-            this.show = false
-            this.$nextTick(() => {
-                this.show = true
-            });
-
-            console.log('submit!')
-            this.$v.$touch()
-            if (this.$v.$invalid) {
-                this.submitStatus = 'ERROR'
-            } else {
-                // do your submit logic here
-                this.submitStatus = 'PENDING'
-                setTimeout(() => {
-                    this.submitStatus = 'OK'
-                }, 500)
-            }
-
+        submitForm(){
+            axios.post(apiUrl + '/contactform', this.form)
+                .then((response) => {
+                    //Perform Success Action
+                    if(response.data.Message.mailshoot == 'sent'){
+                        this.show= true;
+                        console.log(this.show);
+                    }
+                    
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                    // error.response.status Check status code
+                }).finally(() => {
+                    // Reset our form values
+                    this.form.firstname = ''
+                    this.form.lastname = ''
+                    this.form.email = ''
+                    this.form.phone = ''
+                    this.form.message = ''
+                    this.form.checkbox = []
+                    this.hidemsg()
+                    //Perform action in always
+                });
         },
+        hidemsg(){
+            setTimeout(() => {
+                this.show= false;
+            }, 2000);
+        }
     }
 }
 </script>
@@ -217,10 +207,21 @@ export default {
                             }
                         }
                     }
-                    .ctaBtn{
-                        border: none;
-                        width: 30%;
-                        padding: 8px;
+                    .cstmFrmFooter{
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        margin-top: 20px;
+                        .ctaBtn{
+                            border: none;
+                            width: 30%;
+                            padding: 8px;
+                            margin: 0;
+                        }
+                        .successMsg{
+                            margin: 0 0 0 15px;
+                        }
                     }
                 }
             }
@@ -236,37 +237,36 @@ export default {
 
 
 @media screen and (max-width: 767px) {
-
- .contactWrap{
-    .bannerWrap{
-        padding: 30px 0;
-    flex-direction: column-reverse;
-    .colOne
-            {
+    .contactWrap{
+        .bannerWrap{
+            padding: 30px 0;
+            flex-direction: column-reverse;
+            .colOne{
                 width:100%;
-                 .formWrap{
-                .contact-form{
-                    max-width: 100%;
-                    .fieldWrap{
-                    .formRow{
-                           flex-direction: column;
-                            .formGroup{
-                                 max-width: 100%;
-                                 width:100%;&:first-child{
-                                     padding-bottom: 10px;
-                                 }
+                .formWrap{
+                    .contact-form{
+                        max-width: 100%;
+                        .fieldWrap{
+                            .formRow{
+                                flex-direction: column;
+                                .formGroup{
+                                    max-width: 100%;
+                                    width:100%;
+                                    &:first-child{
+                                        padding-bottom: 10px;
+                                    }
+                                }
                             }
-                    }
+                        }
                     }
                 }
-                 }
             }
-            .colTwo
-            {
+            .colTwo{
                 width:100%;
                 margin-bottom: 30px; 
             }
-    }
- }   
+        }
+    }   
 }
+
 </style>
