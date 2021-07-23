@@ -148,6 +148,50 @@
     }
 }
 
+// Media Queries
+
+@media screen and (max-width: 1200px) {
+    .our-services {
+        .serviceRow {
+            .serviceCardGrp {
+                .serviceCard {
+                    &:nth-last-child(-n+4) {
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1050px) {
+    .our-services {
+        .serviceRow {
+            .serviceCardGrp {
+                .serviceCard {
+                    &:nth-last-child(-n+4) {
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .our-services {
+        .serviceRow {
+            .serviceCardGrp {
+                .serviceCard {
+                    &:nth-last-child(-n+4) {
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 767px) {
     .our-services {
         .sectionHeading {

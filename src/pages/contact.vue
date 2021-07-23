@@ -235,6 +235,26 @@ export default {
     }
 }
 
+// Media Queries
+
+@media screen and (max-width: 992px) {
+    .contactWrap{
+        .bannerWrap{
+            .colOne{ 
+                width:100%;
+                .formWrap{
+                    .contact-form{
+                        max-width: 650px;
+                        margin:auto;
+                    }
+                }
+            }
+            .colTwo{
+                display:none;
+            }
+        }
+    }
+}
 
 @media screen and (max-width: 767px) {
     .contactWrap{

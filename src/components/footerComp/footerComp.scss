@@ -236,6 +236,30 @@
     }
 }
 
+// Media Queries
+
+@media screen and (max-width: 992px) {
+    .footer-comp {
+        .cstmFooter {
+            .colOne {
+                width: 50%;
+                padding: 0 15px 0 0px;
+            }
+            .colTwo {
+                width: 50%;
+                padding: 0 0px 0 15px;
+            }
+            .colThree {
+                width: 100%;
+                margin-top: 30px;
+                .contactLinks {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 767px) {
     .footer-comp {
         .cstmFooter {

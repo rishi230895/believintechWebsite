@@ -162,6 +162,26 @@
     }
 }
 
+// Media Queries
+
+@media screen and (max-width: 992px) {
+    .workWrap {
+        .projTabs {
+            .projectWrap.card-deck {
+                flex-direction: row;
+                /*justify-content: space-between;*/
+                .card.projCard {
+                    max-width: 33.33%;
+                    margin-bottom: 15px;
+                    margin-left: unset;
+                    margin-right: unset;
+                    padding: 0 15px;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 767px) {
     .tabs {
         .projTabs {
@@ -202,6 +222,20 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+    .workWrap {
+        .projTabs {
+            .projectWrap.card-deck {
+                flex-direction: row;
+                justify-content: space-between;
+                .card.projCard {
+                    max-width: 48%;
+                    margin-bottom: 15px;
+                    margin-left: unset;
+                    margin-right: unset;
                 }
             }
         }
