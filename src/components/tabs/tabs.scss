@@ -1,0 +1,241 @@
+                    @import "@/styles/_variables.scss";
+                    @import "@/styles/_common.scss";
+                    .tabs {
+                        .careerCard {
+                            border: none;
+                            .vertCard {
+                                 ::v-deep .col-auto {
+                                    width: 30%;
+                                    .nav {
+                                        background-color: transparent;
+                                        border-right: 3px solid #e1e8f0;
+                                        padding: 11px 20px 11px 0;
+                                        li {
+                                            a {
+                                                text-align: left;
+                                                font-family: $poppins-medium;
+                                                color: $charcoal;
+                                            }
+                                            a.active {
+                                                background-color: $primary-blue;
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                                .tab-pane {
+                                    padding: 11px 0 11px 20px;
+                                    a {
+                                        text-decoration: none;
+                                        &:last-child .openPos {
+                                            margin-bottom: 0;
+                                        }
+                                        .openPos {
+                                            display: flex;
+                                            flex-direction: row;
+                                            flex-wrap: wrap;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            padding: 20px;
+                                            border-radius: 5px;
+                                            background-color: $primary-blue;
+                                            color: $white;
+                                            font-family: $poppins-medium;
+                                            transition: all 0.3s ease;
+                                            margin-bottom: 15px;
+                                            &:hover {
+                                                box-shadow: 0 8px 8px 0 rgb(0 66 138 / 8%), 0 4px 5px 0 rgb(0 66 138 / 18%);
+                                                transform: translateY(-5px);
+                                            }
+                                            .colOne {
+                                                width: 60%;
+                                                text-align: left;
+                                            }
+                                            .colTwo {
+                                                width: 40%;
+                                                text-align: left;
+                                                display: flex;
+                                                flex-direction: row;
+                                                justify-content: space-between;
+                                                span {
+                                                    background: #fff;
+                                                    padding: 5px 10px;
+                                                    color: #00428a;
+                                                    font-size: 13px;
+                                                    border-radius: 5px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .projTabs {
+                             ::v-deep .nav-tabs {
+                                margin: 0 auto;
+                                width: fit-content;
+                                border: none;
+                                li {
+                                    a {
+                                        border: none;
+                                        color: $logo-secondary-blue;
+                                        font-family: $poppins-regular;
+                                        font-size: 16px;
+                                    }
+                                    a.active {
+                                        border-bottom: 2px solid $logo-secondary-blue !important;
+                                    }
+                                }
+                            }
+                            .projectWrap {
+                                .projCard {
+                                    max-width: 360px;
+                                    min-height: 180px;
+                                    width: 100%;
+                                    flex: auto;
+                                    border: none;
+                                    transition: all 0.3s ease;
+                                    position: relative;
+                                    transform: scale(1);
+                                    transform-origin: bottom;
+                                    margin-bottom: 30px;
+                                    &::after {
+                                        content: "";
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        background: $black;
+                                        opacity: 0.8;
+                                        visibility: hidden;
+                                        border-radius: 5px;
+                                    }
+                                    &:hover {
+                                        box-shadow: 0 0 10px rgb(0 0 0 / 12%);
+                                        transform: scale(1.07);
+                                        &::after {
+                                            visibility: visible;
+                                        }
+                                    }
+                                    &:hover .projDetail {
+                                        display: block;
+                                    }
+                                    .projImg {
+                                        width: 100%;
+                                        object-fit: cover;
+                                        border-radius: 5px;
+                                    }
+                                    .projDetail {
+                                        padding: 10px;
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        z-index: 2;
+                                        display: none;
+                                        width: 100%;
+                                        h4 {
+                                            color: $white;
+                                            font-family: $redhat-bold;
+                                            font-size: 26px;
+                                        }
+                                        a {
+                                            background-color: $primary-blue;
+                                            color: $white;
+                                            text-decoration: none;
+                                            padding: 5px 10px;
+                                            font-family: $poppins-regular;
+                                            font-size: 14px;
+                                            border-radius: 5px;
+                                            margin: 0 auto;
+                                            transition: all 0.3s ease;
+                                            svg {
+                                                padding-left: 3px;
+                                                margin: 0;
+                                                font-size: inherit;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    @media screen and (max-width: 992px) {
+                        .workWrap {
+                            .projTabs {
+                                .projectWrap.card-deck {
+                                    flex-direction: row;
+                                    /*justify-content: space-between;*/
+                                    .card.projCard {
+                                        max-width: 33.33%;
+                                        margin-bottom: 15px;
+                                        margin-left: unset;
+                                        margin-right: unset;
+                                        padding: 0 15px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    @media screen and (max-width: 767px) {
+                        .tabs {
+                            .projTabs {
+                                 ::v-deep .nav-tabs {
+                                    li {
+                                        a {
+                                            font-size: 14px;
+                                            padding: 0.5rem 0.7rem;
+                                        }
+                                    }
+                                }
+                            }
+                            .careerCard {
+                                .vertCard {
+                                    flex-direction: column;
+                                     ::v-deep .col-auto {
+                                        width: 75%;
+                                        .nav {
+                                            border-right: 0px solid #e1e8f0;
+                                        }
+                                    }
+                                    .tab-pane {
+                                        padding: 11px 0 11px 0px;
+                                        a {
+                                            .openPos {
+                                                padding: 20px 10px;
+                                                .colOne {
+                                                    width: 35%;
+                                                    span {
+                                                        font-size: 14px;
+                                                    }
+                                                }
+                                                .colTwo {
+                                                    width: 65%;
+                                                    span {
+                                                        padding: 5px 7px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .workWrap {
+                            .projTabs {
+                                .projectWrap.card-deck {
+                                    flex-direction: row;
+                                    justify-content: space-between;
+                                    .card.projCard {
+                                        max-width: 48%;
+                                        margin-bottom: 15px;
+                                        margin-left: unset;
+                                        margin-right: unset;
+                                    }
+                                }
+                            }
+                        }
+                    }
