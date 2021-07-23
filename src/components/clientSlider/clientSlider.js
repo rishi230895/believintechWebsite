@@ -23,7 +23,7 @@ export default {
         cssEase: "linear",
         draggable: false,
         infinite: true,
-        pauseOnHover: true,
+        pauseOnHover: false,
         slidesToShow: 6,
         // slidesToScroll: 1,
         centerMode: true,
