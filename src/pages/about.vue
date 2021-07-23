@@ -21,9 +21,6 @@
                     <p class="contentCopy">{{visionSection.visionDesc}}</p>
                 </div>
             </section>
-            <!-- <section class="sectionWrap">
-                <cta-banner-three />
-            </section> -->
             <our-team :items = "teamSection"/>
         </div>
     </div>

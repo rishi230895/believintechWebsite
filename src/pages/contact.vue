@@ -24,21 +24,19 @@
                                     </div>
                                     <div class="formGroup">
                                         <label for="phone">Phone</label>
-                                        <input id="phone" type="tel" name="phone" v-model="form.phone">
+                                        <input id="phone" type="tel" name="phone" required v-model="form.phone">
                                     </div>
                                     <div class="formGroup">
                                         <label for="message">Brief Us About Your Next Big Project *</label>
                                         <textarea id="message" rows="5" name="message" required v-model="form.message"></textarea>
                                     </div>
                                     <div class="formGroup cstmCheckbox">
-                                        <input value="checked" type="checkbox" name="privacy" id="privacy" required v-model="form.checkbox">
+                                        <input value="checked" type="checkbox" name="privacy" id="privacy" v-model="form.checkbox">
                                         <label for="privacy">I understand the information above will be stored only for business purposes.</label>
                                     </div>
                                 </div>
-                                <div class="cstmFrmFooter">
-                                    <input class="ctaBtn" type="submit" value="Submit">
-                                    <p v-if="this.show" class="successMsg">thanks</p>
-                                </div>
+                                <input class="ctaBtn" type="submit" value="Submit">
+                                <p v-if="this.show" class="successMsg">Thanks, We'll Contact You Shortly!</p>
                             </form>
                         </div>
                     </div>
@@ -46,7 +44,6 @@
                         <img v-bind:src="contactBanner.contactImage" alt="believintech contact">
                     </div>
                 </div>
-                <!-- <div>{{form}}</div> -->
             </div>
         </div>
     </div>
@@ -117,7 +114,7 @@ export default {
         hidemsg(){
             setTimeout(() => {
                 this.show= false;
-            }, 2000);
+            }, 1500);
         }
     }
 }
@@ -143,9 +140,10 @@ export default {
                     margin: 0;
                     box-shadow: 0px 0px 7px 0px rgb(0 0 0 / 12%);
                     border-radius: 5px;
-                    padding: 30px;
+                    padding: 40px 30px;
                     font-family: $redhat-medium;
                     color: $charcoal;
+                    position: relative;
                     .fieldWrap{
                         display: flex;
                         flex-direction: row;
@@ -207,21 +205,18 @@ export default {
                             }
                         }
                     }
-                    .cstmFrmFooter{
-                        display: flex;
-                        flex-direction: row;
-                        flex-wrap: wrap;
-                        align-items: center;
-                        margin-top: 20px;
-                        .ctaBtn{
-                            border: none;
-                            width: 30%;
-                            padding: 8px;
-                            margin: 0;
-                        }
-                        .successMsg{
-                            margin: 0 0 0 15px;
-                        }
+                    .ctaBtn{
+                        border: none;
+                        width: 30%;
+                        padding: 8px;
+                    }
+                    .successMsg{
+                        margin: 0;
+                        color: #00e676;
+                        transition: all 0.3s ease;
+                        text-align: left;
+                        position: absolute;
+                        bottom: 5px;
                     }
                 }
             }
@@ -287,6 +282,27 @@ export default {
             }
         }
     }   
+}
+
+@media screen and (max-width: 480px) {
+    .contactWrap{
+        .bannerWrap{
+            .colOne{
+                .formWrap{
+                    .contact-form{
+                        .fieldWrap{
+                            .cstmCheckbox{
+                                input{
+                                    width: 25px;
+                                    height: 25px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }       
 }
 
 </style>

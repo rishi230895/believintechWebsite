@@ -130,37 +130,44 @@
 @media screen and (max-width: 992px) {
     .our-team {
         .teamWrap {
-            .teamCardWrap {
-                margin-bottom: 30px;
-                &:last-child {
-                    margin-bottom: 0;
-                }
-                .teamCard {
-                    height: 650px;
-                }
-                .memberDetails {
-                    padding: 10px 10px;
-                    height: unset;
-                }
-                &:nth-child(even) {
+            .teamGroup{
+                justify-content: center;
+                .teamCardWrap {
+                    max-width: 300px;
+                    margin-bottom: 30px;
+                    padding: 0 10px !important;
+                    box-shadow: none;
+                    // &:last-child {
+                    //     margin-bottom: 0;
+                    // }
                     .teamCard {
-                        order: unset;
+                        height: 250px;
+                        box-shadow: 0px 8px 18px rgb(0 0 0 / 12%);
                     }
                     .memberDetails {
-                        order: 1;
-                        &::before {
-                            left: 50%;
-                            bottom: 102px;
-                            transform: translateX(-50%) rotate(90deg);
+                        padding: 10px 10px;
+                        height: unset;
+                    }
+                    &:nth-child(even) {
+                        .teamCard {
+                            order: unset;
+                        }
+                        .memberDetails {
+                            order: 1;
+                            &::before {
+                                left: 50%;
+                                bottom: 102px;
+                                transform: translateX(-50%) rotate(90deg);
+                            }
                         }
                     }
-                }
-                .teamCard {
-                    .teamImg {
-                        height: 100%;
-                        object-fit: cover;
-                        max-height: 650px;
-                        object-position: top;
+                    .teamCard {
+                        .teamImg {
+                            height: 100%;
+                            object-fit: cover;
+                            max-height: 250px;
+                            object-position: top;
+                        }
                     }
                 }
             }
@@ -173,12 +180,12 @@
         .teamWrap {
             .teamCardWrap {
                 margin-bottom: 30px;
-                &:last-child {
-                    margin-bottom: 0;
-                }
-                .teamCard {
-                    height: 500px;
-                }
+                // &:last-child {
+                //     margin-bottom: 0;
+                // }
+                // .teamCard {
+                //     height: 300px;
+                // }
                 .memberDetails {
                     padding: 10px 10px;
                     height: unset;
@@ -200,8 +207,24 @@
                     .teamImg {
                         height: 100%;
                         object-fit: cover;
-                        max-height: 500px;
+                        // max-height: 300px;
                         object-position: top;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .our-team {
+        .teamWrap {
+            .teamCardWrap {
+                max-width: 100% !important;
+                .teamCard{
+                    height: 350px !important;
+                    .teamImg{
+                        max-height: 350px !important;
                     }
                 }
             }
