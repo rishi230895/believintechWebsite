@@ -27,6 +27,11 @@
             }
              ::v-deep .slick-slide {
                 margin: 0 20px;
+                img{
+                    max-height: 100px;
+                    height: 100%;
+                    object-fit: contain;
+                }
             }
              ::v-deep .slick-track {
                 display: flex;

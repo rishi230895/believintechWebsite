@@ -1,6 +1,6 @@
-
 <section class="tabs">
   <div class="container-lg p-lg-0">
+    <!-- career page -->
     <section class="sectionWrap"  v-if="routerPage == true">
       <div class="tabWrap">
         <h2 class="sectionHeading">{{items.hiringTitle}}<span>.</span></h2>
@@ -23,18 +23,24 @@
         </b-card>
       </div>
     </section>
+    <!-- work page -->
     <section v-if="routerPage == false">
       <div class="projTabs">
         <b-tabs content-class="mt-5">
-          <b-tab v-bind:title="tabs.tabTitle" v-for="tabs in items.details" active>
-            
+          <b-tab v-bind:title="tabs.tabTitle" v-for="tabs in items.details" >
             <b-card-group class="projectWrap" deck>
               <b-card class="projCard" v-for="project in tabs.tabProject" v-bind:key="project.id" no-body>
                   <img class="projImg" v-bind:src="project.contentImage" alt="">
                   <div class="projDetail">
                       <h4>{{project.contentTitle}}</h4>
-                      <a class="ctaBtn" target="_blank" v-bind:href="project.visitUrl">{{project.contentButton}}
-                          <font-awesome-icon :icon="['fa', 'external-link-alt']"></font-awesome-icon>
+                      <a class="ctaBtn" target="_blank" v-bind:href="project.contentLink" v-if="project.contentButton">{{project.contentButton}}
+                        <font-awesome-icon :icon="['fa', 'external-link-alt']"></font-awesome-icon>
+                      </a>
+                      <a class="appBadge" :href="project.iosLink" v-if="project.iosLink" target="_blank">
+                        <img src="../../assets/clients/download-on-the-app-store-en-us/black.svg" alt="">
+                      </a>
+                      <a class="appBadge" :href="project.androidLink" v-if="project.androidLink" target="_blank">
+                        <img src="../../assets/clients/google-play-badge.svg" alt="">
                       </a>
                   </div>
               </b-card>

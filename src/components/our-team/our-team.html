@@ -3,7 +3,7 @@
     <h2 class="sectionHeading">Meet The Team<span>.</span></h2>
     <div class="teamWrap">
       <b-card-group class="teamGroup">
-        <b-col sm="6" lg="3" class="p-0 teamCardWrap" v-for="member in items.details">
+        <b-col sm="6" lg="4" class="p-0 teamCardWrap" v-for="member in items.details">
             <b-card class="teamCard" no-body>
               <b-card-img class="teamImg" v-bind:src="member.teamImage"></b-card-img>
             </b-card>
@@ -11,9 +11,9 @@
               <h4>{{member.teamName}}</h4>
               <span>{{member.teamDesignation}}</span>
               <div class="memberSocial">
-                <a v-bind:href="member.teamIconFacebook" target="_blank">
+                <!-- <a v-bind:href="member.teamIconFacebook" target="_blank">
                   <font-awesome-icon :icon="['fab', 'facebook']" />
-                </a>
+                </a> -->
                 <a v-bind:href="member.teamIconLinkedin" target="_blank">
                   <font-awesome-icon :icon="['fab', 'linkedin']" />
                 </a>

@@ -127,5 +127,8 @@ export default new Router({
             name: 'Terms of Use',
             component: terms
         }
-    ]
+    ],
+    scrollBehavior() {
+        return {x: 0, y: 0}
+    }
 })

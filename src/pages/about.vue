@@ -1,5 +1,6 @@
 <template>
     <div id="about">
+        <loader v-if="isLoading"/>
         <div class="aboutBanner">
             <div class="container-lg p-lg-0">
                 <div class="bannerWrap">
@@ -21,6 +22,9 @@
                     <p class="contentCopy">{{visionSection.visionDesc}}</p>
                 </div>
             </section>
+            <!-- <section class="sectionWrap">
+                <ctaBannerThree />
+            </section> -->
             <our-team :items = "teamSection"/>
         </div>
     </div>
@@ -98,6 +102,7 @@
 
 <script>
 import ourTeam from '@/components/our-team'
+import loader from '@/components/loader'
 // import ctaBannerThree from '@/components/ctaBannerThree'
 import axios from 'axios'
 import {apiUrl} from '@/constants.js'
@@ -106,13 +111,27 @@ export default {
     name: 'about',
     components: {
         ourTeam,
+        loader,
         // ctaBannerThree
+    },
+    metaInfo() {
+        return { 
+            title: "Believ-In Tech - About Us",
+            meta: [
+                { name: 'description', content:  'At BelievInTech, we combine passion with the correct concept and assist you in gaining a competitive edge. We vision towards helping our clients create trust in theminds of their audiences.'},
+                { property: 'og:title', content: 'At BelievInTech, we combine passion with the correct concept and assist you in gaining a competitive edge. We vision towards helping our clients create trust in theminds of their audiences.'},
+                { property: 'og:site_name', content: 'Believ-in Tech'},
+                { property: 'og:type', content: 'website'},    
+                { name: 'robots', content: 'index,follow'} 
+            ]
+        }
     },
     data(){
         return{
             aboutBanner: [],
             visionSection: [],
-            teamSection: []
+            teamSection: [],
+            isLoading: true,
         }
     },
     async created(){
@@ -122,10 +141,29 @@ export default {
                 this.aboutBanner = res.data.data.aboutBanner;
                 this.visionSection = res.data.data.visionSection;
                 this.teamSection = res.data.data.teamSection;
+                this.isLoading = false;
+                document.documentElement.style.overflow = 'visible';
             }
         } catch (error) {
             console.log(error);
         }
+    },
+    mounted() {
+        this.disableScroll();
+        // this.scrollTop();
+    },
+    methods:{
+        disableScroll(){
+            if(this.isLoading == true){
+                document.documentElement.style.overflow = 'hidden';
+            }
+        },
+        // scrollTop(){
+        //     window.onbeforeunload = function(){
+        //         window.scrollTo(0, 0);
+        //         console.log('scrolled to top');
+        //     }
+        // }
     }
 }
 </script>

@@ -22,11 +22,24 @@ export default {
   components: {
     topMenu,
     ctaBannerTwo,
-    footerComp
+    footerComp,
+  },
+  metaInfo() {
+        return { 
+            title: "Believ-In Tech - Web Development , Web Designing , Wordpress , PHP",
+            meta: [
+                { name: 'description', content:  'Believintech hits the nail on the head with its collective expertise start from design and development to the implementation and maintenance.'},
+                { property: 'og:title', content: 'Believintech hits the nail on the head with its collective expertise start from design and development to the implementation and maintenance.'},
+                { property: 'og:site_name', content: 'Believ-in Tech'},
+                { property: 'og:type', content: 'website'},    
+                { name: 'robots', content: 'index,follow'} 
+            ]
+        }
   },
   data() {
     return{
       footerctabannar_section: [],
+       ctaBanner: '',
       // routerPage: '',
     }
   },
@@ -39,7 +52,7 @@ export default {
     } catch (error) {
       console.error(error);
     }
-  }
+  },
 }
 </script>
 
@@ -49,7 +62,7 @@ export default {
 @import '@/styles/_common.scss'; 
 
 html,body{
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 #app {
   -webkit-font-smoothing: antialiased;

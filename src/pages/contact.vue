@@ -1,5 +1,6 @@
 <template>
     <div id="contact">
+        <loader v-if="isLoading" />
         <div class="contactWrap">
             <div class="container-lg p-lg-0">
                 <div class="bannerWrap">
@@ -52,11 +53,24 @@
 <script>
 import axios from 'axios';
 import {apiUrl} from '@/constants.js';
+import loader from '@/components/loader';
 
 export default {
     name: 'contact',
     components: {
-
+        loader
+    },
+    metaInfo() {
+        return { 
+            title: "Believ-In Tech - Contact Us",
+            meta: [
+                { name: 'description', content:  'At BelievInTech, we combine passion with the correct concept and assist you in gaining a competitive edge. We vision towards helping our clients create trust in theminds of their audiences.'},
+                { property: 'og:title', content: 'At BelievInTech, we combine passion with the correct concept and assist you in gaining a competitive edge. We vision towards helping our clients create trust in theminds of their audiences.'},
+                { property: 'og:site_name', content: 'Believ-in Tech'},
+                { property: 'og:type', content: 'website'},    
+                { name: 'robots', content: 'index,follow'} 
+            ]
+        }
     },
     data(){
         return{
@@ -71,7 +85,8 @@ export default {
             },
             name: '',
             show: false,
-            submitStatus: null
+            submitStatus: null,
+            isLoading: true,
         }
     },
     async created(){
@@ -79,10 +94,15 @@ export default {
         try {
             if(res.data.status == 'success'){
                 this.contactBanner = res.data.data.contactBanner;
+                this.isLoading = false;
+                document.documentElement.style.overflow = 'visible';
             }
         } catch (error) {
             console.log(error);
         }
+    },
+    mounted(){
+        this.disableScroll();
     },
     methods: {
         submitForm(){
@@ -115,7 +135,12 @@ export default {
             setTimeout(() => {
                 this.show= false;
             }, 1500);
-        }
+        },
+        disableScroll(){
+            if(this.isLoading == true){
+                document.documentElement.style.overflow = 'hidden';
+            }
+        },
     }
 }
 </script>

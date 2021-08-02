@@ -13,22 +13,6 @@ export default {
             visitUrl: 'https://www.patienthandling.com.au/'
         }
     ]
-      // sectionHeading: "We're Hiring",
-      // routerPage: '',
-      // careers: [
-      //   {
-      //     btnTitle: "Frontend Positions",
-      //     role: "UI Developer",
-      //     vacancy: "Vacancy: 1",
-      //     experience: "Exp: 3-5 years"
-      //   },
-      //   {
-      //     btnTitle: "Backend Positions",
-      //     role: "UI Team Lead",
-      //     vacancy: "Vacancy: 1",
-      //     experience: "Exp: 5-7 years"
-      //   }
-      // ]
     }
   },
   created(){

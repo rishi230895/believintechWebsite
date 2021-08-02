@@ -8,25 +8,21 @@ export default {
   data () {
     return {
       footerctabannarSection: [],
-      routerPage: ''
+      // ctaBanner: true
     }
   },
   async created(){
-    // if(this.$router.currentRoute.path == '/contact'){
-    //   this.routerPage = "yes";
-    //   console.log(this.routerPage);
-    // }
     try {
       const res = await axios.get(apiUrl + '/homeData');
       if(res.data.status == "success"){
         this.footerctabannarSection = res.data.data.footerctabannarSection;
       }
+      // if(this.$router.currentRoute.path == '/contact'){
+      //   this.ctaBanner = true;
+      // }
     } catch (error) {
       console.log(error);
     }
-  },
-  computed: {
-
   },
   mounted () {
 

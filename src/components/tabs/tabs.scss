@@ -79,18 +79,25 @@
                 a {
                     border: none;
                     color: $logo-secondary-blue;
-                    font-family: $poppins-regular;
+                    font-family: $poppins-medium;
                     font-size: 16px;
                 }
                 a.active {
-                    border-bottom: 2px solid $logo-secondary-blue !important;
+                    // border-bottom: 2px solid $logo-secondary-blue !important;
+                    background-color: $logo-secondary-blue;
+                    color: $white;
+                    border-radius: 5px;
                 }
             }
         }
         .projectWrap {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
             .projCard {
                 max-width: 360px;
                 min-height: 180px;
+                max-height: 180px;
                 width: 100%;
                 flex: auto;
                 border: none;
@@ -99,6 +106,12 @@
                 transform: scale(1);
                 transform-origin: bottom;
                 margin-bottom: 30px;
+                box-shadow: 0 0 10px rgb(0 0 0 / 12%);
+                padding: 15px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 &::after {
                     content: "";
                     position: absolute;
@@ -123,8 +136,12 @@
                 }
                 .projImg {
                     width: 100%;
-                    object-fit: cover;
+                    height: 100%;
+                    object-fit: contain;
                     border-radius: 5px;
+                    max-width: 250px;
+                    max-height: 100px;
+                    margin: 0 auto;
                 }
                 .projDetail {
                     padding: 10px;
@@ -156,6 +173,16 @@
                             font-size: inherit;
                         }
                     }
+                    a.appBadge{
+                        background-color: $transparent;
+                        img{
+                            max-width: 125px;
+                            max-height: 37px;
+                            width: 100%;
+                            height: 100%;
+                            margin-top: 5px;
+                        }
+                    }
                 }
             }
         }
@@ -164,14 +191,25 @@
 
 // Media Queries
 
+@media screen and (max-width: 1199px) {
+    .workWrap {
+        .projTabs {
+            .projectWrap.card-deck {
+                .card.projCard {
+                    max-width: 30%;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 992px) {
     .workWrap {
         .projTabs {
             .projectWrap.card-deck {
                 flex-direction: row;
-                /*justify-content: space-between;*/
+                justify-content: space-between;
                 .card.projCard {
-                    max-width: 33.33%;
                     margin-bottom: 15px;
                     margin-left: unset;
                     margin-right: unset;
@@ -240,4 +278,37 @@
             }
         }
     }
+}
+
+@media screen and (max-width: 600px) {
+    .tabs{
+        .projTabs{
+            .projectWrap{
+                .projCard{
+                    min-height: 150px;
+                    max-height: 150px;
+                    .projDetail{
+                        a{
+                            font-size: 12px;
+                        }
+                        h4{
+                            font-size: 14px;
+                        }
+                        a.appBadge{
+                            img{
+                                max-width: 100px;
+                                max-height: 33px;
+                                width: 100%;
+                                height: 100%;
+                                margin-bottom: 5px;
+                            }
+                        }
+                    }
+                    &:hover{
+                        transform: scale(1.02);
+                    }
+                }
+            }
+        }
+    }     
 }

@@ -1,5 +1,6 @@
 <template>
     <div id="career">
+        <loader v-if="isLoading" />
         <div class="careerBanner">
             <div class="container-lg p-lg-0">
                 <div class="bannerWrap">
@@ -76,16 +77,31 @@
 import tabs from '@/components/tabs'
 import axios from 'axios'
 import {apiUrl} from '@/constants.js'
+import loader from '@/components/loader'
 
 export default {
     name: "career",
     components: {
         tabs,
+        loader
     },
     data(){
         return{
             careerBanner: [],
-            hiringSection: []
+            hiringSection: [],
+            isLoading: true
+        }
+    },
+    metaInfo() {
+        return { 
+            title: "Believ-In Tech - Career",
+            meta: [
+                { name: 'description', content:  'At BelievInTech, we combine passion with the correct concept and assist you in gaining a competitive edge. We vision towards helping our clients create trust in theminds of their audiences.'},
+                { property: 'og:title', content: 'At BelievInTech, we combine passion with the correct concept and assist you in gaining a competitive edge. We vision towards helping our clients create trust in theminds of their audiences.'},
+                { property: 'og:site_name', content: 'Believ-in Tech'},
+                { property: 'og:type', content: 'website'},    
+                { name: 'robots', content: 'index,follow'} 
+            ]
         }
     },
     async created(){
@@ -94,9 +110,21 @@ export default {
             if(res.data.status == 'success'){
                 this.careerBanner = res.data.data.careerBanner;
                 this.hiringSection = res.data.data.hiringSection;
+                this.isLoading = false;
+                document.documentElement.style.overflow = 'visible';
             }
         } catch (error) {
             console.log(error);
+        }
+    },
+    mounted(){
+        this.disableScroll();
+    },
+    methods:{
+        disableScroll(){
+            if(this.isLoading == true){
+                document.documentElement.style.overflow = 'hidden';
+            }
         }
     }
 }

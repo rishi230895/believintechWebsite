@@ -1,1 +1,1 @@
-export const apiUrl = 'http://api.believintech.com/wp-json/api/v1';
+export const apiUrl = 'https://api.believintech.com/wp-json/api/v1';

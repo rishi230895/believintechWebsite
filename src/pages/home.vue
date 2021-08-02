@@ -1,13 +1,14 @@
 <template>
     <div id="home">
-        <banner :items = "bannerSection"/>
-        <our-services />
-        <ctabanner :items = "ctabannarSection"/>
-        <process :items = "workflowSection"/>
-        <techStack :items = "technologiesSection"/>
-        <clientSlider :items = "clientsSection"/>
-        <testimonials :items = "testimonialsSection"/>
-        <blogs />
+      <loader v-if="isLoading"/>
+      <banner :items = "bannerSection"/>
+      <our-services />
+      <ctabanner :items = "ctabannarSection"/>
+      <process :items = "workflowSection"/>
+      <techStack :items = "technologiesSection"/>
+      <clientSlider :items = "clientsSection"/>
+      <testimonials :items = "testimonialsSection"/>
+      <!-- <blogs /> -->
     </div>
 </template>
 
@@ -19,7 +20,8 @@ import process from '@/components/process'
 import techStack from '@/components/techStack'
 import clientSlider from '@/components/clientSlider'
 import testimonials from '@/components/testimonials'
-import blogs from '@/components/blogs'
+import loader from '@/components/loader'
+// import blogs from '@/components/blogs'
 import axios from 'axios'
 import {apiUrl} from '@/constants.js'
 
@@ -33,7 +35,8 @@ export default {
     techStack,
     clientSlider,
     testimonials,
-    blogs
+    loader,
+    // blogs
   },
   data(){
     return{
@@ -43,7 +46,7 @@ export default {
       technologiesSection: [],
       clientsSection: [],
       testimonialsSection: [],
-      // latestArticleSection: []
+      isLoading: true,
     }
   },
   async created(){
@@ -56,10 +59,21 @@ export default {
         this.technologiesSection = res.data.data.technologiesSection;
         this.clientsSection = res.data.data.clientsSection;
         this.testimonialsSection = res.data.data.testimonialsSection;
-        // this.latestArticleSection = res.data.data.latestArticleSection;
+        this.isLoading = false;
+        document.documentElement.style.overflow = 'visible';
       }
     } catch (error) {
       console.error(error);
+    }
+  },
+  mounted() {
+    this.disableScroll();
+  },
+  methods:{
+    disableScroll(){
+      if(this.isLoading == true){
+        document.documentElement.style.overflow = 'hidden';
+      }
     }
   }
 }
