@@ -26,8 +26,9 @@ export default {
         return { 
             title: "Believ-In Tech - Work",
             meta: [
-                { name: 'description', content:  'At BelievInTech, we combine passion with the correct concept and assist you in gaining a competitive edge. We vision towards helping our clients create trust in theminds of their audiences.'},
-                { property: 'og:title', content: 'At BelievInTech, we combine passion with the correct concept and assist you in gaining a competitive edge. We vision towards helping our clients create trust in theminds of their audiences.'},
+                { name: 'description', content:  'We produce pixel-perfect web and mobile app development. Our processes are tailored-made and we are flexible to work on our clients time-zones.'},
+                { name: 'keywords', content: 'Website development, website designing, mobile app development, digital marketing, API development, eCommerce development, WordPress, WooCommerce'},
+                { property: 'og:title', content: 'BelievIn Tech | One place to get all your web and app work.'},
                 { property: 'og:site_name', content: 'Believ-in Tech'},
                 { property: 'og:type', content: 'website'},    
                 { name: 'robots', content: 'index,follow'} 

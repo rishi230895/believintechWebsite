@@ -49,6 +49,19 @@ export default {
       isLoading: true,
     }
   },
+  metaInfo() {
+    return { 
+        title: "BelievIn Tech | Home.",
+        meta: [
+            { name: 'description', content:  'We produce pixel-perfect web and mobile app development. Our processes are tailored-made and we are flexible to work on our clients time-zones.'},
+            { name: 'keywords', content: 'Website development, website designing, mobile app development, digital marketing, API development, eCommerce development, WordPress, WooCommerce'},
+            { property: 'og:title', content: 'BelievIn Tech | One place to get all your web and app work.'},
+            { property: 'og:site_name', content: 'Believ-in Tech'},
+            { property: 'og:type', content: 'website'},    
+            { name: 'robots', content: 'index,follow'} 
+        ]
+    }
+  },
   async created(){
     try {
       const res = await axios.get(apiUrl + '/homeData');
