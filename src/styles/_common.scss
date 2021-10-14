@@ -21,6 +21,7 @@ h1.bannerTitle {
     font-family: $poppins-bold;
     font-size: 50px;
     margin: 0;
+    text-transform: capitalize;
 }
 
 p.bannerDesc {
@@ -72,6 +73,7 @@ p.bannerDesc {
     background-size: 201% 100%;
     background-position: right bottom;
     box-shadow: 0px 8px 18px rgb(0 0 0 / 12%);
+    text-transform: capitalize;
     &:hover {
         background-position: left bottom;
     }

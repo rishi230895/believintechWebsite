@@ -20,6 +20,7 @@ import webSupport from '@/pages/webSupport'
 import privacy from '@/pages/privacy'
 import terms from '@/pages/terms'
 import singlePage from '@/pages/singlePage'
+import serviceSingle from '@/pages/serviceSingle'
 
 Vue.use(Router)
 
@@ -62,7 +63,7 @@ export default new Router({
             component: Blog
         },
         {
-            path: '/single-page/:slug',
+            path: '/blog/:slug',
             name: 'singlePage',
             component: singlePage,
             props: true
@@ -121,11 +122,17 @@ export default new Router({
             path: '/privacy-policy',
             name: 'Privacy Policy',
             component: privacy
-        }
-        ,{
+        },
+        {
             path: '/terms-of-use',
             name: 'Terms of Use',
             component: terms
+        },
+        {
+            path: '/services/:slug',
+            name: 'serviceSingle',
+            component: serviceSingle,
+            props: true
         }
     ],
     scrollBehavior() {

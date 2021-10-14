@@ -6,7 +6,7 @@
       <ctabanner :items = "ctabannarSection"/>
       <process :items = "workflowSection"/>
       <techStack :items = "technologiesSection"/>
-      <clientSlider :items = "clientsSection"/>
+      <clientSlider :slider = "clientsSection"/>
       <testimonials :items = "testimonialsSection"/>
       <!-- <blogs /> -->
     </div>

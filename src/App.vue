@@ -2,7 +2,7 @@
   <div id="app">
     <topMenu />
     <router-view />
-    <ctaBannerTwo :items = "footerctabannar_section"/>
+    <ctaBannerTwo :items = "footerctabannar_section" v-if="$route.name !== 'Contact'" />
     <footerComp />
   </div>
 </template>
@@ -28,7 +28,6 @@ export default {
     return{
       footerctabannar_section: [],
        ctaBanner: '',
-      // routerPage: '',
     }
   },
   async created(){
@@ -57,5 +56,10 @@ html,body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $charcoal;
+}
+@media (max-width: 767px){
+  .container-lg{
+    padding: 0 15px !important;
+  }
 }
 </style>

@@ -8,7 +8,6 @@ export default {
   data () {
     return {
       footerctabannarSection: [],
-      // ctaBanner: true
     }
   },
   async created(){
@@ -17,15 +16,13 @@ export default {
       if(res.data.status == "success"){
         this.footerctabannarSection = res.data.data.footerctabannarSection;
       }
-      // if(this.$router.currentRoute.path == '/contact'){
-      //   this.ctaBanner = true;
-      // }
     } catch (error) {
       console.log(error);
     }
+   
   },
   mounted () {
-
+      
   },
   methods: {
 

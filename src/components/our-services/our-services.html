@@ -10,13 +10,17 @@
           <div class="logoWrap">
             <b-card-img class="serviceLogo" v-bind:src="service.serviceLogo"></b-card-img>
           </div>
-          <h4 class="serviceName">{{service.Title}}</h4>
+          <router-link class="serviceLink" :to="{name: 'serviceSingle', params: {slug: service.serviceSlug}}">
+            <h4 class="serviceName">{{service.Title}}</h4>
+          </router-link>
+          
           <b-card-text class="serviceDesc">{{service.postContent}}</b-card-text>
-          <!-- <template class="serviceFooter" #footer>
-            <a href="" class="ctaBtn">{{service.serviceButton}}
+          <template class="serviceFooter" #footer>
+            <router-link class="ctaBtn" :to="{name: 'serviceSingle', params: {slug: service.serviceSlug}}">
+              {{service.serviceButton}}
               <font-awesome-icon :icon="['fas', 'arrow-right']" />
-            </a>
-          </template> -->
+            </router-link>
+          </template>
         </b-card>
       </b-card-group>
     </div>

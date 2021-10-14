@@ -2,26 +2,25 @@
   <div class="container-lg p-lg-0">
     <h2 class="sectionHeading">Meet The Team<span>.</span></h2>
     <div class="teamWrap">
-      <!-- <h4>Administration</h4> -->
-      <b-card-group class="teamGroup">
-        <b-col sm="6" lg="4" class="p-0 teamCardWrap" v-for="member in items.details">
+      <div class="teamDepart" v-for="member in items.details">
+        <h5 class="departTitle">{{member.teamsHeading}}</h5>
+        <b-card-group class="teamGroup">
+          <b-col sm="6" lg="4" class="p-0 teamCardWrap" v-for="department in member.teamInformation">
             <b-card class="teamCard" no-body>
-              <b-card-img class="teamImg" v-bind:src="member.teamImage"></b-card-img>
+              <b-card-img class="teamImg" v-bind:src="department.memberImage"></b-card-img>
             </b-card>
             <div class="memberDetails">
-              <h4>{{member.teamName}}</h4>
-              <span>{{member.teamDesignation}}</span>
+              <h4>{{department.memberName}}</h4>
+              <span>{{department.memberDesignation}}</span>
               <div class="memberSocial">
-                <!-- <a v-bind:href="member.teamIconFacebook" target="_blank">
-                  <font-awesome-icon :icon="['fab', 'facebook']" />
-                </a> -->
-                <a v-bind:href="member.teamIconLinkedin" target="_blank">
+                <a v-bind:href="department.memberLinkedin" target="_blank">
                   <font-awesome-icon :icon="['fab', 'linkedin']" />
                 </a>
               </div>
             </div>
-        </b-col>
-      </b-card-group>
+          </b-col>
+        </b-card-group>
+      </div>
     </div>
   </div>
 </section>

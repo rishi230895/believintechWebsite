@@ -5,26 +5,26 @@
         <div class="infoCnt">
           <ul>
             <li>
-              <a href="mailto:info@believintech.com">
+              <a :href="'mailto:' + HeaderSection.headerEmail">
                 <font-awesome-icon :icon="['fas', 'envelope']" />
-                info@believintech.com</a>
+                {{HeaderSection.headerEmail}}</a>
             </li>
             <li>
-              <a href="tel:+919643886273">
+              <a :href="'tel:' + HeaderSection.headerPhone">
                 <font-awesome-icon :icon="['fas', 'phone-alt']" />
-                +91 9643886273</a>
+                {{HeaderSection.headerPhone}}</a>
             </li>
           </ul>
         </div>
         <div class="infoscl">
           <ul>
             <li>
-              <a href="https://www.facebook.com/BelievIn-Tech-107391134339508/" target="_blank">
+              <a :href="HeaderSection.headerFacebookURL" target="_blank">
                 <font-awesome-icon :icon="['fab', 'facebook']" />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/company/believintech/?viewAsMember=true" target="_blank">
+              <a :href="HeaderSection.headerLinkedInURL" target="_blank">
                 <font-awesome-icon :icon="['fab', 'linkedin']" />
               </a>
             </li>
@@ -37,8 +37,7 @@
     <b-navbar toggleable="lg" type="light" variant="faded" class="cstmNav">
       <div class="container-lg p-lg-0">
         <router-link class="cstmNavBrd" to="/">
-          <img src="../../assets/logo/believintech-full-&-final-logo.png" alt="">
-          <!-- <img src="../../assets/logo/believintech-full&final-logo-2.0.svg" alt=""> -->
+          <img :src="HeaderSection.headerLogo" alt="">
         </router-link>
     
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -64,7 +63,7 @@
                 </li>
               </ul> -->
             </li>
-            <!-- <li class="cstmNavItem noHrLine">
+            <li class="cstmNavItem noHrLine">
               <router-link class="nav-link" to="/services">Services</router-link>
               <ul class="cstmDrpdwn">
                 <li>
@@ -86,7 +85,7 @@
                   <router-link to="/web-support">Ongoing Web Support & Optimization</router-link>
                 </li>
               </ul>
-            </li> -->
+            </li>
             <li class="cstmNavItem">
               <router-link class="nav-link" to="/work">Work</router-link>
             </li>
@@ -96,9 +95,9 @@
             <!-- <li class="cstmNavItem">
               <router-link class="nav-link" to="/contact">Contact Us</router-link>
             </li> -->
-            <!-- <li class="cstmNavItem">
+            <li class="cstmNavItem">
               <router-link class="nav-link" to="/blog">Blog</router-link>
-            </li> -->
+            </li>
             <li class="cstmNavItem noHrLine quoteBtn">
               <router-link class="nav-link" to="/contact">Let's Connect</router-link>
             </li>

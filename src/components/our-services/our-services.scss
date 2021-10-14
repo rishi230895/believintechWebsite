@@ -112,12 +112,15 @@
                         /* Safari 和 Chrome */
                     }
                 }
-                .serviceName {
-                    font-family: $poppins-medium;
-                    font-size: 20px;
-                    line-height: 24px;
-                    color: $charcoal;
-                    margin: 10px 0;
+                .serviceLink{
+                    text-decoration: none;
+                    .serviceName {
+                        font-family: $poppins-medium;
+                        font-size: 20px;
+                        line-height: 24px;
+                        color: $charcoal;
+                        margin: 10px 0;
+                    }
                 }
                 .serviceDesc {
                     font-family: 'poppins-reg';

@@ -141,7 +141,7 @@ export default {
             if(res.data.status == 'success'){
                 this.aboutBanner = res.data.data.aboutBanner;
                 this.visionSection = res.data.data.visionSection;
-                this.teamSection = res.data.data.teamSection;
+                this.teamSection = res.data.data.teamsSection;
                 this.isLoading = false;
                 document.documentElement.style.overflow = 'visible';
             }

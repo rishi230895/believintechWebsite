@@ -2,16 +2,13 @@
   <div class="container-lg p-lg-0">
     <footer class="cstmFooter">
       <div class="cstmCol colOne">
-        <img class="footerLogo" src="../../assets/logo/believintech-full-&-final-logo(white@2x).png" alt="">
-        <p>Believ-In Tech hits the nail on the head with its collective expertise start from design and development 
-          to the implementation and maintenance. Our team keeps on hunting new ideas to deliver real values to our 
-          customers and their businesses.
-        </p>
+        <img class="footerLogo" :src="FooterSection.footerLogo" alt="">
+        <p>{{FooterSection.footerContent}}</p>
         <div class="socialBar">
-          <a href="https://www.facebook.com/BelievIn-Tech-107391134339508/" target="_blank">
+          <a :href="HeaderSection.headerFacebookURL" target="_blank">
             <font-awesome-icon :icon="['fab', 'facebook-square']" />
           </a>
-          <a href="https://www.linkedin.com/company/believintech/?viewAsMember=true" target="_blank">
+          <a :href="HeaderSection.headerLinkedInURL" target="_blank">
             <font-awesome-icon :icon="['fab', 'linkedin']" />
           </a>
         </div>
@@ -56,20 +53,17 @@
         <ul class="contactLinks">
           <li>
             <font-awesome-icon :icon="['fas', 'map-marker-alt']" />
-            <a href="http://maps.google.com/?q=Instaoffice Business Centre Greenwood Plaza, Sector 45, Gurugram, Haryana 122001" target="_blank">
-              Instaoffice Business Centre
-              Greenwood Plaza,
-              Unit No.401-402,4th,
-              Sector 45, Gurugram, Haryana 122001
+            <a :href="'http://maps.google.com/?q=' + FooterSection.footerAddress" target="_blank">
+              {{FooterSection.footerAddress}}
             </a>
           </li>
           <li>
             <font-awesome-icon :icon="['fas', 'phone-alt']" />
-            <a href="tel:+91 9643886273">+91 9643886273</a>
+            <a :href="'tel:'+ HeaderSection.headerPhone">{{HeaderSection.headerPhone}}</a>
           </li>
           <li>
             <font-awesome-icon :icon="['fas', 'envelope']" />
-            <a href="mailTo:info@believintech.com">info@believintech.com</a>
+            <a :href="'mailTo:' + HeaderSection.headerEmail">{{HeaderSection.headerEmail}}</a>
           </li>
         </ul>
       </div>
