@@ -3,7 +3,100 @@
   <!-- <loader v-if="isLoading" /> -->
   <div class="container-lg p-lg-0">
     <h2 class="sectionHeading">{{items.latestArticleHeading}}<span>.</span></h2>
-    <b-card-group deck>
+    <template v-if="$route.name == 'Home'">
+      <div class="blgCardGrp blgCardGrpDesk">
+        <div class="blogCard" v-for="blog in items.details">
+          <img class="blogThumbnail" v-bind:src="blog.blogImage">
+          <div class="blogDetailsWrap">
+            <div class="blogDetails">
+              <font-awesome-icon :icon="['fas', 'clock']" />
+              {{blog.blogDate}}</div>
+            <div class="blogDetails">
+              <font-awesome-icon :icon="['fas', 'user-circle']" />
+              {{blog.blogAuthor}}</div>
+            <!-- <div class="blogDetails">
+              <font-awesome-icon :icon="['fas', 'comments']" />
+              {{blog.blogComments}}</div> -->
+          </div>
+          <router-link class="blogTitle" :to="{ name: 'singlePage', params: { slug: blog.blogSlug }}" >{{blog.blogTitle}}</router-link>
+          <!-- <a class="blogTitle" href="">{{blog.blogTitle}}</a> -->
+          <p class="blogContent contentCopy">{{blog.blogContent}}</p>
+          <router-link class="ctaBtn" :to="{name: 'singlePage', params: {slug: blog.blogSlug}}">
+            Read More
+          </router-link>
+          <!-- <a class="ctaBtn" href="">Read More</a> -->
+        </div>
+      </div>
+  
+      <carousel 
+        class="blgCardGrp blgCardGrpMob"
+        :dots="true" 
+        :margin="30"
+        :items="3"
+        v-if="items.details && items.details.length > 0"
+        :responsive="{
+          0:{
+            items:'1',
+            nav: false
+          },
+          767:{
+            items:'3'
+          }
+        }"
+      >
+        <div class="blogCard" v-for="blog in items.details">
+          <img class="blogThumbnail" v-bind:src="blog.blogImage">
+          <div class="blogDetailsWrap">
+            <div class="blogDetails">
+              <font-awesome-icon :icon="['fas', 'clock']" />
+              {{blog.blogDate}}</div>
+            <div class="blogDetails">
+              <font-awesome-icon :icon="['fas', 'user-circle']" />
+              {{blog.blogAuthor}}</div>
+            <!-- <div class="blogDetails">
+              <font-awesome-icon :icon="['fas', 'comments']" />
+              {{blog.blogComments}}</div> -->
+          </div>
+          <router-link class="blogTitle" :to="{ name: 'singlePage', params: { slug: blog.blogSlug }}" >
+            {{blog.blogTitle}}
+          </router-link>
+          <!-- <a class="blogTitle" href="">{{blog.blogTitle}}</a> -->
+          <p class="blogContent contentCopy">{{blog.blogContent}}</p>
+          <router-link class="ctaBtn" :to="{name: 'singlePage', params: {slug: blog.blogSlug}}">
+            Read More
+          </router-link>
+          <!-- <a class="ctaBtn" href="">Read More</a> -->
+        </div>
+      </carousel>
+    </template>
+    
+    <template v-else>
+      <div class="blgCardGrp blgPgCard">
+        <div class="blogCard" v-for="blog in items.details">
+          <img class="blogThumbnail" v-bind:src="blog.blogImage">
+          <div class="blogDetailsWrap">
+            <div class="blogDetails">
+              <font-awesome-icon :icon="['fas', 'clock']" />
+              {{blog.blogDate}}</div>
+            <div class="blogDetails">
+              <font-awesome-icon :icon="['fas', 'user-circle']" />
+              {{blog.blogAuthor}}</div>
+            <!-- <div class="blogDetails">
+              <font-awesome-icon :icon="['fas', 'comments']" />
+              {{blog.blogComments}}</div> -->
+          </div>
+          <router-link class="blogTitle" :to="{ name: 'singlePage', params: { slug: blog.blogSlug }}" >{{blog.blogTitle}}</router-link>
+          <!-- <a class="blogTitle" href="">{{blog.blogTitle}}</a> -->
+          <p class="blogContent contentCopy">{{blog.blogContent}}</p>
+          <router-link class="ctaBtn" :to="{name: 'singlePage', params: {slug: blog.blogSlug}}">
+            Read More
+          </router-link>
+          <!-- <a class="ctaBtn" href="">Read More</a> -->
+        </div>
+      </div>
+    </template>
+
+    <!-- <b-card-group deck>
       <b-card class="blogCard" v-for="blog in items.details">
         <b-card-img class="blogThumbnail" v-bind:src="blog.blogImage"></b-card-img>
         <div class="blogDetailsWrap">
@@ -17,17 +110,17 @@
             <font-awesome-icon :icon="['fas', 'comments']" />
             {{blog.blogComments}}</div>
         </div>
-        <router-link class="blogTitle" :to="{ name: 'singlePage', params: { slug: blog.blogSlug }}" >{{blog.blogTitle}}</router-link>
+        <router-link class="blogTitle" :to="{ name: 'singlePage', params: { slug: blog.blogSlug }}" >{{blog.blogTitle}}</router-link> -->
         <!-- <a class="blogTitle" href="">{{blog.blogTitle}}</a> -->
-        <p class="blogContent">{{blog.blogContent}}</p>
+        <!-- <p class="blogContent">{{blog.blogContent}}</p>
         <template #footer>
           <router-link class="ctaBtn" :to="{name: 'singlePage', params: {slug: blog.blogSlug}}">
             Read More
-          </router-link>
+          </router-link> -->
           <!-- <a class="ctaBtn" href="">Read More</a> -->
-        </template>
+        <!-- </template>
       </b-card>
-    </b-card-group>
+    </b-card-group> -->
   </div>
 </section>
 

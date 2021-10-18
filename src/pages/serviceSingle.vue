@@ -119,7 +119,7 @@
                 <h2 class="sectionHeading">{{sgWkSlider.sgWkHeading}}<span>.</span></h2>
                 <carousel 
                     class="workSldr" 
-                    :autoplay="true" 
+                    :autoplay="false" 
                     :autoplayTimeout="8000" 
                     :autoplayHoverPause="true" 
                     :autoplaySpeed="500" 
@@ -955,7 +955,7 @@ export default {
         clientSlider,
         carousel,
         loader,
-        testimonials
+        testimonials,
     },
     data(){
         return{

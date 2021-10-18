@@ -27,7 +27,7 @@ export default {
   data() {
     return{
       footerctabannar_section: [],
-       ctaBanner: '',
+      ctaBanner: '',
     }
   },
   async created(){

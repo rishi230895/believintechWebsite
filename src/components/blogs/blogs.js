@@ -1,10 +1,12 @@
 // import axios from 'axios'
 // import {apiUrl} from '@/constants.js'
 // import loader from '@/components/loader'
+import carousel from 'vue-owl-carousel'
 
 export default {
   name: 'blogs',
   components: {
+    carousel
     // loader
   },
   props: ['items'],

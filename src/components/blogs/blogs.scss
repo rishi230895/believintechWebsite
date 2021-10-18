@@ -1,68 +1,139 @@
 @import '@/styles/_variables.scss';
 @import '@/styles/_common.scss';
 .blogs {
-    .blogCard {
-        border: none;
-        max-width: 33%;
-        &:hover .card-body {
-            .blogTitle {
+    .blgCardGrp{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .blogCard {
+            border: none;
+            max-width: 360px;
+            width: 100%;
+            box-shadow: 0 3px 6px rgb(0 0 0 / 12%);
+            padding-bottom: 15px;
+            border-radius: 15px;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &:nth-child(3n){
+                margin-right: 0;
+            }
+            &:hover .blogTitle{
                 color: $secondary-blue;
                 text-decoration: underline;
             }
-        }
-        .card-body {
-            padding: 0;
-            .blogThumbnail {
-                max-height: 200px;
-                width: 100%;
-                height: 100%;
-                display: block;
-                margin: 0 auto;
-                border-radius: 5px;
-                object-fit: cover;
-            }
-            .blogDetailsWrap {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: space-between;
-                background: $white;
-                position: relative;
-                top: -30px;
-                padding: 20px 15px;
-                max-width: 90%;
-                margin: 0 auto;
-                box-shadow: 5px 0px 18px rgb(0 0 0 / 12%);
-                border-radius: 10px;
-                .blogDetails {
-                    font-family: $poppins-light;
-                    font-size: 12px;
-                    svg {
-                        color: $primary-blue;
+            // .card-body {
+            //     padding: 0;
+                .blogThumbnail {
+                    max-height: 200px;
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    margin: 0 auto;
+                    border-radius: 15px 15px 5px 5px;
+                    object-fit: cover;
+                }
+                .blogDetailsWrap {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-around;
+                    background: $white;
+                    position: relative;
+                    top: -30px;
+                    padding: 20px 15px;
+                    max-width: 90%;
+                    margin: 0 auto;
+                    box-shadow: 5px 0px 18px rgb(0 0 0 / 12%);
+                    border-radius: 10px;
+                    width: 100%;
+                    .blogDetails {
+                        font-family: $poppins-light;
+                        font-size: 12px;
+                        svg {
+                            color: $primary-blue;
+                        }
                     }
                 }
-            }
-            .blogTitle {
-                display: block;
-                font-family: $poppins-semibold;
-                font-size: 22px;
-                text-transform: uppercase;
-                line-height: 24px;
-                color: $charcoal;
-                text-decoration: none;
-                margin-bottom: 15px;
-                transition: all 0.5s ease;
-                -webkit-transition: all 0.5s ease;
-                -moz-transition: all 0.5s ease;
+                .blogTitle {
+                    display: block;
+                    font-family: $poppins-semibold;
+                    font-size: 22px;
+                    text-transform: uppercase;
+                    line-height: 24px;
+                    color: $charcoal;
+                    text-decoration: none;
+                    margin-bottom: 15px;
+                    transition: all 0.5s ease;
+                    -webkit-transition: all 0.5s ease;
+                    -moz-transition: all 0.5s ease;
+                }
+                .blogContent{
+                    margin-bottom: 20px;
+                    padding: 0 15px;
+                    align-self: stretch;
+                    height: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    max-height: 70px;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                }
+            // }
+            // .card-footer {
+            //     background-color: transparent;
+            //     border: none;
+                .ctaBtn {
+                    padding: 5px 15px;
+                    margin: 0 auto;
+                    height: 100%;
+                    max-height: 34px;
+                }
+            // }
+        }
+    }
+}
+
+// MEDIA QUERIES
+
+@media screen and (min-width: 992px) {
+    .blogs {
+        .blgCardGrpMob{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .blogs {
+        .blgCardGrp{
+            .blogCard {
+                max-width: 300px;
             }
         }
-        .card-footer {
-            background-color: transparent;
-            border: none;
-            .ctaBtn {
-                padding: 5px 15px;
-                margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .blogs {
+        .blgCardGrpMob{
+            display: flex;
+            .blogCard {
+                max-width: 100%;
+            }
+        }
+        .blgCardGrpDesk{
+            display: none;
+        }
+        .blgPgCard{
+            justify-content: space-between;
+            .blogCard {
+                max-width: 48%;
+                margin-right: 0;
             }
         }
     }
@@ -72,6 +143,20 @@
     .blogs {
         .blogCard {
             max-width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .blogs {
+        .blgPgCard{
+            flex-direction: column;
+            .blogCard {
+                max-width: 100%;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
         }
     }
 }

@@ -4,22 +4,38 @@
     <div class="teamWrap">
       <div class="teamDepart" v-for="member in items.details">
         <h5 class="departTitle">{{member.teamsHeading}}</h5>
-        <b-card-group class="teamGroup">
-          <b-col sm="6" lg="4" class="p-0 teamCardWrap" v-for="department in member.teamInformation">
-            <b-card class="teamCard" no-body>
-              <b-card-img class="teamImg" v-bind:src="department.memberImage"></b-card-img>
-            </b-card>
+
+        <div class="teamGroup">
+          <div class="teamCardWrap" v-for="department in member.teamInformation">
+            <div class="memberImgWrap">
+              <img class="teamImg" v-bind:src="department.memberImage">
+            </div>
             <div class="memberDetails">
               <h4>{{department.memberName}}</h4>
               <span>{{department.memberDesignation}}</span>
-              <div class="memberSocial">
-                <a v-bind:href="department.memberLinkedin" target="_blank">
-                  <font-awesome-icon :icon="['fab', 'linkedin']" />
-                </a>
-              </div>
+              <a class="memberSocial" v-bind:href="department.memberLinkedin" target="_blank">
+                <font-awesome-icon :icon="['fab', 'linkedin']" />
+              </a>
             </div>
+          </div>
+        </div>
+
+        <!-- <b-card-group class="teamGroup">
+          <b-col class="p-0 teamCardWrap" v-for="department in member.teamInformation">
+            <b-card class="teamCard" no-body>
+              <b-card-img class="teamImg" v-bind:src="department.memberImage"></b-card-img>
+              <div class="memberDetails">
+                <h4>{{department.memberName}}</h4>
+                <span>{{department.memberDesignation}}</span>
+                <div class="memberSocial">
+                  <a v-bind:href="department.memberLinkedin" target="_blank">
+                    <font-awesome-icon :icon="['fab', 'linkedin']" />
+                  </a>
+                </div>
+              </div>
+            </b-card>
           </b-col>
-        </b-card-group>
+        </b-card-group> -->
       </div>
     </div>
   </div>

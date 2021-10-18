@@ -16,17 +16,25 @@
                     </div>
                 </div>
             </div>
-            <section class="vision sectionWrap">
-                <div class="container-lg p-lg-0">
-                    <h2 class="sectionHeading">{{visionSection.visionTitle}}<span>.</span></h2>
-                    <p class="contentCopy">{{visionSection.visionDesc}}</p>
-                </div>
-            </section>
-            <!-- <section class="sectionWrap">
-                <ctaBannerThree />
-            </section> -->
-            <our-team :items = "teamSection"/>
         </div>
+        <section class="vision sectionWrap">
+            <div class="container-lg p-lg-0">
+                <div class="visionRow">
+                    <div class="colOne">
+                        <img :src="visionSection.visionImg" alt="">
+                    </div>
+                    <div class="colTwo">
+                        <h2 class="sectionHeading">{{visionSection.visionTitle}}<span>.</span></h2>
+                        <p class="contentCopy">{{visionSection.visionDesc}}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <section class="sectionWrap">
+            <ctaBannerThree />
+        </section> -->
+        <our-team :items = "teamSection"/>
+        
     </div>
 </template>
 
@@ -52,52 +60,68 @@
                 }
             }
         }
-        .vision{
-            background-color: $primary-blue;
-            padding: 50px 0;
-            .sectionHeading{
-                color: $white;
+    }
+    .vision{
+        background-color: $primary-blue;
+        padding: 50px 0;
+        .visionRow{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .colOne{
+                width: 40%;
+                img{
+                    width: 100%;
+                }
             }
-            p{
-                color: $white;
-                width: 85%;
-                margin: 0 auto;
+            .colTwo{
+                width: 55%;
+                .sectionHeading{
+                    color: $white;
+                    margin: 0 0 50px;
+                }
+                p{
+                    color: $white;
+                    // width: 100%;
+                    margin: 0 auto;
+                    text-align: left;
+                }
             }
         }
     }
     
+    
     @media screen and (max-width: 767px) {
     .aboutBanner{
         .bannerWrap{
-
             padding: 30px 0;
             flex-direction: column-reverse;
-            .colOne
-            {
+            .colOne{
                 width:100%;
             }
-            .colTwo
-            {
+            .colTwo{
                 width:100%;
                 margin-bottom: 30px; 
             }
         }
-
-         .vision { 
-            
-            padding: 30px 0;
-            p{
-                width: 100%;
-            }
-            
-            }
     }
-
-   
+    .vision { 
+        padding: 30px 0;
+        .visionRow{
+            .colOne{
+                display: none;
+            }
+            .colTwo{
+                width: 100%;
+                .sectionHeading{
+                    margin: 0 0 30px;
+                }
+            }
+        }
+    } 
 }
-
-
-
 </style>
 
 <script>

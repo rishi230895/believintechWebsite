@@ -8,7 +8,7 @@
       <techStack :items = "technologiesSection"/>
       <clientSlider :slider = "clientsSection"/>
       <testimonials :items = "testimonialsSection"/>
-      <!-- <blogs /> -->
+      <blogs :items = "latestArticleSection"/>
     </div>
 </template>
 
@@ -21,7 +21,7 @@ import techStack from '@/components/techStack'
 import clientSlider from '@/components/clientSlider'
 import testimonials from '@/components/testimonials'
 import loader from '@/components/loader'
-// import blogs from '@/components/blogs'
+import blogs from '@/components/blogs'
 import axios from 'axios'
 import {apiUrl} from '@/constants.js'
 
@@ -36,7 +36,7 @@ export default {
     clientSlider,
     testimonials,
     loader,
-    // blogs
+    blogs
   },
   data(){
     return{
@@ -46,6 +46,7 @@ export default {
       technologiesSection: [],
       clientsSection: [],
       testimonialsSection: [],
+      latestArticleSection:[],
       isLoading: true,
     }
   },
@@ -72,6 +73,7 @@ export default {
         this.technologiesSection = res.data.data.technologiesSection;
         this.clientsSection = res.data.data.clientsSection;
         this.testimonialsSection = res.data.data.testimonialsSection;
+        this.latestArticleSection = res.data.data.latestArticleSection;
         this.isLoading = false;
         document.documentElement.style.overflow = 'visible';
       }
