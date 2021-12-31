@@ -1,7 +1,7 @@
 
 <section class="our-services sectionWrap" id="services" v-if="serviceSection.details.length > 0">
   <div class="container-lg p-lg-0">
-    <h2 class="sectionHeading" v-if="routerPage == false">{{serviceSection.serviceHeading}}<span>.</span></h2>
+    <h2 class="sectionHeading" v-if="routerPage == false" v-html="serviceSection.serviceHeading"><span>.</span></h2>
     <p class="contentCopy" v-if="routerPage == false">{{serviceSection.serviceDescription}}</p>
   
     <div class="serviceRow">

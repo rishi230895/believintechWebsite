@@ -1,6 +1,6 @@
 <section class="our-team sectionWrap">
   <div class="container-lg p-lg-0">
-    <h2 class="sectionHeading">Meet The Team<span>.</span></h2>
+    <h2 class="sectionHeading" v-html="items.teamHeading"><span>.</span></h2>
     <div class="teamWrap">
       <div class="teamDepart" v-for="member in items.details">
         <h5 class="departTitle">{{member.teamsHeading}}</h5>

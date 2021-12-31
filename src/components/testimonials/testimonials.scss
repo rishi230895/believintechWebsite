@@ -13,7 +13,7 @@
                 .sectionHeading {
                     color: $white;
                     text-align: left;
-                    font-size: 35px;
+                    line-height: 45px;
                     &::after {
                         background-color: $logo-secondary-blue;
                         bottom: -15px;
@@ -36,6 +36,10 @@
                 .subHeading {
                     color: $logo-secondary-blue;
                     width: fit-content;
+                    font-size: 22px;
+                    &::after{
+                        height: 2px;
+                    }
                 }
                 img {
                     max-height: 250px;

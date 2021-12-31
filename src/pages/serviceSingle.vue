@@ -29,7 +29,7 @@
             <div class="container-lg p-lg-0">
                 <div class="abtServRow">
                     <div class="abtColOne">
-                        <h2 class="sectionHeading">{{sgSerAbout.abSerHeading}}<span>.</span></h2>
+                        <h2 class="sectionHeading" v-html="sgSerAbout.abSerHeading"><span>.</span></h2>
                         <p class="contentCopy">{{sgSerAbout.abSerDesc}}</p>
                         <router-link class="ctaBtn" to="/work">{{sgSerAbout.abSerBtn}}</router-link>
                     </div>
@@ -49,7 +49,7 @@
                 </svg>
             </div>
             <div class="container-lg p-lg-0">
-                <h2 class="sectionHeading">{{sgPgServices.sgPgHeading}}<span>.</span></h2>
+                <h2 class="sectionHeading" v-html="sgPgServices.sgPgHeading"><span>.</span></h2>
                 <p class="contentCopy">{{sgPgServices.sgPgDesc}}</p>
                 <div class="servSecRow" v-if="sgPgServices.details && sgPgServices.details.length > 0">
                     <div class="servCard" v-for="servCrd in sgPgServices.details" :key="servCrd.index">
@@ -116,7 +116,7 @@
         <!-- work section -->
         <section class="wrkServSec sectionWrap" v-if="wrkData">
             <div class="container-lg p-lg-0">
-                <h2 class="sectionHeading">{{sgWkSlider.sgWkHeading}}<span>.</span></h2>
+                <h2 class="sectionHeading" v-html="sgWkSlider.sgWkHeading"><span>.</span></h2>
                 <carousel 
                     class="workSldr" 
                     :autoplay="false" 
@@ -168,7 +168,7 @@
         <!-- ensure section -->
         <section class="ensrServSec sectionWrap" v-if="testiData">
             <div class="container-lg p-lg-0">
-                <h2 class="sectionHeading">{{serEnDetails.enHeading}}<span>.</span></h2>
+                <h2 class="sectionHeading" v-html="serEnDetails.enHeading"><span>.</span></h2>
                 <div class="ensrSecRow" v-if="serEnDetails.details && serEnDetails.details.length > 0">
                     <div class="ensrCard" v-for="ensrCrd in serEnDetails.details" :key="ensrCrd.index">
                         <div class="rowOne">

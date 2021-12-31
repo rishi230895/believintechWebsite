@@ -3,7 +3,7 @@
         <loader v-if="isLoading" />
         <div class="workWrap">
             <div class="container-lg p-lg-0">
-                <h1 class="sectionHeading">{{WorkSection.workTitle}}<span>.</span></h1>
+                <h1 class="sectionHeading" v-html="WorkSection.workTitle"><span>.</span></h1>
                 <tabs :items = "WorkSection" />
             </div>
         </div>

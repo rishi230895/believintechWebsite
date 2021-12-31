@@ -1,6 +1,6 @@
 <section class="process sectionWrap" v-if="items.details">
   <div class="container-lg p-lg-0">
-    <h2 class="sectionHeading">{{items.workflowHeading}}<span>.</span></h2>
+    <h2 class="sectionHeading" v-html="items.workflowHeading"><span>.</span></h2>
     <div class="processWrap">
         <div class="step" v-for="steps in items.details">
           <img class="processIcon" v-bind:src="steps.workflowImage" alt="">

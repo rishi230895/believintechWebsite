@@ -1,5 +1,5 @@
 <section class="client-slider sectionWrap">
-  <h2 class="sectionHeading" v-if="slider.clientHeadings">{{slider.clientHeadings}}<span>.</span></h2>
+  <h2 class="sectionHeading" v-if="slider.clientHeadings" v-html="slider.clientHeadings"><span>.</span></h2>
   <div class="clientWrap">
     <p class="contentCopy" v-if="slider.clientDescriptions">{{slider.clientDescriptions}}</p>
     <template>

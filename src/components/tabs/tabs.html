@@ -3,7 +3,7 @@
     <!-- career page -->
     <section class="sectionWrap"  v-if="routerPage == true">
       <div class="tabWrap">
-        <h2 class="sectionHeading">{{items.hiringTitle}}<span>.</span></h2>
+        <h2 class="sectionHeading" v-html="items.hiringTitle"><span>.</span></h2>
         <b-card class="careerCard" no-body>
           <b-tabs class="vertCard" pills card vertical>
             <b-tab v-bind:title="career.positionTitle" active v-for="career in items.details" v-if="career.jobDetails">

@@ -1,6 +1,7 @@
 @import "@/styles/_variables.scss";
 @import "@/styles/_common.scss";
 .cta-banner-three {
+    padding: 50px 0 0;
     .ctaWrap {
         .bannerWrap {
             background-color: $secondary-blue;
@@ -20,6 +21,7 @@
                     font-family: $poppins-regular;
                     font-size: 16px;
                     color: $white;
+                    text-align: left;
                 }
             }
             .colTwo {

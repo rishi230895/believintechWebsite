@@ -8,7 +8,7 @@
                         <div class="formWrap">
                             <form class="contact-form"  v-on:submit.prevent="submitForm">
                                 <div class="fieldWrap">
-                                    <h2 class="sectionHeading">{{contactBanner.contactTitle}}<span>.</span></h2>
+                                    <h2 class="sectionHeading" v-html="contactBanner.contactTitle"><span>.</span></h2>
                                     <div class="formRow">
                                         <div class="formGroup">
                                             <label for="firstName">First Name *</label>

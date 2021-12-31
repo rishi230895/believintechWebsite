@@ -2,7 +2,7 @@
 <section class="blogs sectionWrap">
   <!-- <loader v-if="isLoading" /> -->
   <div class="container-lg p-lg-0">
-    <h2 class="sectionHeading">{{items.latestArticleHeading}}<span>.</span></h2>
+    <h2 class="sectionHeading" v-html="items.latestArticleHeading"><span>.</span></h2>
     <template v-if="$route.name == 'Home'">
       <div class="blgCardGrp blgCardGrpDesk">
         <div class="blogCard" v-for="blog in items.details">

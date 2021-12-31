@@ -19,7 +19,7 @@
 h1.bannerTitle {
     text-align: left;
     font-family: $poppins-bold;
-    font-size: 50px;
+    font-size: 55px;
     margin: 0;
     text-transform: capitalize;
 }
@@ -46,7 +46,7 @@ p.bannerDesc {
 // cta text 
 .ctaBannerTitle {
     font-family: $poppins-bold;
-    font-size: 35px;
+    font-size: 45px;
     max-width: 60%;
     text-align: left;
     color: $white;
@@ -131,7 +131,10 @@ p.bannerDesc {
     //     -o-transition: all 500ms ease;
     // }
     span {
-        color: $secondary-blue;
+        // color: $secondary-blue;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
     }
 }
 

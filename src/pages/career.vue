@@ -35,7 +35,7 @@
             flex-direction: row;
             flex-wrap: wrap;
             align-items: center;
-            padding: 50px 0;
+            // padding: 50px 0;
             .colOne{
                 width: 45%;
             }

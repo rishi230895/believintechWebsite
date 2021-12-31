@@ -24,15 +24,16 @@
                         <img :src="visionSection.visionImg" alt="">
                     </div>
                     <div class="colTwo">
-                        <h2 class="sectionHeading">{{visionSection.visionTitle}}<span>.</span></h2>
+                        <h2 class="sectionHeading" v-html="visionSection.visionTitle"><span>.</span></h2>
                         <p class="contentCopy">{{visionSection.visionDesc}}</p>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- <section class="sectionWrap">
-            <ctaBannerThree />
-        </section> -->
+        <!-- cta banner -->
+        <ctaBannerThree />
+
+        <!-- our team -->
         <our-team :items = "teamSection"/>
         
     </div>
@@ -127,7 +128,7 @@
 <script>
 import ourTeam from '@/components/our-team'
 import loader from '@/components/loader'
-// import ctaBannerThree from '@/components/ctaBannerThree'
+import ctaBannerThree from '@/components/ctaBannerThree'
 import axios from 'axios'
 import {apiUrl} from '@/constants.js'
 
@@ -136,7 +137,7 @@ export default {
     components: {
         ourTeam,
         loader,
-        // ctaBannerThree
+        ctaBannerThree
     },
     metaInfo() {
         return { 
