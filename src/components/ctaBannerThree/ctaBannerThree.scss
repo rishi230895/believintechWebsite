@@ -28,8 +28,9 @@
                 .ctaBtn {
                     margin: 0;
                     background-color: $white;
-                    color: $primary-blue;
-                    background: linear-gradient(to left, $white 50%, $primary-blue 50%);
+                    // color: $primary-blue;
+                    // background: linear-gradient(to left, $white 50%, $primary-blue 50%);
+                    background: linear-gradient(43deg, $logo-secondary-blue 0%, $secondary-blue 46%, $primary-blue 100%);
                     background-size: 201% 100%;
                     background-position: right bottom;
                     &:hover {

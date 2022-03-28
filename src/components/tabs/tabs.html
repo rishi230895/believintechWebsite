@@ -4,11 +4,12 @@
     <section class="sectionWrap"  v-if="routerPage == true">
       <div class="tabWrap">
         <h2 class="sectionHeading" v-html="items.hiringTitle"><span>.</span></h2>
+        <p class="contentCopy">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure sed, harum quisquam exercitationem, ipsum aperiam necessitatibus, placeat voluptates animi alias in facere pariatur consequatur ex perspiciatis numquam. Nulla, ullam cum.</p>
         <b-card class="careerCard" no-body>
           <b-tabs class="vertCard" pills card vertical>
-            <b-tab v-bind:title="career.positionTitle" active v-for="career in items.details" v-if="career.jobDetails">
-              <a href="mailTo:hrd@believintech.com" v-for="jobs in career.jobDetails">
-                <div class="openPos">
+            <b-tab v-bind:title="career.positionTitle" v-for="(career,index) in items.details" v-if="career.jobDetails" v-bind:key="career.id" :id="'career'+index">
+              <div class="posWrp" v-for="(jobs,index) in career.jobDetails" v-bind:key="jobs.id">
+                <div class="openPos" v-b-toggle="'job-desc'+ index">
                   <div class="colOne">
                     <span class="role">{{jobs.jobName}}</span>
                   </div>
@@ -17,17 +18,69 @@
                     <span class="experience">Exp: {{jobs.exp}}</span>
                   </div>
                 </div>
-              </a>
+                <b-collapse :id="'job-desc'+index" :accordion="'job-desc'+ index" role="tabpanel">
+                  <!-- Content here -->
+                  <div class="posJd">
+                    <p class="contentCopy">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta, asperiores. Blanditiis unde rem dignissimos? Illum praesentium odio dolorum aspernatur temporibus sequi, non suscipit tempore veritatis itaque reiciendis libero iste adipisci.</p>
+                    <ul>
+                      <li>abc</li>
+                      <li>vfd</li>
+                      <li>fdbz</li>
+                    </ul>
+                    <a v-b-modal.modal-1 class="ctaBtn" v-on:click="sendInfo(jobs.jobName)">Apply Now</a>
+                  </div>
+                </b-collapse>
+              </div>
             </b-tab>
           </b-tabs>
         </b-card>
       </div>
+      <b-modal title-class="jobTitle" dialog-class="jobModal" id="modal-1" title="Apply for your Dream Job" hide-footer="true">
+        <form @submit="onSubmit">
+          <div class="formRow">
+            <div class="formGroup">
+              <label>Job Title</label>
+              <input type="text" disabled v-model="form.jobName">
+            </div>
+          </div>
+          <div class="formRow halfRow">
+            <div class="formGroup">
+              <label for="appl-firstname">First Name</label>
+              <input type="text" id="appl-firstname" v-model="form.firstname" required>
+            </div>
+            <div class="formGroup">
+              <label for="appl-lastname">Last Name</label>
+              <input type="text" id="appl-lastname" v-model="form.lastname" required>
+            </div>
+          </div>
+          <div class="formRow">
+            <div class="formGroup">
+              <label for="appl-email">Email</label>
+              <input type="email" name="emailappl" id="appl-email" v-model="form.email" required>
+            </div>
+          </div>
+          <div class="formRow">
+            <div class="formGroup">
+              <label for="appl-msg">Your Message (if any)</label>
+              <textarea name="" id="appl-msg" rows="5" v-model="form.message"></textarea>
+            </div>
+          </div>
+          <div class="formRow">
+            <div class="formGroup uploadRes">
+                <label for="upload-res" v-if="showFile == false"><img src="../../assets/file-upload.png" alt=""> Upload your Resume</label>
+                <label for="upload-res" v-else><img src="../../assets/file-upload.png" alt=""> {{form.resume}}</label>
+                <input type="file" name="" id="upload-res" @change="uploadRes">
+            </div>
+          </div>
+          <button class="ctaBtn">Submit</button>
+        </form>
+      </b-modal>
     </section>
     <!-- work page -->
     <section v-if="routerPage == false">
       <div class="projTabs">
         <b-tabs content-class="mt-5">
-          <b-tab v-bind:title="tabs.tabTitle" v-for="tabs in items.details" >
+          <b-tab v-bind:title="tabs.tabTitle" v-for="tabs in items.details">
             <b-card-group class="projectWrap" deck>
               <b-card class="projCard" v-for="project in tabs.tabProject" v-bind:key="project.id" no-body>
                   <img class="projImg" v-bind:src="project.contentImage" alt="">
@@ -45,7 +98,6 @@
                   </div>
               </b-card>
             </b-card-group>
-
           </b-tab>
         </b-tabs>
       </div>

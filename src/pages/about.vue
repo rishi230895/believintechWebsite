@@ -25,6 +25,7 @@
                     </div>
                     <div class="colTwo">
                         <h2 class="sectionHeading" v-html="visionSection.visionTitle"><span>.</span></h2>
+                        <img :src="visionSection.visionImg" alt="">
                         <p class="contentCopy">{{visionSection.visionDesc}}</p>
                     </div>
                 </div>
@@ -89,6 +90,9 @@
                     margin: 0 auto;
                     text-align: left;
                 }
+                img{
+                    display: none;
+                }
             }
         }
     }
@@ -117,7 +121,11 @@
             .colTwo{
                 width: 100%;
                 .sectionHeading{
-                    margin: 0 0 30px;
+                    margin: 0 auto 30px;
+                }
+                img{
+                    display: block;
+                    width: 100%;
                 }
             }
         }

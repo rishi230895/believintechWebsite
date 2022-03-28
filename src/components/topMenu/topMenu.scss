@@ -101,6 +101,8 @@
                     border-radius: 0 0 10px 10px;
                     // height: 0%;
                     display: none;
+                    padding: 0;
+                    box-shadow: 0 3px 6px rgb(0 0 0/ 16%);
                     li{
                         list-style: none;
                         text-align: left;
@@ -148,7 +150,8 @@
                     border-radius: 5px;
                     text-decoration: none;
                     position: relative;
-                    background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
+                    // background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
+                    background: linear-gradient(43deg, $logo-secondary-blue 0%, $secondary-blue 46%, $primary-blue 100%);
                     background-size: 200% 100%;
                     background-position: right bottom;
                 }

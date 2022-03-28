@@ -46,6 +46,9 @@
     
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto cstmNavbarUl">
+            <!-- <li class="cstmNavItem" v-for="menu in HeaderSection.details">
+              <router-link class="nav-link" :to="menu.navLink">{{menu.navText}}</router-link>
+            </li> -->
             <li class="cstmNavItem">
               <router-link class="nav-link" to="/">Home</router-link>
             </li>
@@ -63,10 +66,13 @@
                 </li>
               </ul> -->
             </li>
-            <li class="cstmNavItem">
-              <router-link class="nav-link" to="/services">Services</router-link>
+            <li class="cstmNavItem noHrLine">
+              <router-link class="nav-link" to="">Services</router-link>
               <ul class="cstmDrpdwn">
-                <li>
+                <li v-for="service in serviceSection.details">
+                  <router-link :to="{name: 'serviceSingle', params: {slug: service.serviceSlug}}">{{service.Title}}</router-link>
+                </li>
+                <!-- <li>
                   <router-link to="/wordpress-development">WordPress Development</router-link>
                 </li>
                 <li>
@@ -83,7 +89,7 @@
                 </li>
                 <li>
                   <router-link to="/web-support">Ongoing Web Support & Optimization</router-link>
-                </li>
+                </li> -->
               </ul>
             </li>
             <li class="cstmNavItem">

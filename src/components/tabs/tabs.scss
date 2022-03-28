@@ -3,6 +3,7 @@
 .tabs {
     .careerCard {
         border: none;
+        margin-top: 50px;
         .vertCard {
              ::v-deep .col-auto {
                 width: 30%;
@@ -25,9 +26,11 @@
             }
             .tab-pane {
                 padding: 11px 0 11px 20px;
-                a {
-                    text-decoration: none;
-                    &:last-child .openPos {
+                .posWrp {
+                    margin-bottom: 15px;
+                    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px;
+                    border-radius: 0px 0px 6px 6px;
+                    &:last-child {
                         margin-bottom: 0;
                     }
                     .openPos {
@@ -42,11 +45,10 @@
                         color: $white;
                         font-family: $poppins-medium;
                         transition: all 0.3s ease;
-                        margin-bottom: 15px;
-                        &:hover {
-                            box-shadow: 0 8px 8px 0 rgb(0 66 138 / 8%), 0 4px 5px 0 rgb(0 66 138 / 18%);
-                            transform: translateY(-5px);
-                        }
+                        // &:hover {
+                        //     box-shadow: 0 8px 8px 0 rgb(0 66 138 / 8%), 0 4px 5px 0 rgb(0 66 138 / 18%);
+                        //     transform: translateY(-5px);
+                        // }
                         .colOne {
                             width: 60%;
                             text-align: left;
@@ -64,6 +66,21 @@
                                 font-size: 13px;
                                 border-radius: 5px;
                             }
+                        }
+                    }
+                    .posJd{
+                        border-radius: 0px 0px 6px 6px;
+                        // box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px;
+                        padding: 20px;
+                        p{
+                            margin-bottom: 0;
+                            text-align: left;
+                        }
+                        ul{
+                            width: fit-content;
+                        }
+                        .ctaBtn{
+                            padding: 5px 25px;
                         }
                     }
                 }
@@ -188,6 +205,104 @@
         }
     }
 }
+::v-deep .jobTitle{
+    font-size: 18px;
+    font-family: $poppins-medium;
+    color: $charcoal;
+}
+::v-deep .jobModal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    margin: 0;
+    width: 100%;
+    .formRow{
+        display: flex;
+        flex-direction: row;
+        .formGroup{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            width: 100%;
+            label{
+                font-size: 12px;
+                font-family: $poppins-medium;
+                color: $charcoal;
+                margin-bottom: 3px;
+                width: max-content;
+            }
+            input{
+                padding: 3px 5px;
+                box-sizing: border-box;
+                font-size: 14px;
+                font-family: $poppins-regular;
+                border: 1px solid $darkgrey;
+                appearance: none;
+                border-radius: 3px;
+                &:focus{
+                    outline: none;
+                    border-color: $logo-secondary-blue;
+                }
+            }
+            textarea{
+                padding: 3px 5px;
+                font-size: 14px;
+                font-family: $poppins-regular;
+                border: 1px solid $darkgrey;
+                border-radius: 3px;
+                resize: none;
+                &:focus{
+                    outline: none;
+                    border-color: $logo-secondary-blue;
+                }
+            }
+        }
+        .uploadRes{
+            background-color: $lightGrey;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 3px;
+            img{
+                width: 30px;
+                height: 30px;
+                object-fit: contain;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            label{
+                width: fit-content;
+                padding: 20px 10px 20px 35px;
+                margin-bottom: 0;
+                text-align: center;
+                cursor: pointer;
+                z-index: 1;
+                position: relative;
+                max-width: 250px;
+            }
+            input{
+                width: 100%;
+                opacity: 0;
+                position: absolute;
+            }
+        }
+    }
+    .halfRow{
+        justify-content: space-between;
+        .formGroup{
+            width: 48%;
+        }
+    }
+    .ctaBtn{
+        margin-top: 0;
+        padding: 5px 25px;
+        border: none;
+    }
+}
 
 // Media Queries
 
@@ -204,6 +319,30 @@
 }
 
 @media screen and (max-width: 992px) {
+    .tabs{
+        .careerCard {
+            .vertCard {
+                ::v-deep .col-auto {
+                    .nav{
+                        padding-right: 0;
+                    }
+                }
+                .tab-pane {
+                    .posWrp {
+                        .openPos {
+                            .colOne {
+                                width: 50%;
+                            }
+                            .colTwo{
+                                width: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     .workWrap {
         .projTabs {
             .projectWrap.card-deck {
@@ -236,7 +375,7 @@
             .vertCard {
                 flex-direction: column;
                  ::v-deep .col-auto {
-                    width: 75%;
+                    width: 100%;
                     .nav {
                         border-right: 0px solid #e1e8f0;
                     }

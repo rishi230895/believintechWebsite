@@ -180,7 +180,8 @@
                         </div>
                     </div>
                 </div>
-                <a href="" class="ctaBtn">{{serEnDetails.enBtnTxt}}</a>
+                <router-link class="ctaBtn" to="/contact">{{serEnDetails.enBtnTxt}}</router-link>
+                <!-- <a href="" class="ctaBtn">{{serEnDetails.enBtnTxt}}</a> -->
             </div>
         </section>
         <!-- testimonials -->
@@ -970,51 +971,62 @@ export default {
             isLoading: true,
         }
     },
-    async created(){
-        try {
-            const res = await axios.get(apiUrl + '/newserviceSingle/' + this.slug);
-            if(res.data.status == 'success'){
-                var bnrData = res.data.data.sgSerBanner;
-                var aboutData = res.data.data.sgSerAbout;
-                var servData = res.data.data.sgPgServices;
-                var clntData = res.data.data.sgSerSlider;
-                var procData = res.data.data.sgProDetails;
-                var wrkData = res.data.data.sgWkSlider;
-                var ensrData = res.data.data.serEnDetails;
-                var testiData = res.data.data.testSlider;
-                
-                this.bnrData = bnrData.error ? '' : bnrData;
-                this.aboutData = aboutData.error ? '' : aboutData;
-                this.servData = servData.error ? '' : servData;
-                this.clntData = clntData.error ? '' : clntData;
-                this.procData = procData.error ? '' : procData;
-                this.wrkData = wrkData.error ? '' : wrkData;
-                this.ensrData = ensrData.error ? '' : ensrData;
-                this.testiData = testiData.error ? '' : testiData;
-               
-                this.sgSerBanner = res.data.data.sgSerBanner;
-                this.sgSerAbout = res.data.data.sgSerAbout;
-                this.sgPgServices = res.data.data.sgPgServices;
-                this.sgSerSlider = res.data.data.sgSerSlider;
-                this.sgProDetails = res.data.data.sgProDetails;
-                this.sgWkSlider = res.data.data.sgWkSlider;
-                this.serEnDetails = res.data.data.serEnDetails;
-                this.testSlider = res.data.data.testSlider;
-
-                this.isLoading = false;
-                document.documentElement.style.overflow = 'visible';
-            }
-        } catch(error){
-            console.error(error);
-        }
+    created(){
+        this.asyncData();
     },
     mounted(){
        this.disableScroll();
+    },
+    watch: {
+       // call the method if the route changes
+       '$route': {
+         handler: 'asyncData',
+         immediate: true // runs immediately with mount() instead of calling method on mount hook
+       }
     },
     methods:{
         disableScroll(){
             if(this.isLoading == true){
                 document.documentElement.style.overflow = 'hidden';
+            }
+        },
+        async asyncData(){
+            try {
+                this.isLoading = true;
+                const res = await axios.get(apiUrl + '/newserviceSingle/' + this.slug);
+                if(res.data.status == 'success'){
+                    var bnrData = res.data.data.sgSerBanner;
+                    var aboutData = res.data.data.sgSerAbout;
+                    var servData = res.data.data.sgPgServices;
+                    var clntData = res.data.data.sgSerSlider;
+                    var procData = res.data.data.sgProDetails;
+                    var wrkData = res.data.data.sgWkSlider;
+                    var ensrData = res.data.data.serEnDetails;
+                    var testiData = res.data.data.testSlider;
+                    
+                    this.bnrData = bnrData.error ? '' : bnrData;
+                    this.aboutData = aboutData.error ? '' : aboutData;
+                    this.servData = servData.error ? '' : servData;
+                    this.clntData = clntData.error ? '' : clntData;
+                    this.procData = procData.error ? '' : procData;
+                    this.wrkData = wrkData.error ? '' : wrkData;
+                    this.ensrData = ensrData.error ? '' : ensrData;
+                    this.testiData = testiData.error ? '' : testiData;
+                
+                    this.sgSerBanner = res.data.data.sgSerBanner;
+                    this.sgSerAbout = res.data.data.sgSerAbout;
+                    this.sgPgServices = res.data.data.sgPgServices;
+                    this.sgSerSlider = res.data.data.sgSerSlider;
+                    this.sgProDetails = res.data.data.sgProDetails;
+                    this.sgWkSlider = res.data.data.sgWkSlider;
+                    this.serEnDetails = res.data.data.serEnDetails;
+                    this.testSlider = res.data.data.testSlider;
+
+                    this.isLoading = false;
+                    document.documentElement.style.overflow = 'visible';
+                }
+            } catch(error){
+                console.error(error);
             }
         }
     }
