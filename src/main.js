@@ -18,10 +18,10 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 
 // Configuration VueAnalytics
-Vue.use(VueAnalytics, {
-  id: 'UA-119904331-2',
-  router
-});
+// Vue.use(VueAnalytics, {
+//   id: 'UA-119904331-2',
+//   router
+// });
 
 // Vue Meta
 Vue.use(VueMeta)
