@@ -75,122 +75,131 @@
                 height: 100%;
             }
         }
-        .cstmNavbarUl{
-            align-items: center;
-            .cstmNavItem{
-                position: relative;
-                padding: 30px 15px;
-                .nav-link{
-                    padding: 0;
-                    color: $charcoal;
-                    font-family: $poppins-medium;
-                    font-size: 14px;
-                    text-transform: uppercase;
-                }
-                .cstmDrpdwn{
-                    margin: 0;
-                    background-color: #00428a;
-                    position: absolute;
-                    width: -webkit-max-content;
-                    width: -moz-max-content;
-                    width: max-content;
-                    top: 81px;
-                    left: -24px;
-                    z-index: 99;
-                    max-width: 265px;
-                    border-radius: 0 0 10px 10px;
-                    // height: 0%;
-                    display: none;
-                    padding: 0;
-                    box-shadow: 0 3px 6px rgb(0 0 0/ 16%);
-                    li{
-                        list-style: none;
-                        text-align: left;
-                        position: relative;
-                        background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
-                        background-size: 201% 100%;
-                        background-position: right bottom;
-                        transition: all 0.4s linear;
-                        &:hover{
-                            background-position: left bottom;
-                        }
-                        &:last-child{
-                          border-radius: 0 0 10px 10px;
-                        }
-                        a{
-                            color: $white;
-                            text-decoration: none;
-                            font-family: $poppins-regular;
-                            font-size: 14px;
-                            padding: 10px 40px 10px 15px;
-                            display: block;
-                            &::after{
-                                content: ">";
-                                font-size: 20px;
+        .hamburger{
+            display: none;
+        }
+        .cstmNavColl {
+            .cstmNavbarUl{
+                align-items: center;
+                .cstmNavItem{
+                    position: relative;
+                    padding: 30px 15px;
+                    .nav-link{
+                        padding: 0;
+                        color: $charcoal;
+                        font-family: $poppins-medium;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                    }
+                    .cstmDrpdwn{
+                        margin: 0;
+                        background-color: #00428a;
+                        position: absolute;
+                        width: -webkit-max-content;
+                        width: -moz-max-content;
+                        width: max-content;
+                        top: 81px;
+                        left: -24px;
+                        z-index: 99;
+                        max-width: 265px;
+                        border-radius: 0 0 10px 10px;
+                        // height: 0%;
+                        display: none;
+                        padding: 0;
+                        box-shadow: 0 3px 6px rgb(0 0 0/ 16%);
+                        li{
+                            list-style: none;
+                            text-align: left;
+                            position: relative;
+                            background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
+                            background-size: 201% 100%;
+                            background-position: right bottom;
+                            transition: all 0.4s linear;
+                            &:hover{
+                                background-position: left bottom;
+                            }
+                            &:last-child{
+                            border-radius: 0 0 10px 10px;
+                            }
+                            a{
                                 color: $white;
-                                position: absolute;
-                                top: 50%;
-                                right: 15px;
-                                pointer-events: none;
-                                transform: translateY(-50%);
+                                text-decoration: none;
+                                font-family: $poppins-regular;
+                                font-size: 14px;
+                                padding: 10px 40px 10px 15px;
+                                display: block;
+                                &::after{
+                                    content: ">";
+                                    font-size: 20px;
+                                    color: $white;
+                                    position: absolute;
+                                    top: 50%;
+                                    right: 15px;
+                                    pointer-events: none;
+                                    transform: translateY(-50%);
+                                }
                             }
                         }
+                        
                     }
-                    
                 }
-            }
-            .quoteBtn{
-                padding-top: 0;
-                padding-bottom: 0;
-                a{
-                    font-family: 'poppins-med' !important;
-                    transition: $cmn-transition;
-                    color: $white !important;
-                    padding: 10px 25px !important;
-                    border-radius: 5px;
-                    text-decoration: none;
+                .quoteBtn{
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    a{
+                        font-family: 'poppins-med' !important;
+                        transition: $cmn-transition;
+                        color: $white !important;
+                        padding: 10px 25px !important;
+                        border-radius: 5px;
+                        text-decoration: none;
+                        position: relative;
+                        // background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
+                        background: linear-gradient(43deg, $logo-secondary-blue 0%, $secondary-blue 46%, $primary-blue 100%);
+                        background-size: 200% 100%;
+                        background-position: right bottom;
+                    }
+                    a:hover{
+                        background-position: left bottom;
+                    }
+                }
+                .noHrLine{
                     position: relative;
-                    // background: linear-gradient(to left, $primary-blue 50%, $secondary-blue 50%);
-                    background: linear-gradient(43deg, $logo-secondary-blue 0%, $secondary-blue 46%, $primary-blue 100%);
-                    background-size: 200% 100%;
-                    background-position: right bottom;
                 }
-                a:hover{
-                    background-position: left bottom;
+                .noHrLine::after{
+                    display: none;
                 }
-            }
-            .noHrLine{
-                position: relative;
-            }
-            .noHrLine::after{
-                display: none;
-            }
-            .noHrLine:hover .cstmDrpdwn{
-                padding: 0;
-                // height: fit-content;
-                display: block;
-            }
-            .cstmNavItem:hover .nav-link{
-                color: $primary-blue;
-            }
-            .cstmNavItem::after{
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                background-color: $primary-blue;
-                width: 0%;
-                height: 3px;
-                opacity: 0;
-                transition: all 500ms ease;
-                -moz-transition: all 500ms ease;
-                -webkit-transition: all 500ms ease;
-                -ms-transition: all 500ms ease;
-                -o-transition: all 500ms ease;
-            }
-            .cstmNavItem:hover::after{
-                opacity: 1;
-                width: 100%;
+                .noHrLine:hover .cstmDrpdwn{
+                    padding: 0;
+                    // height: fit-content;
+                    display: block;
+                }
+                .cstmNavItem:hover .nav-link{
+                    color: $primary-blue;
+                }
+                .cstmNavItem::after{
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    background-color: $primary-blue;
+                    width: 0%;
+                    height: 3px;
+                    opacity: 0;
+                    transition: all 500ms ease;
+                    -moz-transition: all 500ms ease;
+                    -webkit-transition: all 500ms ease;
+                    -ms-transition: all 500ms ease;
+                    -o-transition: all 500ms ease;
+                }
+                .cstmNavItem:hover::after{
+                    opacity: 1;
+                    width: 100%;
+                }
+                .cstmNavItem .router-link-exact-active.router-link-active{
+                    color: $primary-blue;
+                    font-weight: bold;
+                }
             }
         }
     }
@@ -245,6 +254,73 @@
     }
     .navbarWrapper {
         padding: 15px;
+        .cstmNav{
+            .hamburger{
+                display: inline;
+                position: relative;
+                margin-bottom: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                width: 21px;
+                #ham-check{
+                    opacity: 0;
+                    z-index: 1;
+                    &:checked~.lineTop{
+                        transform: rotate(45deg);
+                    }
+                    &:checked~.lineMiddle{
+                        transform: translateX(16deg);
+                        opacity: 0;
+                    }
+                    &:checked~.lineBottom{
+                        transform: rotate(-45deg);
+                    }
+                }
+                .line{
+                    position: absolute;
+                    width: 21px;
+                    height: 2px;
+                    background-color: $primary-blue;
+                    border-radius: 3px;
+                    transition: transform .25s, opacity .35s;
+                }
+                .lineTop{
+                    transform: translateY(-7px);
+                }
+                .lineBottom{
+                    transform: translateY(7px);
+                }
+            }
+            .showMobMenu{
+                display: flex !important;
+                right: 0 !important;
+            }
+            .cstmNavColl{
+                transition: all 0.3s ease;
+                justify-content: center;
+                position: fixed;
+                top: 65px;
+                right: -100vw;
+                width: 100vw;
+                height: 100vh;
+                background-color: #90caf9;
+                .cstmNavbarUl{
+                    transform: translate(-50%,-50%);
+                    position: absolute;
+                    left: 50%;
+                    top: 40%;
+                    width: 100%;
+                    .cstmNavItem{
+                        .nav-link{
+                            color: $white;
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
         // .cstmNav {
         //     .cstmNavColl{
         //         position: fixed;
@@ -300,7 +376,6 @@
                     border-radius: 0;
                 }
                 .cstmNavbarUl {
-                    margin-top: 15px;
                     .cstmNavItem {
                         padding: 10px 15px;
                     }

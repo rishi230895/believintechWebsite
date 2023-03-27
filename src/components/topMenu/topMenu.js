@@ -9,7 +9,8 @@ export default {
     return {
       scrolled: false,
       HeaderSection: [],
-      serviceSection: []
+      serviceSection: [],
+      showNav: false
     }
   },
   async created(){
@@ -38,6 +39,13 @@ export default {
         }else{
           document.body.classList.remove("fixed-header");
         }
+      }
+    },
+    toggleNav(){
+      this.showNav = !this.showNav
+      var bodySelector = document.getElementsByTagName('body')
+      if(this.showNav == true){
+        bodySelector.style.overflow = 'hidden' 
       }
     }
   }

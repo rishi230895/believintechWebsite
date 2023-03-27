@@ -58,13 +58,17 @@
                             text-align: left;
                             display: flex;
                             flex-direction: row;
-                            justify-content: space-between;
+                            justify-content: flex-end;
                             span {
                                 background: #fff;
                                 padding: 5px 10px;
                                 color: #00428a;
                                 font-size: 13px;
                                 border-radius: 5px;
+                                margin-right: 20px;
+                                &:last-child{
+                                    margin-right: 0;
+                                }
                             }
                         }
                     }
@@ -72,12 +76,27 @@
                         border-radius: 0px 0px 6px 6px;
                         // box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px;
                         padding: 20px;
-                        p{
+                        .contentCopy{
                             margin-bottom: 0;
                             text-align: left;
+                            font-size: 16px;
                         }
                         ul{
                             width: fit-content;
+                            margin-top: 1rem;
+                            padding-left: 0;
+                            li{
+                                list-style: none;
+                                display: flex;
+                                align-items: center;
+                                font-family: $poppins-regular;
+                                font-size: 14px;
+                                svg{
+                                    width: 10px;
+                                    margin-right: 10px;
+                                    color: $charcoal;
+                                }
+                            }
                         }
                         .ctaBtn{
                             padding: 5px 25px;
@@ -206,8 +225,8 @@
     }
 }
 ::v-deep .jobTitle{
-    font-size: 18px;
-    font-family: $poppins-medium;
+    font-size: 22px;
+    font-family: $poppins-bold;
     color: $charcoal;
 }
 ::v-deep .jobModal{
@@ -216,92 +235,119 @@
     left: 50%;
     transform: translate(-50%, -50%) !important;
     margin: 0;
-    width: 100%;
-    .formRow{
-        display: flex;
-        flex-direction: row;
-        .formGroup{
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 10px;
-            width: 100%;
-            label{
-                font-size: 12px;
-                font-family: $poppins-medium;
-                color: $charcoal;
-                margin-bottom: 3px;
-                width: max-content;
-            }
-            input{
-                padding: 3px 5px;
-                box-sizing: border-box;
-                font-size: 14px;
-                font-family: $poppins-regular;
-                border: 1px solid $darkgrey;
-                appearance: none;
-                border-radius: 3px;
-                &:focus{
-                    outline: none;
-                    border-color: $logo-secondary-blue;
-                }
-            }
-            textarea{
-                padding: 3px 5px;
-                font-size: 14px;
-                font-family: $poppins-regular;
-                border: 1px solid $darkgrey;
-                border-radius: 3px;
-                resize: none;
-                &:focus{
-                    outline: none;
-                    border-color: $logo-secondary-blue;
-                }
-            }
-        }
-        .uploadRes{
-            background-color: $lightGrey;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            border-radius: 3px;
-            img{
-                width: 30px;
-                height: 30px;
-                object-fit: contain;
-                position: absolute;
-                left: 0;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-            label{
-                width: fit-content;
-                padding: 20px 10px 20px 35px;
-                margin-bottom: 0;
-                text-align: center;
-                cursor: pointer;
-                z-index: 1;
-                position: relative;
-                max-width: 250px;
-            }
-            input{
-                width: 100%;
-                opacity: 0;
-                position: absolute;
-            }
-        }
+    width: 95%;
+    max-width: 550px;
+    .modal-header{
+        border-bottom: none;
     }
-    .halfRow{
-        justify-content: space-between;
-        .formGroup{
-            width: 48%;
-        }
-    }
-    .ctaBtn{
-        margin-top: 0;
-        padding: 5px 25px;
+    .modal-content{
         border: none;
+        padding: 24px;
+        .formRow{
+            display: flex;
+            flex-direction: row;
+            .formGroup{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 30px;
+                width: 100%;
+                position: relative;
+                label{
+                    font-size: 12px;
+                    font-family: $poppins-medium;
+                    color: $charcoal;
+                    margin-bottom: 3px;
+                    width: max-content;
+                }
+                .jobTtlFld{
+                    cursor: not-allowed;
+                    background-color: transparent;
+                }
+                input{
+                    padding: 3px 0;
+                    box-sizing: border-box;
+                    font-size: 14px;
+                    font-family: $poppins-regular;
+                    border: none;
+                    border-bottom: 1px solid $darkgrey;
+                    appearance: none;
+                    // border-radius: 3px;
+                    height: 35px;
+                    &:focus{
+                        outline: none;
+                        border-color: $logo-secondary-blue;
+                    }
+                }
+                textarea{
+                    padding: 3px 5px;
+                    font-size: 14px;
+                    font-family: $poppins-regular;
+                    border: 1px solid $darkgrey;
+                    border-radius: 3px;
+                    resize: none;
+                    &:focus{
+                        outline: none;
+                        border-color: $logo-secondary-blue;
+                    }
+                }
+                .frmErr{
+                    color: $error;
+                    font-size: 11px;
+                    position: absolute;
+                    bottom: -18px;
+                    text-transform: capitalize;
+                }
+            }
+            .uploadRes{
+                background-color: $lightGrey;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                border-radius: 3px;
+                img{
+                    width: 30px;
+                    height: 30px;
+                    object-fit: contain;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                label{
+                    width: fit-content;
+                    padding: 20px 10px 20px 35px;
+                    margin-bottom: 0;
+                    text-align: center;
+                    cursor: pointer;
+                    z-index: 1;
+                    position: relative;
+                    max-width: 350px;
+                    text-transform: capitalize;
+                }
+                input{
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    position: absolute;
+                    cursor: pointer;
+                    z-index: 2;
+                }
+            }
+        }
+        .halfRow{
+            justify-content: space-between;
+            .formGroup{
+                width: 48%;
+            }
+        }
+        .ctaBtn{
+            margin-top: 0;
+            padding: 5px 25px;
+            border: none;
+        }
     }
+    
 }
 
 // Media Queries
@@ -322,11 +368,11 @@
     .tabs{
         .careerCard {
             .vertCard {
-                ::v-deep .col-auto {
-                    .nav{
-                        padding-right: 0;
-                    }
-                }
+                // ::v-deep .col-auto {
+                //     .nav{
+                //         padding-right: 0;
+                //     }
+                // }
                 .tab-pane {
                     .posWrp {
                         .openPos {
@@ -378,23 +424,32 @@
                     width: 100%;
                     .nav {
                         border-right: 0px solid #e1e8f0;
+                        flex-direction: row !important;
+                        justify-content: center;
+                        li{
+                            a{
+                                font-size: 0.8rem;
+                            }
+                        }
                     }
                 }
                 .tab-pane {
                     padding: 11px 0 11px 0px;
-                    a {
+                    .posWrp {
                         .openPos {
                             padding: 20px 10px;
                             .colOne {
-                                width: 35%;
+                                width: 30%;
                                 span {
-                                    font-size: 14px;
+                                    font-size: 0.8rem;
                                 }
                             }
                             .colTwo {
                                 width: 65%;
                                 span {
                                     padding: 5px 7px;
+                                    margin-right: 10px;
+                                    font-size: 0.8rem;
                                 }
                             }
                         }
@@ -449,5 +504,41 @@
                 }
             }
         }
-    }     
+    }  
+    ::v-deep .jobModal{
+        .modal-content{
+            padding: 10px;
+        }
+    }   
+}
+
+@media screen and (max-width: 355px) {
+    .tabs {
+        .careerCard {
+            .vertCard {
+                .tab-pane {
+                    padding: 11px 0 11px 0px;
+                    .posWrp {
+                        .openPos {
+                            flex-direction: column;
+                            .colOne {
+                                width: 80%;
+                                span {
+                                    text-align: center;
+                                    display: block;
+                                }
+                            }
+                            .colTwo {
+                                width: 80%;
+                                justify-content: center;
+                                span {
+                                    margin-top: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -21,6 +21,7 @@ import privacy from '@/pages/privacy'
 import terms from '@/pages/terms'
 import singlePage from '@/pages/singlePage'
 import serviceSingle from '@/pages/serviceSingle'
+import notfound from '@/pages/404'
 
 Vue.use(Router)
 
@@ -68,56 +69,6 @@ export default new Router({
             component: singlePage,
             props: true
         },
-        // {
-        //     path: '/our-team',
-        //     name: 'Our Team',
-        //     component: Team
-        // },
-        // {
-        //     path: '/engagement-model',
-        //     name: 'Engagement Model',
-        //     component: Engagement
-        // },
-        // {
-        //     path: '/our-clients',
-        //     name: 'Our Clients',
-        //     component: Clients
-        // },
-        // {
-        //     path: '/success-stories',
-        //     name: 'Success Stories',
-        //     component: Success
-        // },
-        // {
-        //     path: '/wordpress-development',
-        //     name: 'Wordpress',
-        //     component: Wordpress
-        // },
-        // {
-        //     path: '/ecommerce-development',
-        //     name: 'Ecommerce',
-        //     component: Ecommerce
-        // },
-        // {
-        //     path: '/woocommerce',
-        //     name: 'Woocommerce',
-        //     component: Woocommerce
-        // },
-        // {
-        //     path: '/api-development',
-        //     name: 'API Development',
-        //     component: Api
-        // },
-        // {
-        //     path: '/php-frameworks',
-        //     name: 'PHP Frameworks',
-        //     component: phpFrameworks
-        // },
-        // {
-        //     path: '/web-support',
-        //     name: 'Web Support',
-        //     component: webSupport
-        // },
         {
             path: '/privacy-policy',
             name: 'Privacy Policy',
@@ -133,6 +84,15 @@ export default new Router({
             name: 'serviceSingle',
             component: serviceSingle,
             props: true
+        },
+        {
+            path: '*',
+            redirect: '/404',
+        },
+        {
+            path: '/404',
+            name: 'notFound',
+            component: notfound
         }
     ],
     scrollBehavior() {

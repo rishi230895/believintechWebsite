@@ -4,10 +4,10 @@
     <section class="sectionWrap"  v-if="routerPage == true">
       <div class="tabWrap">
         <h2 class="sectionHeading" v-html="items.hiringTitle"><span>.</span></h2>
-        <p class="contentCopy">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure sed, harum quisquam exercitationem, ipsum aperiam necessitatibus, placeat voluptates animi alias in facere pariatur consequatur ex perspiciatis numquam. Nulla, ullam cum.</p>
+        <p class="contentCopy">{{items.hiringDesc}}</p>
         <b-card class="careerCard" no-body>
           <b-tabs class="vertCard" pills card vertical>
-            <b-tab v-bind:title="career.positionTitle" v-for="(career,index) in items.details" v-if="career.jobDetails" v-bind:key="career.id" :id="'career'+index">
+            <b-tab lazy v-bind:title="career.positionTitle" v-for="(career,index) in items.details" v-if="career.jobDetails" v-bind:key="career.id" :id="'career'+index">
               <div class="posWrp" v-for="(jobs,index) in career.jobDetails" v-bind:key="jobs.id">
                 <div class="openPos" v-b-toggle="'job-desc'+ index">
                   <div class="colOne">
@@ -21,11 +21,12 @@
                 <b-collapse :id="'job-desc'+index" :accordion="'job-desc'+ index" role="tabpanel">
                   <!-- Content here -->
                   <div class="posJd">
-                    <p class="contentCopy">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta, asperiores. Blanditiis unde rem dignissimos? Illum praesentium odio dolorum aspernatur temporibus sequi, non suscipit tempore veritatis itaque reiciendis libero iste adipisci.</p>
-                    <ul>
-                      <li>abc</li>
-                      <li>vfd</li>
-                      <li>fdbz</li>
+                    <p class="contentCopy">{{jobs.jobDesc}}</p>
+                    <ul v-if="jobs.jobRoles">
+                      <li v-for="role in jobs.jobRoles" :key="role">
+                        <font-awesome-icon :icon="['fas', 'arrow-right']" />
+                        {{role.jobRole}}
+                      </li>
                     </ul>
                     <a v-b-modal.modal-1 class="ctaBtn" v-on:click="sendInfo(jobs.jobName)">Apply Now</a>
                   </div>
@@ -35,41 +36,43 @@
           </b-tabs>
         </b-card>
       </div>
-      <b-modal title-class="jobTitle" dialog-class="jobModal" id="modal-1" title="Apply for your Dream Job" hide-footer="true">
+      <b-modal title-class="jobTitle" dialog-class="jobModal" id="modal-1" title="Apply Now!" hide-footer="true">
         <form @submit="onSubmit">
           <div class="formRow">
             <div class="formGroup">
               <label>Job Title</label>
-              <input type="text" disabled v-model="form.jobName">
+              <input class="jobTtlFld" type="text" disabled v-model="form.jobName">
             </div>
           </div>
           <div class="formRow halfRow">
             <div class="formGroup">
               <label for="appl-firstname">First Name</label>
-              <input type="text" id="appl-firstname" v-model="form.firstname" required>
+              <input type="text" id="appl-firstname" v-model="form.firstname">
+              <span class="frmErr" v-if="!form.firstname">{{errFirst}}</span>
             </div>
             <div class="formGroup">
               <label for="appl-lastname">Last Name</label>
-              <input type="text" id="appl-lastname" v-model="form.lastname" required>
+              <input type="text" id="appl-lastname" v-model="form.lastname">
+              <span class="frmErr" v-if="!form.lastname">{{errLast}}</span>
             </div>
           </div>
-          <div class="formRow">
+          <div class="formRow halfRow">
             <div class="formGroup">
               <label for="appl-email">Email</label>
-              <input type="email" name="emailappl" id="appl-email" v-model="form.email" required>
+              <input type="email" name="emailappl" id="appl-email" v-model="form.email">
+              <span class="frmErr" v-if="!form.email">{{errEmail}}</span>
             </div>
-          </div>
-          <div class="formRow">
             <div class="formGroup">
-              <label for="appl-msg">Your Message (if any)</label>
-              <textarea name="" id="appl-msg" rows="5" v-model="form.message"></textarea>
+              <label for="appl-phn">Phone No.</label>
+              <input type="tel" id="appl-phn" v-model="form.phnNo">
+              <span class="frmErr" v-if="!form.phnNo">{{errPhn}}</span>
             </div>
           </div>
           <div class="formRow">
             <div class="formGroup uploadRes">
-                <label for="upload-res" v-if="showFile == false"><img src="../../assets/file-upload.png" alt=""> Upload your Resume</label>
-                <label for="upload-res" v-else><img src="../../assets/file-upload.png" alt=""> {{form.resume}}</label>
-                <input type="file" name="" id="upload-res" @change="uploadRes">
+              <label for="upload-res" :class="[hasError ? frmErr : '']"><img src="../../assets/file-upload.png" alt="">{{labelTxt}}</label>
+              <input type="file" id="upload-res" @change="uploadRes">
+              <span v-if="!form.resume">{{errFile}}</span>
             </div>
           </div>
           <button class="ctaBtn">Submit</button>

@@ -2,7 +2,7 @@
   <div id="app">
     <topMenu />
     <router-view />
-    <ctaBannerTwo :items = "footerctabannar_section" v-if="$route.name !== 'Contact'" />
+    <ctaBannerTwo :items = "footerctabannar_section" v-if="this.$route.name !== 'Contact'" />
     <footerComp />
   </div>
 </template>

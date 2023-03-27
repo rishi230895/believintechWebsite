@@ -6,14 +6,14 @@
             <div class="container-lg p-lg-0">
                 <div class="servBnr">
                     <div class="servBnrColOne">
-                        <h1 class="bannerTitle">{{sgSerBanner.sgSerTitle}}</h1>
-                        <p class="bannerDesc">{{sgSerBanner.sgSerDesc}}</p>
+                        <h1 class="bannerTitle" v-if="sgSerBanner.sgSerTitle">{{sgSerBanner.sgSerTitle}}</h1>
+                        <p class="bannerDesc" v-if="sgSerBanner.sgSerDesc">{{sgSerBanner.sgSerDesc}}</p>
                         <div class="ctaSec">
-                            <router-link class="ctaBtn servCtaOne" to="/work">{{sgSerBanner.sgSerPort}}</router-link>
-                            <router-link class="ctaBtn servCtaTwo" to="/contact">{{sgSerBanner.sgSerContact}}</router-link>
+                            <router-link class="ctaBtn servCtaOne" to="/work" v-if="sgSerBanner.sgSerPort">{{sgSerBanner.sgSerPort}}</router-link>
+                            <router-link class="ctaBtn servCtaTwo" to="/contact" v-if="sgSerBanner.sgSerContact">{{sgSerBanner.sgSerContact}}</router-link>
                         </div>
                     </div>
-                    <div class="servBnrColTwo">
+                    <div class="servBnrColTwo" v-if="sgSerBanner.sgSerImg">
                         <img class="servBnrImg" :src="sgSerBanner.sgSerImg" alt="">
                     </div>
                 </div>
@@ -29,11 +29,11 @@
             <div class="container-lg p-lg-0">
                 <div class="abtServRow">
                     <div class="abtColOne">
-                        <h2 class="sectionHeading" v-html="sgSerAbout.abSerHeading"><span>.</span></h2>
-                        <p class="contentCopy">{{sgSerAbout.abSerDesc}}</p>
-                        <router-link class="ctaBtn" to="/work">{{sgSerAbout.abSerBtn}}</router-link>
+                        <h2 class="sectionHeading" v-html="sgSerAbout.abSerHeading" v-if="sgSerAbout.abSerHeading"><span>.</span></h2>
+                        <p class="contentCopy" v-if="sgSerAbout.abSerDesc">{{sgSerAbout.abSerDesc}}</p>
+                        <router-link class="ctaBtn" to="/work" v-if="sgSerAbout.abSerBtn">{{sgSerAbout.abSerBtn}}</router-link>
                     </div>
-                    <div class="abtColTwo">
+                    <div class="abtColTwo" v-if="sgSerAbout.abSerImg">
                         <img :src="sgSerAbout.abSerImg" alt="">
                     </div>
                 </div>
@@ -49,15 +49,15 @@
                 </svg>
             </div>
             <div class="container-lg p-lg-0">
-                <h2 class="sectionHeading" v-html="sgPgServices.sgPgHeading"><span>.</span></h2>
-                <p class="contentCopy">{{sgPgServices.sgPgDesc}}</p>
+                <h2 class="sectionHeading" v-html="sgPgServices.sgPgHeading" v-if="sgPgServices.sgPgHeading"><span>.</span></h2>
+                <p class="contentCopy" v-if="sgPgServices.sgPgDesc">{{sgPgServices.sgPgDesc}}</p>
                 <div class="servSecRow" v-if="sgPgServices.details && sgPgServices.details.length > 0">
                     <div class="servCard" v-for="servCrd in sgPgServices.details" :key="servCrd.index">
                         <div class="rowOne">
-                            <img class="servIcon" :src="servCrd.sgSerImg" alt="">
-                            <h4 class="servTtl">{{servCrd.sgSerName}}</h4>
+                            <img class="servIcon" v-if="servCrd.sgSerImg" :src="servCrd.sgSerImg" alt="">
+                            <h4 class="servTtl" v-if="servCrd.sgSerName">{{servCrd.sgSerName}}</h4>
                         </div>
-                        <div class="rowTwo">
+                        <div class="rowTwo" v-if="servCrd.sgSerDesc">
                             <p class="servDesc contentCopy">{{servCrd.sgSerDesc}}</p>
                         </div>
                     </div>
@@ -74,10 +74,10 @@
         <!-- client slider -->
         <section class="cltServSec sectionWrap" v-if="clntData">
             <div class="cltServRow">
-                <div class="headWrap">
+                <div class="headWrap" v-if="sgSerSlider.clientHeading">
                     <h2 class="sectionHeading">{{sgSerSlider.clientHeading}}</h2>
                 </div>
-                <clientSlider :slider="sgSerSlider" class="snglClntSlider"/>
+                <clientSlider v-if="sgSerSlider.clientHeading" :slider="sgSerSlider" class="snglClntSlider"/>
             </div>
         </section>
         <!-- process section -->
@@ -91,17 +91,17 @@
                 <div class="procServRow">
                     <ul class="procList deskProcList" v-if="sgProDetails.details && sgProDetails.details.length > 0">
                         <li class="procItem" v-for="procItm in sgProDetails.details" :key="procItm.index">
-                            <span>{{procItm.sgProName}}</span>
-                            <img :src="procItm.sgProImg" alt="">
-                            <p class="contentCopy">{{procItm.sgProDesc}}</p>
+                            <span v-if="procItm.sgProName">{{procItm.sgProName}}</span>
+                            <img v-if="procItm.sgProImg" :src="procItm.sgProImg" alt="">
+                            <p class="contentCopy" v-if="procItm.sgProDesc">{{procItm.sgProDesc}}</p>
                         </li>
                     </ul>
                     <ul class="procList mobProcList" v-if="sgProDetails.details && sgProDetails.details.length > 0">
                         <li class="procItem" v-for="procItm in sgProDetails.details" :key="procItm.index">
-                            <img :src="procItm.sgProImg" alt="">
+                            <img v-if="procItm.sgProImg" :src="procItm.sgProImg" alt="">
                             <div class="mobProcDtl">
-                                <span>{{procItm.sgProName}}</span>
-                                <p class="contentCopy">{{procItm.sgProDesc}}</p>
+                                <span v-if="procItm.sgProName">{{procItm.sgProName}}</span>
+                                <p v-if="procItm.sgProDesc" class="contentCopy">{{procItm.sgProDesc}}</p>
                             </div>
                         </li>
                     </ul>
@@ -116,7 +116,7 @@
         <!-- work section -->
         <section class="wrkServSec sectionWrap" v-if="wrkData">
             <div class="container-lg p-lg-0">
-                <h2 class="sectionHeading" v-html="sgWkSlider.sgWkHeading"><span>.</span></h2>
+                <h2 class="sectionHeading" v-if="sgWkSlider.sgWkHeading" v-html="sgWkSlider.sgWkHeading"><span>.</span></h2>
                 <carousel 
                     class="workSldr" 
                     :autoplay="false" 
@@ -144,14 +144,14 @@
                     </template>
                     <div class="wrkSldrWrp" v-for="wrkSldr in sgWkSlider.details" :key="wrkSldr.index">
                         <div class="sldrCol">
-                            <img class="wrkImg" src="../assets/patient-handling.png" alt="">
+                            <img class="wrkImg" v-if="wrkSldr.sdSerImg" :src="wrkSldr.sdSerImg" alt="">
                         </div>
                         <div class="sldrCol wrkdtl">
-                            <h4 class="sldrTtl">{{wrkSldr.sdSerHeading}}</h4>
-                            <p class="contentCopy">{{wrkSldr.sdSerDesc}}</p>
+                            <h4 class="sldrTtl" v-if="wrkSldr.sdSerHeading">{{wrkSldr.sdSerHeading}}</h4>
+                            <p class="contentCopy" v-if="wrkSldr.sdSerDesc">{{wrkSldr.sdSerDesc}}</p>
                             <div class="dtlBtnRow">
-                                <router-link class="ctaBtn" to="/work">{{wrkSldr.sdPortText}}</router-link>
-                                <router-link class="ctaBtn" to="/contact">{{wrkSldr.sdConText}}</router-link>
+                                <router-link class="ctaBtn" to="/work" v-if="wrkSldr.sdPortText">{{wrkSldr.sdPortText}}</router-link>
+                                <router-link class="ctaBtn" to="/contact" v-if="wrkSldr.sdConText">{{wrkSldr.sdConText}}</router-link>
                             </div>
                         </div>
                     </div>
@@ -172,15 +172,15 @@
                 <div class="ensrSecRow" v-if="serEnDetails.details && serEnDetails.details.length > 0">
                     <div class="ensrCard" v-for="ensrCrd in serEnDetails.details" :key="ensrCrd.index">
                         <div class="rowOne">
-                            <img class="ensrIcon" :src="ensrCrd.serEnImg" alt="">
-                            <h4 class="ensrTtl">{{ensrCrd.serEnHeading}}</h4>
+                            <img class="ensrIcon" v-if="ensrCrd.serEnImg" :src="ensrCrd.serEnImg" alt="">
+                            <h4 class="ensrTtl" v-if="ensrCrd.serEnHeading">{{ensrCrd.serEnHeading}}</h4>
                         </div>
-                        <div class="rowTwo">
+                        <div class="rowTwo" v-if="ensrCrd.serEnDesc">
                             <p class="ensrDesc contentCopy">{{ensrCrd.serEnDesc}}</p>
                         </div>
                     </div>
                 </div>
-                <router-link class="ctaBtn" to="/contact">{{serEnDetails.enBtnTxt}}</router-link>
+                <router-link class="ctaBtn" to="/contact" v-if="serEnDetails.enBtnTxt">{{serEnDetails.enBtnTxt}}</router-link>
                 <!-- <a href="" class="ctaBtn">{{serEnDetails.enBtnTxt}}</a> -->
             </div>
         </section>
@@ -568,6 +568,10 @@
             }
             .workSldr{
                 position: relative;
+                ::v-deep .owl-stage{
+                    display: flex;
+                    align-items: center;
+                }
                 .sldrIcn{
                     width: 40px;
                     height: 40px;
@@ -579,9 +583,11 @@
                 }
                 .prevIcn{
                     left: -40px;
+                    cursor: pointer;
                 }
                 .nxtIcn{
                     right: -40px;
+                    cursor: pointer;
                 }
                 .wrkSldrWrp{
                     display: flex;

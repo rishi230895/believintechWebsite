@@ -40,12 +40,19 @@
           <img :src="HeaderSection.headerLogo" alt="">
         </router-link>
     
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <!-- <b-navbar-toggle target="nav-collapse"></b-navbar-toggle> -->
+
+        <label for="nav-collapse" class="hamburger" target="nav-collapse" @click="toggleNav">
+          <input type="checkbox" id="ham-check">
+          <span class="line lineTop"></span>
+          <span class="line lineMiddle"></span>
+          <span class="line lineBottom"></span>
+        </label>
     
-        <b-collapse id="nav-collapse" is-nav class="cstmNavColl">
+        <div id="nav-collapse" :class="{showMobMenu: showNav}" is-nav class="cstmNavColl">
     
           <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto cstmNavbarUl">
+          <b-navbar-nav class="cstmNavbarUl">
             <!-- <li class="cstmNavItem" v-for="menu in HeaderSection.details">
               <router-link class="nav-link" :to="menu.navLink">{{menu.navText}}</router-link>
             </li> -->
@@ -54,42 +61,13 @@
             </li>
             <li class="cstmNavItem">
               <router-link class="nav-link" to="/about">About Us</router-link>
-              <!-- <ul class="cstmDrpdwn">
-                <li>
-                  <router-link to="/engagement-model">Our Engagement Model</router-link>
-                </li>
-                <li>
-                  <router-link to="/our-clients">Our Clients</router-link>
-                </li>
-                <li>
-                  <router-link to="/success-stories">Success Stories</router-link>
-                </li>
-              </ul> -->
             </li>
             <li class="cstmNavItem noHrLine">
-              <router-link class="nav-link" to="">Services</router-link>
+              <span class="nav-link" to="">Services</span>
               <ul class="cstmDrpdwn">
                 <li v-for="service in serviceSection.details">
                   <router-link :to="{name: 'serviceSingle', params: {slug: service.serviceSlug}}">{{service.Title}}</router-link>
                 </li>
-                <!-- <li>
-                  <router-link to="/wordpress-development">WordPress Development</router-link>
-                </li>
-                <li>
-                  <router-link to="/ecommerce-development">E-Commerce Development</router-link>
-                </li>
-                <li>
-                  <router-link to="/woocommerce">WooCommerce</router-link>
-                </li>
-                <li>
-                  <router-link to="/api-development">API Development</router-link>
-                </li>
-                <li>
-                  <router-link to="/php-frameworks">PHP Frameworks</router-link>
-                </li>
-                <li>
-                  <router-link to="/web-support">Ongoing Web Support & Optimization</router-link>
-                </li> -->
               </ul>
             </li>
             <li class="cstmNavItem">
@@ -98,9 +76,6 @@
             <li class="cstmNavItem">
               <router-link class="nav-link" to="/career">Career</router-link>
             </li>
-            <!-- <li class="cstmNavItem">
-              <router-link class="nav-link" to="/contact">Contact Us</router-link>
-            </li> -->
             <li class="cstmNavItem">
               <router-link class="nav-link" to="/blog">Blogs</router-link>
             </li>
@@ -108,7 +83,7 @@
               <router-link class="nav-link" to="/contact">Let's Connect</router-link>
             </li>
           </b-navbar-nav>
-        </b-collapse>
+        </div>
       </div>
     </b-navbar>
   </div>
